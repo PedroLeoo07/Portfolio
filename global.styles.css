@@ -49,13 +49,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 4rem;
+    list-style: none;
+    margin-left:50%;
 }
 
 .nav-link {
     text-decoration: none;
-    color: black;
+    color: red;
+
 }
 
 .nav-link:hover {
-    color: #e20614;
+    color: rgb(0, 0, 0);
 }
