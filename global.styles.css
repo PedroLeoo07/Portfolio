@@ -9,6 +9,7 @@
     background-color: black;
     display: flex;
     flex-direction: column;
+    background-image: url("././images/paisagem.jpeg");
  }
  
  .container-header {
@@ -63,3 +64,16 @@
 .nav-link:hover {
     color: rgb(0, 0, 0);
 }
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    color: #ff0000;
+    flex-wrap: wrap;
+    position: relative;
+ }
