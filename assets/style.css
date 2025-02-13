@@ -62,3 +62,94 @@ nav a:active{
     border-bottom: 3px solid #b73b4b;
 }
 
+@media(max-width: 995px){
+   nav{
+    position: absolute;
+       top: 100%;
+       right: 0;
+       width: 40%;
+       border-left: 3px solid #b73b4b;
+       border-bottom: 3px solid #b73b4b;
+       border-bottom-left-radius: 2rem;
+       padding: 1rem solid;
+       background-color: #161616;
+       border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+   } 
+
+   nav:active{
+    display: block;
+   }
+   nav a{
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+   }
+
+   nav a:hover,
+   nav a:active{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid #b73b4b;
+   }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #b73b4b;   
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #b73b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b73b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5 rem 3 rem;
+    transition: 0.3s ease;
+}
