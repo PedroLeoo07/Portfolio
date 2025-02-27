@@ -2,154 +2,268 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-html{
-    font-size: 62.5%;
-}
-
-body{
-    width: 100%;
-    height: 100vh;
+    background-color: #f2f2f2;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-in-out;
     overflow-x: hidden;
-    background-color: black;
-    color: white;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
 }
 
-header{
-    margin-top: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 9%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    padding: 10px;
+    background-color: #ffffff;
 }
 
-.logo{
-    font-size: 3rem;
-    color: #b73b4b;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5 ease;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
 }
 
-.logo:hover{
-    transform: scale(1.1);
+nav a:hover {
+    color: #007bff;
 }
 
-nav a{
-    font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+nav a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
 }
 
-nav a:hover,
-nav a:active{
-    color: #b73b4b;
-    border-bottom: 3px solid #b73b4b;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
 }
 
-@media(max-width: 995px){
-   nav{
-    position: absolute;
-       top: 100%;
-       right: 0;
-       width: 40%;
-       border-left: 3px solid #b73b4b;
-       border-bottom: 3px solid #b73b4b;
-       border-bottom-left-radius: 2rem;
-       padding: 1rem solid;
-       background-color: #161616;
-       border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
-   } 
-
-   nav:active{
-    display: block;
-   }
-   nav a{
-    display: block;
-    font-size: 2rem;
-    margin: 3rem 0;
-   }
-
-   nav a:hover,
-   nav a:active{
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.5rem solid #b73b4b;
-   }
+header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
 }
 
-section{
-    min-height: 100vh;
-    padding: 5rem 9% 5rem;
+header a:hover {
+    color: #007bff;
 }
 
-.home{
+header a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+section {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
-    background-color: black;
+    height: 100vh;
 }
 
-.home .home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
+.home-img {
+    width: 50%;
 }
 
-span{
-    color: #b73b4b;   
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.home-content h3{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.home-content {
+    width: 50%;
+    padding: 20px;
 }
 
-.home-img{
-    border-radius: 50%;
+.home-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-.home-img img{
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px solid #b73b4b;
-    cursor: pointer;
-    transition: 0.2s linear;
+.home-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.home-img img:hover{
-    font-size: 1.8rem;
-    font-weight: 500;
+.home-content p {
+    font-size: 1.1em;
 }
 
-.social-icons{
-    display: inline-flex;
+.home-content .social-icons {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #b73b4b;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5 rem 3 rem;
-    transition: 0.3s ease;
 }
+
+.home-content .social-icons a {
+    margin: 0 10px;
+}
+
+.home-content .social-icons i {
+    font-size: 2em;
+    color: #007bff;
+}
+
+.home-content .social-icons i:hover {
+    color: #0056b3;
+}
+
+.home-content .btn {
+    margin-top: 20px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.1em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    color: #fff;
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .home-img {
+        width: 100%;
+    }
+    
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .home-content h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .home-content p {
+        font-size: 0.9em;
+    }
+    
+}
+
+@media screen and   (max-width: 480px) {
+    .home-img {
+        width: 100%;
+    }
+    
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+}
+
