@@ -10,8 +10,8 @@
   }
   
   :root {
-    --bg-color: #080808; /* Define a cor de fundo do projeto */
-    --secondary-bg-color: #121212; /* Define a cor de fundo secundária do projeto */
+    --bg-color: black; /* Define a cor de fundo do projeto */
+    --secondary-bg-color: red; /* Define a cor de fundo secundária do projeto */
     --text-color: #e4e4e4; /* Define a cor do texto do projeto */
     --main-color: #00ffee; /* Define a cor principal do projeto */
   }
