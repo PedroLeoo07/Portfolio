@@ -1,54 +1,278 @@
 <!DOCTYPE html>
-<html lang="en, pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem Vindos ao meu Portfólio 👋</title>
-    <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-    <header>
-        <a href="./images/Leonardo.jpeg">Leonardo</a>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Skills</a>
-            <a href="#">Education</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
-        </nav>
+    <link rel="icon" href="assets/images/dev.png" type="image/x-icon" />
+
+    <title>Portfólio</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#home" class="logo">Felipe <span>Dev</span></a>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Início</a>
+        <a href="#education">Acadêmico</a>
+        <a href="#services">Serviços</a>
+        <a href="#testimonials">Depoimentos</a>
+        <a href="#contact">Contato</a>
+      </nav>
     </header>
-    <section class="home">
-        <div class="home-img">
-        <img src="." alt="Leonardo">
-        <div class="home-content">
-            <h1>Hi, it's <span>Leonardo</span></h1>
-            <h3 class="typing-text">I'm a</h3>
-            <p>Student engineer software</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321"> <i class="fa-brands fa-linkedin"><img src="./images/logoLinkedin.png" alt="Linkedin"></i></a>
-                <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321"> <i class="fa-brands fa-linkedin"><img src="./images/logoGithub.png" alt="GitHub"></i></a>
-                <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321"> <i class="fa-brands fa-linkedin"><img src="./images/logoX.png" alt="x-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321"> <i class="fa-brands fa-linkedin"><img src="./images/logoInstagram.png" alt="instagram"></i></a>
-            </div>
-            <a href="#" class="btn">Hire-me</a>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h1>Olá, eu sou <span>Felipe Santos</span></h1>
+        <h3 class="text-animation"><span></span></h3>
+        <p>
+          Desenvolvedor Fullstack com experiência em desenvolvimento de
+          aplicações web e mobile. Entre em contato para saber mais.
+        </p>
+
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+          <a href="#" target="_blank"><i class="bx bxl-discord-alt"></i></a>
         </div>
+
+        <div class="btn-group">
+          <a href="#hire" class="btn">Contrate-me</a>
+          <a href="#contact" class="btn">Contato</a>
         </div>
+      </div>
+
+      <div class="home-img">
+        <img
+          src="https://github.com/FelipeSantos92Dev.png"
+          alt="Pessoa olhando para trás usando boné"
+        />
+      </div>
     </section>
 
-    <footer>
-        <p>© 2022 Leonardo Oliveira</p>
-        <p>All rights reserved</p>
-        <p>Made with ❤️ by Leonardo Oliveira</p>
-        <p>Contact me: <a href="mailto:leonardo.oliveira.38aab7321@gmail.com">leonardo.oliveira.38aab7321@gmail.com</a></p>
-        <p>Portfolio: <a href="https://leonardo-oliveira.github.io/lab-OliveiraLeo/">leonardo-oliveira.github.io/lab-OliveiraLeo/</a></p>
-        <p>GitHub: <a href="https://github.com/leonardo-oliveira">leonardo-oliveira</a></p>
-        <p>Linkedin: <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321">leonardo-oliveira-38aab7321</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/leonardo_oliveira_38aab7321/">leonardo_oliveira_38aab7321</a></p>
-        <p>X-Twitter: <a href="https://twitter.com/leonardo_oliveira_38aab7321">leonardo_oliveira_38aab7321</a></p>
-        <p>Youtube: <a href="https://www.youtube.com/channel/UC-2w0k3t0x-3l9-5-8-0-4">UC-2w0k3t0x-3l9-5-8-4</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/leonardo.oliveira.38aab7321">leonardo.oliveira.38aab7321</a></p>
+    <section class="education" id="education">
+      <h2 class="heading">Acadêmico</h2>
+
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3>Pós-graduação | Gestão de Projetos em TI</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam recusandae totam, magni cumque iste dignissimos iure
+              dicta, repudiandae eos sequi reprehenderit ducimus amet voluptate?
+              Eos tempora labore facere obcaecati sapiente.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <h3>Pós-graduação | Engenharia de Software</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam recusandae totam, magni cumque iste dignissimos iure
+              dicta, repudiandae eos sequi reprehenderit ducimus amet voluptate?
+              Eos tempora labore facere obcaecati sapiente.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2021</div>
+          <div class="timeline-content">
+            <h3>Graduação | Análise e Desenvolvimento de Sistemas</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam recusandae totam, magni cumque iste dignissimos iure
+              dicta, repudiandae eos sequi reprehenderit ducimus amet voluptate?
+              Eos tempora labore facere obcaecati sapiente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2 class="heading">Serviços</h2>
+
+      <div class="services-container">
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Desenvolvimento Web</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptates, quod, quae, quos quibusdam dolorum quia quas
+              voluptatum nemo doloremque.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Desenvolvimento Mobile</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptates, quod, quae, quos quibusdam dolorum quia quas
+              voluptatum nemo doloremque.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4>UI/UX Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptates, quod, quae, quos quibusdam dolorum quia quas
+              voluptatum nemo doloremque.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Manutenção de Sistemas</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptates, quod, quae, quos quibusdam dolorum quia quas
+              voluptatum nemo doloremque.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-box">
+        <h2 class="heading">Depoimentos</h2>
+
+        <div class="wrapper">
+          <div class="testimonial-item">
+            <img
+              src="https://github.com/FelipeSantos92Dev.png"
+              alt="Pessoa olhando para trás usando boné"
+            />
+
+            <h2>Felipe Santos</h2>
+
+            <div class="rating">
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+            </div>
+            <p>
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              iusto quia iste eum omnis repellat modi, facere saepe eius
+              expedita odio assumenda at atque veniam! Voluptatum velit quaerat
+              ad fuga?"
+            </p>
+          </div>
+          <div class="testimonial-item">
+            <img
+              src="https://github.com/FelipeSantos92Dev.png"
+              alt="Pessoa olhando para trás usando boné"
+            />
+
+            <h2>Felipe Santos</h2>
+
+            <div class="rating">
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+            </div>
+            <p>
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              iusto quia iste eum omnis repellat modi, facere saepe eius
+              expedita odio assumenda at atque veniam! Voluptatum velit quaerat
+              ad fuga?"
+            </p>
+          </div>
+          <div class="testimonial-item">
+            <img
+              src="https://github.com/FelipeSantos92Dev.png"
+              alt="Pessoa olhando para trás usando boné"
+            />
+
+            <h2>Felipe Santos</h2>
+
+            <div class="rating">
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+              <i class="bx bxs-star" id="star"></i>
+            </div>
+            <p>
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              iusto quia iste eum omnis repellat modi, facere saepe eius
+              expedita odio assumenda at atque veniam! Voluptatum velit quaerat
+              ad fuga?"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contato</h2>
+
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Nome Completo" />
+          <input type="email" placeholder="Email" />
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Número de Contato" />
+          <input type="text" placeholder="Assunto" />
+        </div>
+        <textarea
+          name="message"
+          id="message"
+          cols="20"
+          rows="4"
+          placeholder="Sua Mensagem..."
+        ></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="social">
+        <a href="#" target="_blank"><i class="bx bxl-github"></i></a>
+        <a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+        <a href="#" target="_blank"><i class="bx bxl-discord-alt"></i></a>
+      </div>
+
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Sobre Mim</a></li>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#education">Acadêmico</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+      <p class="copyright">
+        &copy; 2024 Felipe Santos | Todos os direitos reservados.
+      </p>
     </footer>
-</body>
+  </body>
 </html>
