@@ -1,3 +1,4 @@
+
 # Portfólio Pessoal
 
 Bem-vindo ao meu portfólio! Este projeto é uma demonstração das minhas habilidades como desenvolvedor web, destacando meu trabalho com **HTML**, **CSS** e **JavaScript**. Aqui, você encontrará uma visão geral da minha jornada profissional e educacional, além de projetos e experiências que refletem minha paixão por criar soluções web.
