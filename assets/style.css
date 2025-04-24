@@ -1,650 +1,156 @@
 * {
-    margin: 0; /* Remove a margem padrão do body que é 8px */
-    padding: 0; /* Remove o padding padrão do body que é 8px */
-    box-sizing: border-box; /* Faz com que o padding e a borda não aumentem o tamanho do elemento */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    border: none; /* Remove a borda padrão dos elementos */
-    outline: none; /* Remove a borda de foco dos elementos */
-    scroll-behavior: smooth; /* Adiciona um efeito de rolagem suave */
-    font-family: "Poppins", sans-serif; /* Define a fonte padrão do projeto */
-  }
-  
-  :root {
-    --bg-color: black; /* Define a cor de fundo do projeto */
-    --secondary-bg-color: rgb(29, 29, 29); /* Define a cor de fundo secundária do projeto */
-    --text-color: #e4e4e4; /* Define a cor do texto do projeto */
-    --main-color: #00ffee; /* Define a cor principal do projeto */
-  }
-  
-  html {
-    overflow-x: hidden; /* Remove a barra de rolagem horizontal */
-  }
-  
-  body {
-    background-color: var(--bg-color); /* Define a cor de fundo do body */
-    color: var(--text-color); /* Define a cor do texto do body */
-  }
-  
-  .header {
-    position: fixed; /* Fixa o cabeçalho no topo da página */
-    top: 0; /* Define a distância do topo */
-    left: 0; /* Define a distância da esquerda */
-    width: 100%; /* Define a largura do cabeçalho */
-    padding: 2rem 16rem; /* Adiciona um espaçamento interno */
-    background: rgba(0, 0, 0, 0.3); /* Adiciona um fundo com transparência */
-    backdrop-filter: blur(10px); /* Adiciona um efeito de desfoque */
-    display: flex; /* Faz com que os elementos fiquem em linha */
-    justify-content: space-between; /* Alinha os elementos no espaço entre eles */
-    align-items: center; /* Alinha os elementos no centro no eixo vertical */
-    z-index: 5; /* Define a ordem de empilhamento */
-  }
-  
-  .logo {
-    font-size: 2rem; /* Define o tamanho da fonte equivalente a 48px */
-    color: var(--text-color);
-    font-weight: 800; /* Define o peso da fonte */
-    cursor: pointer; /* Adiciona um cursor de ponteiro */
-    transition: 0.3s ease; /* Adiciona uma transição suave */
-  }
-  
-  .logo:hover {
-    transform: scale(1.03); /* Adiciona um efeito de escala */
-  }
-  
-  .logo span {
-    text-shadow: 0 0 5px var(--main-color); /* Adiciona uma sombra no texto */
-  }
-  
-  .navbar a {
-    font-size: 1.2rem; /* Define o tamanho da fonte equivalente a 16px */
-    color: var(--text-color);
-    margin-left: 4rem; /* Adiciona uma margem à esquerda */
-    font-weight: 500; /* Define o peso da fonte */
-    transition: 0.3s ease; /* Adiciona uma transição suave */
-    border-bottom: 3px solid transparent; /* Adiciona uma borda na parte inferior */
-    border-radius: 3px; /* Adiciona um raio nas bordas */
-  }
-  
-  .navbar a:hover,
-  .navbar a.active {
-    color: var(--main-color); /* Define a cor do texto */
-    border-bottom: 3px solid var(--main-color); /* Adiciona uma borda na parte inferior */
-    border-radius: 3px; /* Adiciona um raio nas bordas */
-  }
-  
-  section {
-    min-height: 100vh; /* Define a altura mínima da seção */
-    padding: 4rem 16rem; /* Adiciona um espaçamento interno */
-  }
-  
-  .home {
-    display: flex; /* Faz com que os elementos fiquem em linha */
-    align-items: center; /* Alinha os elementos no centro no eixo vertical */
-    justify-content: center; /* Alinha os elementos no centro no eixo horizontal */
-    gap: 16rem; /* Adiciona um espaçamento entre os elementos */
-  }
-  
-  .home-content {
-    display: flex; /* Faz com que os elementos fiquem em linha */
-    flex-direction: column; /* Alinha os elementos em coluna */
-    align-items: baseline; /* Alinha os elementos na base */
-    text-align: left; /* Alinha o texto à esquerda */
-    justify-content: center; /* Alinha os elementos no centro no eixo horizontal */
-  }
-  
-  span {
-    color: var(--main-color); /* Define a cor do texto */
-  }
-  
-  .logo span {
-    color: var(--main-color); /* Define a cor do texto */
-  }
-  
-  .home-content h3 {
-    margin-top: 1rem; /* Adiciona uma margem na parte superior */
-    margin-bottom: 2rem; /* Adiciona uma margem na parte inferior */
-    font-size: 2rem; /* Define o tamanho da fonte equivalente a 56px */
-  }
-  
-  .home-content h1 {
-    font-size: 3rem; /* Define o tamanho da fonte equivalente a 112px */
-    font-weight: 700; /* Define o peso da fonte */
-    margin-top: 1.5rem; /* Adiciona uma margem na parte superior */
-    line-height: 1; /* Define a altura da linha */
-  }
-  
-  .home-img {
-    border-radius: 50%; /* Adiciona um raio nas bordas */
-  }
-  
-  .home-img img {
-    top: 3rem; /* Define a distância do topo */
-    width: 20vw; /* Define a largura do elemento equivalente a 32% da largura da tela */
-    border-radius: 50%; /* Adiciona um raio nas bordas */
-    box-shadow: 0 0 20px var(--main-color); /* Adiciona uma sombra */
-    cursor: pointer; /* Adiciona um cursor de ponteiro */
-    transition: 0.4s ease-in-out; /* Adiciona uma transição suave */
-  }
-  
-  .home-img img:hover {
-    box-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color),
-      0 0 60px var(--main-color); /* Adiciona uma sombra */
-  }
-  
-  .home-content p {
-    font-size: 1.2rem; /* Define o tamanho da fonte equivalente a 16px */
-    font-weight: 400; /* Define o peso da fonte */
-    line-height: 1.6; /* Define a altura da linha */
-    max-width: 1000px; /* Define a largura máxima do elemento */
-  }
-  
-  .social-icons a {
-    display: inline-flex; /* Faz com que os elementos fiquem em linha com a mesma altura */
-    justify-content: center; /* Alinha os elementos no centro no eixo horizontal */
-    align-items: center; /* Alinha os elementos no centro no eixo vertical */
-    width: 4rem; /* Define a largura do elemento */
-    height: 4rem; /* Define a altura do elemento */
-    background: transparent; /* Define o fundo transparente */
-    border: 2px solid var(--main-color); /* Adiciona uma borda */
-    font-size: 2.5rem; /* Define o tamanho da fonte equivalente a 40px */
-    border-radius: 50%; /* Adiciona um raio nas bordas */
-    color: var(--main-color); /* Define a cor do texto */
-    margin: 2rem 1.5rem 2rem 0; /* Adiciona uma margem */
-    transition: 0.3s ease-in-out; /* Adiciona uma transição suave */
-  }
-  
-  .social-icons a:hover {
-    color: var(--bg-color); /* Define a cor do texto */
-    transform: scale(1.1) translateY(-2px); /* Adiciona um efeito de escala no eixo Y */
-    box-shadow: 0 0 25px var(--main-color); /* Adiciona uma sombra */
-    background-color: var(--main-color); /* Define a cor de fundo */
-  }
-  
-  .btn {
-    display: inline-block; /* Faz com que o elemento seja exibido em linha */
-    padding: 1rem 2rem; /* Adiciona um espaçamento interno */
-    background: var(--main-color); /* Define a cor de fundo */
-    box-shadow: 0 0 20px var(--main-color); /* Adiciona uma sombra */
-    border-radius: 5px; /* Adiciona um raio nas bordas */
-    font-size: 1.2rem; /* Define o tamanho da fonte equivalente a 16px */
-    color: var(--bg-color); /* Define a cor do texto */
-    border: 2px solid transparent; /* Adiciona uma borda */
-    letter-spacing: 0.1rem; /* Define o espaçamento entre as letras */
-    font-weight: 500; /* Define o peso da fonte */
-    transition: 0.3s ease-in-out; /* Adiciona uma transição suave */
-    cursor: pointer; /* Adiciona um cursor de ponteiro */
-  }
-  
-  .btn:hover {
-    transform: scale(1.05); /* Adiciona um efeito de escala */
-    box-shadow: 0 0 10px var(--main-color), 0 0 15px var(--main-color),
-      0 0 20px var(--main-color); /* Adiciona uma sombra */
-  }
-  
-  .btn-group {
-    display: flex; /* Faz com que os elementos fiquem em linha */
-    align-items: center; /* Alinha os elementos no centro no eixo vertical */
-    gap: 1.5rem; /* Adiciona um espaçamento entre os elementos */
-  }
-  
-  .btn-group a:nth-of-type(2) {
-    /* Seleciona o segundo elemento do grupo */
-    background-color: var(--bg-color); /* Define a cor de fundo */
-    color: var(--main-color); /* Define a cor do texto */
-    border: 2px solid var(--main-color); /* Adiciona uma borda */
-    box-shadow: 0 0 20px transparent; /* Adiciona uma sombra */
-  }
-  
-  .btn-group a:nth-of-type(2):hover {
-    box-shadow: 0 0 20px var(--main-color); /* Adiciona uma sombra */
-    background-color: var(--main-color); /* Define a cor de fundo */
-    color: var(--bg-color); /* Define a cor do texto */
-  }
-  
-  .text-animation {
-    font-size: 34px; /* Define o tamanho da fonte */
-    font-weight: 600; /* Define o peso da fonte */
-    min-width: 280px; /* Define a largura mínima */
-  }
-  
-  .text-animation span {
-    position: relative; /* Define a posição relativa */
-  }
-  
-  .text-animation span::before {
-    content: "Desenvolvedor Fullstack"; /* Adiciona um conteúdo */
-    color: var(--main-color); /* Define a cor do texto */
-    animation: words 20s infinite; /* Adiciona uma animação */
-  }
-  
-  .text-animation span::after {
-    content: ""; /* Adiciona um conteúdo vazio */
-    background-color: var(--bg-color); /* Define a cor de fundo */
-    position: absolute; /* Define a posição absoluta */
-    width: calc(100% + 8px); /* Define a largura de acordo com o conteúdo */
-    height: 100%; /* Define a altura de acordo com o conteúdo */
-    border-left: 3px solid var(--bg-color); /* Adiciona uma borda à esquerda */
-    right: -8px; /* Define a distância da direita */
-    animation: cursor 1s infinite, typing 20s steps(14) infinite; /* Adiciona uma animação que simula um cursor */
-  }
-  
-  @keyframes cursor {
-    /* Define a animação do cursor */
-    to {
-      border-left: 3px solid var(--main-color); /* Adiciona uma borda à esquerda */
-    }
-  }
-  
-  @keyframes words {
-    /* Define a animação das palavras */
-    0%,
-    20% {
-      content: "Desenvolvedor Frontend"; /* Adiciona um conteúdo */
-    }
-    21%,
-    40% {
-      content: "Desenvolvedor Backend"; /* Adiciona um conteúdo */
-    }
-    41%,
-    60% {
-      content: "Desenvolvedor Mobile"; /* Adiciona um conteúdo */
-    }
-    61%,
-    80% {
-      content: "Desenvolvedor Web"; /* Adiciona um conteúdo */
-    }
-    81%,
-    100% {
-      content: "Desenvolvedor Fullstack"; /* Adiciona um conteúdo */
-    }
-  }
-  
-  @keyframes typing {
-    /* Define a animação da digitação */
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95% {
-      width: 0; /* Define a largura como zero */
-    }
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    60%,
-    65%,
-    80%,
-    85%,
-    100% {
-      width: calc(100% + 8px); /* Define a largura de acordo com o conteúdo */
-    }
-  }
-  
-  .heading {
-    font-size: 2rem; /* Define o tamanho da fonte equivalente a 40px */
-    text-align: center; /* Alinha o texto ao centro */
-    margin: 5rem 0; /* Adiciona uma margem */
-  }
-  
-  .education {
-    padding: 100px 15px; /* Adiciona um espaçamento interno */
-    background: var(--secondary-bg-color); /* Define a cor de fundo */
-  }
-  
-  .education h2 {
-    margin-bottom: 5rem; /* Adiciona uma margem na parte inferior */
-  }
-  
-  .timeline-items {
-    max-width: 1200px; /* Define a largura máxima */
-    margin: auto; /* Adiciona uma margem automática */
-    display: flex; /* Faz com que os elementos fiquem em linha */
-    flex-wrap: wrap; /* Quebra a linha quando não há espaço */
-    position: relative; /* Define a posição relativa */
-  }
-  
-  .timeline-items::before {
-    /* Adiciona um pseudo-elemento */
-    content: ""; /* Adiciona um conteúdo vazio */
-    position: absolute; /* Define a posição absoluta */
-    width: 5px; /* Define a largura */
-    height: 100%; /* Define a altura */
-    background-color: var(--main-color); /* Define a cor de fundo */
-    left: calc(50% - 1px); /* Define a distância da esquerda */
-    top: 0; /* Define a distância do topo */
-    transform: translateX(-50%); /* Adiciona um efeito de translação */
-    border-radius: 5px; /* Adiciona um raio nas bordas */
-  }
-  
-  .timeline-item {
-    margin-bottom: 40px; /* Adiciona uma margem */
-    width: 100%; /* Define a largura */
-    position: relative; /* Define a posição relativa */
-  }
-  
-  .timeline-item:last-child {
-    /* Seleciona o último elemento */
-    margin-bottom: 0; /* Remove a margem */
-  }
-  
-  .timeline-item:nth-child(odd) {
-    /* Seleciona os elementos ímpares */
-    padding-right: calc(50% + 30px); /* Adiciona um espaçamento à direita */
-    text-align: right; /* Alinha o texto à direita */
-  }
-  
-  .timeline-item:nth-child(even) {
-    /* Seleciona os elementos pares */
-    padding-left: calc(50% + 30px); /* Adiciona um espaçamento à esquerda */
-    text-align: left; /* Alinha o texto à esquerda */
-  }
-  
-  .timeline-dot {
-    height: 21px; /* Define a altura */
-    width: 21px; /* Define a largura */
-    background-color: var(--main-color); /* Define a cor de fundo */
-    box-shadow: 0 0 20px var(--main-color), 0 0 30px var(--main-color); /* Adiciona uma sombra */
-    position: absolute; /* Define a posição absoluta */
-    left: calc(50% - 11px); /* Define a distância da esquerda */
-    border-radius: 50%; /* Adiciona um raio nas bordas */
-  }
-  
-  .timeline-date {
-    font-size: 1.6rem; /* Define o tamanho da fonte equivalente a 16px */
-    font-weight: 800; /* Define o peso da fonte */
-    color: var(--text-color); /* Define a cor do texto */
-    margin: 0 0 15px; /* Adiciona uma margem */
-  }
-  
-  .timeline-content {
-    background: var(--bg-color); /* Define a cor de fundo */
-    border: 1px solid var(--main-color); /* Adiciona uma borda */
-    padding: 30px 50px; /* Adiciona um espaçamento interno */
-    border-radius: 5px; /* Adiciona um raio nas bordas */
-    box-shadow: 0 0 10px var(--main-color); /* Adiciona uma sombra */
-    cursor: pointer; /* Adiciona um cursor de ponteiro */
-    transition: 0.3s ease-in-out; /* Adiciona uma transição suave */
-  }
-  
-  .timeline-content:hover {
-    transform: scale(1.05); /* Adiciona um efeito de escala */
-    box-shadow: 0 0 20px var(--main-color); /* Adiciona uma sombra */
-  }
-  
-  .timeline-content h3 {
-    font-size: 1.6rem; /* Define o tamanho da fonte equivalente a 16px */
-    font-weight: 600; /* Define o peso da fonte */
-    color: var(--text-color); /* Define a cor do texto */
-    margin: 0 0 10px; /* Adiciona uma margem */
-  }
-  
-  .timeline-content p {
-    font-size: 1.2rem; /* Define o tamanho da fonte equivalente a 16px */
-    font-weight: 300; /* Define o peso da fonte */
-    color: var(--text-color); /* Define a cor do texto */
-    line-height: 1.2; /* Define a altura da linha */
-  }
-  
-  ::-webkit-scrollbar {
-    /* Adiciona um estilo à barra de rolagem */
-    width: 6px; /* Define a largura */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    /* Adiciona um estilo ao polegar da barra de rolagem */
-    background-color: var(--main-color); /* Define a cor de fundo */
-    border-radius: 5px; /* Adiciona um raio nas bordas */
-  }
-  
-  ::-webkit-scrollbar-track {
-    /* Adiciona um estilo à trilha da barra de rolagem */
-    background-color: var(--bg-color); /* Define a cor de fundo */
-  }
-  
-  .services {
-    background-color: var(--bg-color);
-    color: var(--secondary-bg-color);
-  }
-  
-  .services h2 {
-    margin-bottom: 5rem;
-    color: var(--text-color);
-  }
-  
-  .services-container {
-    display: grid; /* Faz com que os elementos fiquem em grid */
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Define o número de colunas repetidas */
-    align-items: center;
-    gap: 2.5rem; /* Adiciona um espaçamento entre os elementos */
-  }
-  
-  .service-box {
-    background-color: var(--main-color);
-    height: 300px;
-    border-radius: 5px;
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-  }
-  
-  .service-box:hover {
-    background: var(--text-color);
-    color: var(--bg-color);
-    border: 3px solid var(--main-color);
-    transform: scale(1.01);
-  }
-  
-  .service-box .service-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 3rem 3rem;
-  }
-  
-  .service-info h4 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  
-  .service-info p {
-    font-size: 1.2rem;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.6;
-    margin: auto;
-  }
-  
-  .testimonials {
-    background-color: var(--secondary-bg-color);
-  }
-  
-  .testimonials-box {
-    background-size: cover; /* Define o tamanho da imagem como capa */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .testimonials .heading {
-    margin-bottom: 5rem;
-  }
-  
-  .testimonials-box img {
-    width: 15rem;
-    border-radius: 50%;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 20px var(--main-color);
-  }
-  
-  .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  }
-  
-  .testimonial-item {
-    min-height: 550px;
-    max-width: 450px;
-    background: var(--bg-color);
-    border: 3px solid rgba(121, 155, 187, 0.2);
-    border-radius: 5px;
-    margin: 0 2rem;
-    padding: 30px 60px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1.2rem;
-    color: #e4e4e4;
-    transition: 0.4s ease-in-out;
-  }
-  
-  .testimonial-item:hover {
-    border: 3px solid var(--main-color);
-    transform: scale(1.01);
-    box-shadow: 0 0 20px var(--main-color);
-  }
-  
-  .testimonial-item h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
-  
-  .testimonial-item p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1.2;
-  }
-  
-  #star {
-    color: gold;
-    font-size: 1.4rem;
-  }
-  
-  .contact {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding-left: 40rem;
-    padding-right: 40rem;
-  }
-  
-  .contact h2 {
-    margin-bottom: 3rem;
-    color: var(--text-color);
-  }
-  
-  .contact form {
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .contact form .input-box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .contact form .input-box input,
-  .contact form textarea {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    background: var(--secondary-bg-color);
-    border-radius: 5px;
-    border: 3px solid var(--main-color);
-    margin: 1rem 0;
-    resize: none;
-  }
-  
-  .contact form .btn {
-    padding: 1rem 8rem;
-    margin-top: 1rem;
-  }
-  
-  .footer {
-    position: relative;
-    bottom: 0; /* Define a distância da parte inferior */
-    width: 100%;
-    padding: 2rem 16rem;
-    background-color: var(--secondary-bg-color);
-  }
-  
-  .footer .social {
-    text-align: center;
-    padding-bottom: 4rem;
-    color: var(--main-color);
-  }
-  
-  .footer .social a {
-    font-size: 2rem;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    width: 3.8rem;
-    height: 3.8rem;
-    line-height: 3.8rem;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 1.4rem;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .footer .social a:hover {
-    transform: scale(1.1);
-    background-color: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 20px var(--main-color);
-  }
-  
-  .footer ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    text-align: center;
-  }
-  
-  .footer ul li a {
-    color: var(--text-color);
-    border-bottom: 2px solid transparent;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .footer ul li a:hover {
-    border-bottom: 2px solid var(--main-color);
-  }
-  
-  .footer ul li {
-    display: inline-block;
-    padding: 0 2rem;
-  }
-  
-  .footer .copyright {
-    text-align: center;
-    margin-top: 4rem;
-    color: var(--text-color);
-    font-size: 1.2rem;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
 
-  
+.header{
+  background-color: #ff0000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_title{
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.header_nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+}
+
+.header_subtitle{
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+.header_link{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header_link:hover{
+  color: rgb(0, 0, 0);
+  transform: scale(1.5);
+}
+
+.header_link:active{
+  background-color: #ff0000;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.header_link:focus{
+  outline: none;
+  box-shadow: 0 0 5px #ff0000;
+}
+
+.header_button{
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.home{
+  padding: 20px;
+  text-align: center;
+  font-size: 24px; 
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-content{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-animation{
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+@keyframes fadeInUp{
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown{
+  0%{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.img{
+  width: 20rem;
+  height: 20rem;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  display: block;
+  animation: fadeInUp 0.5s ease-in-out;
+  transition: transform 0.3s ease;
+}

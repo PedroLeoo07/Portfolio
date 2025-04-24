@@ -1,265 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR, en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/style.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-
-    <link rel="icon" href="images/icon.png" type="image/x-icon" />
-
-    <title>Portfólio</title>
-  </head>
-
-  <body>
-    <header class="header">
-      <a href="#home" class="logo">Leonardo <span>Oliveira</span></a>
-
-      <nav class="navbar">
-        <a href="#home" class="active">Início</a>
-        <a href="#education">Acadêmico</a>
-        <a href="#services">Habilidades</a>
-        <a href="#testimonials">Depoimentos</a>
-        <a href="#contact">Contato</a>
+<html lang="en, pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+  <title>Home</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header_container">
+      <h1 class="header_title">Leonardo Oliveira</h1>
+      <nav class="header_nav">
+        <a href="/index.html" class="header_link">Home</a>
+        <a href="/pages/sobre.html" class="header_link">Projetos</a>
+        <a href="/pages/sobre.html" class="header_link">Âcademico</a>
+        <a href="/pages/sobre.html" class="header_link">Serviços</a>
+        <a href="/pages/contato.html" class="header_link">Contato</a>
       </nav>
-    </header>
+    </div>
+  </header>
+  <section class="home", id="home">
+    <div class="home-content">
+      <h1>Olá, eu sou <span>Leonardo Oliveira</span></h1>
+      <h3 class="text-animation"><span></span></h3>
+      <p>
+        Sou um estudante de desenvolvimento de software Full-Stack, apaixonado por tecnologia e inovação.
+         Estou sempre em busca de novos desafios e oportunidades para aprender e crescer na área de programação.
+      </p>
 
-    <section class="home" id="home">
-      <div class="home-content">
-        <h1>Olá, eu sou <span>Leonardo Oliveira</span></h1>
-        <h3 class="text-animation"><span></span></h3>
-        <p>
-         Estudante de Desenvolvimento de Sistemas
-        </p>
-
-        <div class="social-icons">
-          <a href="https://github.com/PedroLeoo07" target="_blank"><i class="bx bxl-github"></i></a>
-          <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" target="_blank"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://www.instagram.com/oliveir._leo/" target="_blank"><i class="bx bxl-instagram"></i></a>
-          <a href="#" target="_blank"><i class="bx bxl-discord-alt"></i></a>
-        </div>
-
-        <div class="btn-group">
-          <a href="https://www.instagram.com/oliveir._leo/" class="btn">Contrate-me</a>
-          <a href="#contact" class="btn">Contato</a>
-        </div>
+      <div class="social-icons">
+        <a href="#" target="_blank"><img src="/images/logoGithub.png" alt="GitHub" width="30"></a>
+        <a href="#" target="_blank"><img src="/images/logoInstagram.png" alt="Instagram" width="30"></a>
+        <a href="#" target="_blank"><img src="/images//logoLinkedin.png" alt="LinkedIn" width="30"></a>
+        <a href="#" target="_blank"><img src="/images/logoX.png" alt="Twitter" width="30"></a>
+        <a href="#" target="_blank"><img src="/images/logoDiscord.png" alt="Discord" width="30"></a>
       </div>
 
       <div class="home-img">
-        <img
-          src="./images/Leonardo.jpeg"
-          alt="Pessoa olhando para uma camera"
-        />
+        <img class="img" src="/images/dev.jpg" alt="Desenvolvedor olhando para o futuro">
       </div>
-    </section>
-
-    <section class="education" id="education">
-      <h2 class="heading">Acadêmico</h2>
-
-      <div class="timeline-items">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024/2025</div>
-          <div class="timeline-content">
-            <h3>Curso Técnico em Desenvolvimento de Sistemas</h3>
-            <p>
-              Em 2024 iniciei o curso técnico em Desenvolvimento de Sistemas no Senai de Valinhos, desenvolvendo habilidades em HTML, CSS, JavaScript, Node.js, Next.js e PostgreSQL. 
-              Busca oportunidades de trabalho que ofereçam crescimento e desenvolvimento contínuo. Em 2025, se sente mais capacitado e preparado para novos desafios.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2022/2025</div>
-          <div class="timeline-content">
-            <h3>Curso De Informática</h3>
-            <p>
-              No curso de Informática, desenvolvi habilidades em HTML e CSS para criar e estilizar páginas web. 
-              Aprendi lógica de programação, o que facilitou a resolução de problemas e o desenvolvimento de sistemas. Dominei o pacote Office, trabalhando com Excel (
-                fórmulas, gráficos e tabelas dinâmicas), Word (criação e formatação de documentos) e PowerPoint (apresentações dinâmicas). No design gráfico, usei o Adobe 
-                Photoshop e Illustrator para criar e editar imagens e ilustrações, além de editar vídeos com o Adobe Premiere. 
-              Também me especializei em comandos do Windows para otimizar tarefas.
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2019/2022</div>
-          <div class="timeline-content">
-            <h3>Curso De Games</h3>
-            <p>
-              Em 2019, comecei a me aprofundar no desenvolvimento de jogos, adquirindo habilidades em modelagem 3D e criação de jogos 2D, desde a concepção até a 
-              implementação de mecânicas e interatividade. Também estou me especializando em jogos 3D, focando em gráficos, animações e física para criar experiências imersivas. 
-              Busco sempre novos desafios para aprimorar minhas habilidades e expandir meu conhecimento na indústria de games.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <h2 class="heading">Habilidades</h2>
-
-      <div class="services-container">
-        <div class="service-box">
-          <div class="service-info">
-            <h4>Desenvolvimento Web</h4>
-            <p>
-              O desenvolvimento web envolve a criação de sites e aplicações, divididos em frontend (interface do usuário com HTML, CSS, JavaScript) e 
-              backend (processamento de dados com Node.js). Os dados são armazenados em bancos de dados SQL como MySQL ou PostgreSQL, 
-              proporcionando experiências dinâmicas e funcionais na web.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-box">
-          <div class="service-info">
-            <h4>Desenvolvimento Mobile</h4>
-            <p>
-              O desenvolvimento mobile com React Native e Expo permite criar aplicativos para Android e iOS com uma única base de código em JavaScript. O Expo oferece ferramentas e 
-              APIs prontas para uso, facilitando o processo sem configurações complexas. 
-              Com o Expo Go, é possível testar os aplicativos rapidamente em dispositivos reais ou emuladores.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-box">
-          <div class="service-info">
-            <h4>UI/UX Design</h4>
-            <p>
-              UI/UX Design com Figma permite criar interfaces e melhorar a experiência do usuário de forma colaborativa e eficiente. O Figma facilita o design visual (UI) 
-              com ferramentas para layout e tipografia, e a criação de protótipos interativos para testar a navegação e usabilidade (UX). 
-              A colaboração em tempo real e a capacidade de criar designs responsivos tornam o processo mais ágil e dinâmico.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-box">
-          <div class="service-info">
-            <h4>Adobe Photoshop</h4>
-            <p>
-              Tenho experiência básica no Adobe Photoshop, com habilidades em edição de imagens, como ajustes de cores e correção de imperfeições, além de design gráfico para criar 
-              logotipos e materiais visuais simples. 
-              Estou desenvolvendo minhas habilidades em arte digital, focando em ilustrações e manipulações criativas.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-      <div class="testimonials-box">
-        <h2 class="heading">Depoimentos</h2>
-
-        <div class="wrapper">
-          <div class="testimonial-item">
-            <img
-              src="/images/Leonardo.jpeg"
-              alt="Pessoa olhando para trás usando boné"
-            />
-
-            <h2>Leonardo Oliveira</h2>
-
-            <div class="rating">
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-            </div>
-            <p>
-             
-            </p>
-          </div>
-          <div class="testimonial-item">
-            <img
-              src="/images/Leonardo.jpeg"
-              alt="Pessoa olhando para trás usando boné"
-            />
-
-            <h2>Leonardo Oliveira</h2>
-
-            <div class="rating">
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-            </div>
-            <p>
-             
-            </p>
-          </div>
-          <div class="testimonial-item">
-            <img
-              src="/images/Leonardo.jpeg"
-              alt="Pessoa olhando para trás usando boné"
-            />
-
-            <h2>Leonardo Oliveira</h2>
-
-            <div class="rating">
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-              <i class="bx bxs-star" id="star"></i>
-            </div>
-            <p>
-             
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2 class="heading">Contato</h2>
-
-      <form action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Nome Completo" />
-          <input type="email" placeholder="Email" />
-        </div>
-        <div class="input-box">
-          <input type="text" placeholder="Número de Contato" />
-          <input type="text" placeholder="Assunto" />
-        </div>
-        <textarea
-          name="message"
-          id="message"
-          cols="20"
-          rows="4"
-          placeholder="Sua Mensagem..."
-        ></textarea>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </section>
-
-    <footer class="footer">
-      <div class="social">
-        <a href="#" target="_blank"><i class="bx bxl-github"></i></a>
-        <a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a>
-        <a href="#" target="_blank"><i class="bx bxl-instagram"></i></a>
-        <a href="#" target="_blank"><i class="bx bxl-discord-alt"></i></a>
-      </div>
-
-      <ul>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Sobre Mim</a></li>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#education">Acadêmico</a></li>
-        <li><a href="#services">Habilidades</a></li>
-        <li><a href="#testimonials">Depoimentos</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-      <p class="copyright">
-        &copy; 2025 Leonardo Oliveira | Todos os direitos reservados.
-      </p>
-    </footer>
-  </body>
+    
+    </div>
+  </section>
+</body>
 </html>
