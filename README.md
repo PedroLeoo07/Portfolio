@@ -1,33 +1,89 @@
+# 💼 Portfólio Pessoal
 
-# Portfólio Pessoal
 
-Bem-vindo ao meu portfólio! Este projeto é uma demonstração das minhas habilidades como desenvolvedor web, destacando meu trabalho com **HTML**, **CSS** e **JavaScript**. Aqui, você encontrará uma visão geral da minha jornada profissional e educacional, além de projetos e experiências que refletem minha paixão por criar soluções web.
+
+Bem-vindo(a) ao meu portfólio!
+Este projeto é uma demonstração das minhas habilidades como desenvolvedor web, destacando meu trabalho com HTML, CSS e JavaScript. Aqui você encontrará minha trajetória educacional e profissional, além de projetos que refletem minha paixão por criar soluções inovadoras e acessíveis.
+
+## 🧠 Sobre Mim
+Sou um entusiasta da tecnologia em constante aprendizado. Atualmente curso Desenvolvimento de Sistemas e busco oportunidades para crescer como desenvolvedor Full Stack, com foco em front-end, back-end e mobile.
+Tenho experiência criação de jogos e um grande interesse por design de interfaces e UX.
 
 ## 🚀 Tecnologias Utilizadas
 
-- **HTML5**: Estruturação semântica e acessível do conteúdo.
-- **CSS3**: Estilização avançada com design responsivo e tema escuro.
-- **JavaScript**: Animações e interatividade (caso utilizado).
-- **Git**: Controle de versão e gerenciamento do código.
-- **GitLab**: Colaboração e versionamento remoto.
-- **VS Code**: Editor de código utilizado durante o desenvolvimento.
+**HTML5 – Estrutura semântica e acessível.**
+
+**CSS3 – Estilização moderna com responsividade.**
+
+**JavaScript – Interatividade e lógica de front-end.**
+
+**Git & GitLab – Controle de versão e colaboração.**
+
+**VS Code – Editor preferido no desenvolvimento.**
 
 ## ✨ Funcionalidades
+🌙 Tema Escuro para melhor usabilidade visual.
 
-- **Design Escuro**: Layout moderno e agradável, com um esquema de cores escuras, visando uma navegação mais confortável.
-- **Animações de Texto**: Transições suaves que tornam a experiência do usuário mais dinâmica e envolvente.
-- **Linha do Tempo Interativa**: Exibe de forma visual e interativa minha trajetória educacional e profissional.
-- **Responsividade**: O site se adapta perfeitamente a diferentes dispositivos, como desktop, tablet e mobile.
-- **Acessibilidade**: Foquei em criar uma interface acessível, garantindo uma experiência inclusiva para todos os usuários.
+🧩 Animações de Texto suaves e responsivas.
+
+📅 Linha do Tempo Interativa com marcos educacionais e profissionais.
+
+📱 Layout Responsivo para dispositivos móveis e desktops.
+
+♿ Acessibilidade pensada para todos os públicos.
+
+📂 Organização Modular do código para facilitar manutenção.
+
+##  📸 Capturas de Tela
+
+
+## 🧪 Em Desenvolvimento
+Funcionalidades previstas para as próximas versões:
+
+🧭 Navegação por abas.
+
+🗂️ Filtro de projetos por tecnologia.
+
+🌐 Suporte multilíngue (Português / Inglês).
+
+🔥 Integração com APIs para mostrar repositórios do GitLab em tempo real.
 
 ## 🛠 Como Rodar Localmente
 
-Siga os passos abaixo para visualizar o portfólio localmente:
+ 1. Clone este repositório
+git clone https://github.com/PedroLeoo07/Oliv-Portfolio
 
-### 1. Clone o Repositório
+ 2. Acesse a pasta
+cd Oliv-Portfolio
 
-Clone este repositório para seu ambiente local:
+ 3. Abra o index.html no navegador
+ ou use o Live Server no VS Code
 
-```bash
-git clone https://gitlab.com/seuusuario/seu-portfolio.git
+
+## 🧩 Projetos em Destaque
+**🚀 API Rick and Morty**
+
+**📊 Dashboard Responsivo – Painel de controle com gráficos interativos e layout fluido.**
+
+**🌍 APIS com Back-End**
+
+
+## 🙌 Agradecimentos
+Agradeço a todos os professores, colegas e desenvolvedores que compartilham conhecimento e me inspiram diariamente.
+Um obrigado especial aos projetos open source que tornaram este portfólio possível.
+
+## 📬 Contato
+💌 Email: [leonardo.p.oliveira12@aluno.senai.br]
+
+🔗 LinkedIn: [https://www.linkedin.com/in/leonardo-oliveira-38aab7321/]
+
+🧑‍💻 GitHub: [https://github.com/PedroLeoo07]
+
+🌐 Site: [https://lab-oliveira-leo.vercel.app/] 
+
+## 🤝 Contribuindo
+Se quiser sugerir melhorias, abra uma issue ou envie um merge request. Ficarei feliz em colaborar!
+
+## 📄 Licença
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
