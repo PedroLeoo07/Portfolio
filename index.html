@@ -1,47 +1,94 @@
 <!DOCTYPE html>
-<html lang="en, pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/style.css">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="./assets/style.css">
   <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-  <title>Home</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <header class="header">
-    <div class="header_container">
-      <h1 class="header_title">Leonardo Oliveira</h1>
-      <nav class="header_nav">
-        <a href="/index.html" class="header_link">Home</a>
-        <a href="/pages/sobre.html" class="header_link">Projetos</a>
-        <a href="/pages/sobre.html" class="header_link">Âcademico</a>
-        <a href="/pages/sobre.html" class="header_link">Serviços</a>
-        <a href="/pages/contato.html" class="header_link">Contato</a>
-      </nav>
-    </div>
-  </header>
-  <section class="home", id="home">
-    <div class="home-content">
-      <h1>Olá, eu sou <span>Leonardo Oliveira</span></h1>
-      <h3 class="text-animation"><span></span></h3>
-      <p>
-        Sou um estudante de desenvolvimento de software Full-Stack, apaixonado por tecnologia e inovação.
-         Estou sempre em busca de novos desafios e oportunidades para aprender e crescer na área de programação.
-      </p>
+    <header class="header">
+        <a href="#" class="logo">Leonardo.</a>
 
-      <div class="social-icons">
-        <a href="#" target="_blank"><img src="/images/logoGithub.png" alt="GitHub" width="30"></a>
-        <a href="#" target="_blank"><img src="/images/logoInstagram.png" alt="Instagram" width="30"></a>
-        <a href="#" target="_blank"><img src="/images//logoLinkedin.png" alt="LinkedIn" width="30"></a>
-        <a href="#" target="_blank"><img src="/images/logoX.png" alt="Twitter" width="30"></a>
-        <a href="#" target="_blank"><img src="/images/logoDiscord.png" alt="Discord" width="30"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+          <a href="#home" class="active">Home</a>
+          <a href="#abount">Abount</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h1>Hi, I'm <span>Leonardo Oliveira</span></h1>
+        <div class="text-animate">
+          <h3>Full-Stack Developer</h3>
+        </div>
+
+        <p>sou apaixonado por tecnologia e quero me aprofundar muito mais</p>
+
+        <div class="btn-box">
+          <a href="#" class="btn">Hire Me</a>
+          <a href="#" class="btn">Lets Talk</a>
+        </div>
       </div>
 
-      <div class="home-img">
-        <img class="img" src="/images/dev.jpg" alt="Desenvolvedor olhando para o futuro">
+      <div class="home-sci">
+          <a href=""> <i class='bx bxl-linkedin'></i></a>
+          <a href=""> <i class='bx bxl-github'></i></a>
+         <a href="">  <i class='bx bxl-whatsapp'></i></a>
+          <a href=""><i class='bx bxl-instagram'></i></a>
       </div>
-    
-    </div>
-  </section>
+
+      <div class="home-imgHover">
+
+      </div>
+    </section>
+
+    <section class="abount" id="abount">
+      <h2 class="heading">Abount <span>Me</span></h2>
+
+      <div class="abount-img">
+        <img src="images/dev.jpg" alt="">
+        <span class="circle-spin"></span>
+      </div>
+
+      <div class="abount-content">
+        <h3>Full-Stack Developer</h3>
+        <p>Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente estou no 4° semestre. Sou apaixonado por tecnologia e quero me aprofundar muito mais.</p>
+        <div class="btn-box btns">
+          <a href="#" class="btn">Read More</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <h2 class="heading">Minha <span>Jornada</span></h2>
+
+      <div class="education-row">
+        <div class="education-collumn">
+          <h3 class="title">Educação</h3>
+
+          <div class="education-box">
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><box-icon type='solid' name='calendar'></box-icon></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
