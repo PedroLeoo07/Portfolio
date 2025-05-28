@@ -86,7 +86,7 @@ section{
 
 .home-content {
   max-width: 60rem;
-  flex: 1; /* Faz o conteúdo ocupar espaço proporcional */
+  z-index: 99;
 }
 
 
@@ -654,15 +654,110 @@ skills-content .progress .bar span{
 
   #menu-icon {
     display: block;
+    z-index: 200; /* Garante que o ícone fique acima do menu */
   }
 
   .navbar {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -100%;
     width: 100%;
     padding: 1rem 4%;
     background: var(--bg-color);
-    box-shadow: 0 .5rem 1 rem rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    z-index: 150;
+    flex-direction: column;
+    transition: left .25s;
+    display: flex;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
   }
 }
+
+@media (min-width: 769px) {
+  .navbar {
+    position: static;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  .navbar a {
+    margin: 0 1.5rem;
+    display: inline-block;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  html{
+    font-size: 50%;
+  }
+
+  .home-content h1  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-sci {
+    width: 160px;
+  }
+
+  .home-sci a {
+    width: 38px;
+    height: 38px;
+  }
+} 
+
+
+@media (max-width: 462px) {
+  .home-content h1 {
+    font-size: 5.2rem;
+  }
+
+  .education {
+    padding: 10rem 4% 5rem 5%;
+  }
+
+  .contact form .input-box .input-field {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer p {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+} 
+
+
+@media (max-width: 371px) {
+  .home {
+    justify-content: center;
+  }
+
+  .home-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+}
+
