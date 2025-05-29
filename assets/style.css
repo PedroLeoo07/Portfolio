@@ -674,7 +674,6 @@ span {
 
   #menu-icon {
     display: block;
-    
   }
 
   .navbar {
@@ -688,6 +687,7 @@ span {
     z-index: 1;
     transition: .25s ease;
     transition-delay: .25s;
+    display: block;
   }
 
   .navbar.active {
@@ -717,9 +717,10 @@ span {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
-    transform: translateX(-20rem);
+    transform: translateX(0); /* Corrigido para 0 para aparecer */
     transition: .25s ease;
     transition-delay: 0s;
+    color: var(--text-color);
   }
 
 
@@ -881,4 +882,4 @@ span {
   100% {
     width: 0;
   }
-} 
+}
