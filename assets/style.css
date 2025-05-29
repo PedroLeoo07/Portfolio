@@ -10,10 +10,10 @@
 }
 
 :root{
-  --bg-color: #081b29;
-  --second-bg-color: #112e42;
+  --bg-color: #000000;
+  --second-bg-color: #000508;
   --text-color: #ededed;
-  --main-color: #00abf0;
+  --main-color: #f00000;
 }
 
 html{
@@ -248,20 +248,6 @@ section{
   width: 100%;
 }
 
-.home-imgHover {
-  position: relative; /* Alterado para relativo */
-  width: 45%; /* Mantém a largura da imagem */
-  height: auto; /* Ajusta a altura proporcionalmente */
-  background: transparent;
-  border: 2px solid red;
-  flex-shrink: 0; /* Garante que a imagem não encolha */
-  transition: 3s;
-}
-
-.home-imgHover:hover {
- background: var(--bg-color);
- opacity: .8;
-}
 
 .about {
   display: flex;
@@ -467,7 +453,7 @@ span {
   z-index: -1;
 }
 
-skills-box .skills-content:hover::before{
+.skills-box .skills-content:hover::before{
   width: 100%;
 }
 
@@ -493,7 +479,7 @@ skills-box .skills-content:hover::before{
   margin: 1rem 0;
 }
 
-skills-content .progress .bar span{
+.skills-content .progress .bar span{
   display: block;
   height: 100%;
   border-radius: .3rem;
@@ -668,6 +654,10 @@ skills-content .progress .bar span{
     padding: 2rem 4%;
   }
 
+  section {
+    padding: 10rem 4% 2rem;
+  }
+
   .home {
     padding: 0 4%;
   }
@@ -684,7 +674,7 @@ skills-content .progress .bar span{
 
   #menu-icon {
     display: block;
-    z-index: 200; /* Garante que o ícone fique acima do menu */
+    
   }
 
   .navbar {
@@ -693,23 +683,46 @@ skills-content .progress .bar span{
     left: -100%;
     width: 100%;
     padding: 1rem 4%;
-    background: var(--bg-color);
+    background: var(--main-color);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-    z-index: 150;
-    flex-direction: column;
-    transition: left .25s;
-    display: flex;
+    z-index: 1;
+    transition: .25s ease;
+    transition-delay: .25s;
   }
 
   .navbar.active {
     left: 0;
+    transition-delay: 0s;
+  }
+
+  .navbar .active-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    border-top: .1rem solid rgba(0, 0, 0, .2);
+    z-index: -1;
+    transition: .25s ease;
+    transition-delay: .25s;
+  }
+
+  .navbar.active .active-nav {
+    left: 0;
+    transition-delay: .25s;
   }
 
   .navbar a {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
+    transform: translateX(-20rem);
+    transition: .25s ease;
+    transition-delay: 0s;
   }
+
+
 }
 
 @media (min-width: 769px) {
@@ -737,6 +750,10 @@ skills-content .progress .bar span{
   .home-content h1  {
     display: flex;
     flex-direction: column;
+  }
+
+  .home-content h1 span {
+    font-size: 4.5rem;
   }
 
   .home-sci {
@@ -864,4 +881,4 @@ skills-content .progress .bar span{
   100% {
     width: 0;
   }
-}
+} 
