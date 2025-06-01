@@ -282,8 +282,10 @@ span {
 
 .about-img img {
    width: 100%;
-   border-radius: 60%;
-  border: .2rem solid var(--main-color);
+   height: 100%;
+   object-fit: cover;
+   border-radius: 50%; /* Deixa a imagem perfeitamente redonda */
+   border: .2rem solid var(--main-color);
 }
 
 .about-img .circle-spin{
