@@ -10,6 +10,35 @@ menuIcon.onclick = () => {
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
+// Tema claro/escuro
+const themeToggleBtn = document.getElementById('theme-toggle');
+const userPrefKey = 'portfolio-theme';
+
+function applyTheme(theme) {
+    if(theme === 'light') {
+        document.body.classList.add('light');
+    } else {
+        document.body.classList.remove('light');
+    }
+}
+
+// Detecta preferência salva ou sistema
+const savedTheme = localStorage.getItem(userPrefKey);
+if(savedTheme) {
+    applyTheme(savedTheme);
+} else {
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    applyTheme(prefersLight ? 'light' : 'dark');
+}
+
+if(themeToggleBtn){
+    themeToggleBtn.addEventListener('click', () => {
+        const newTheme = document.body.classList.contains('light') ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem(userPrefKey, newTheme);
+    });
+}
+
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;

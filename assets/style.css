@@ -16,6 +16,51 @@
   --main-color: #f00000;
 }
 
+/* Tema claro (ativado em body.light) */
+body.light {
+  --bg-color: #ffffff;
+  --second-bg-color: #f2f4f7;
+  --text-color: #1a1d21;
+  --main-color: #d10000;
+}
+
+/* Transições suaves */
+body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content .content, .footer, section, .about-img img, .about-img .circle-spin {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-left: 2rem;
+  border-radius: 50%;
+  border: .2rem solid var(--main-color);
+  background: var(--bg-color);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--main-color);
+  transition: background .35s ease, color .35s ease;
+}
+
+.theme-toggle::before {
+  content: '\2600'; /* Sol */
+  transition: transform .4s ease, opacity .3s;
+}
+
+body.light .theme-toggle::before {
+  content: '\1F319'; /* Lua */
+}
+
+.theme-toggle:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
 html{
   font-size: 62.5%;
   overflow-x: hidden;
@@ -87,6 +132,43 @@ section{
   justify-content: space-between;
   padding: 0 9%;
 
+}
+
+/* Imagem de perfil reutilizada da seção About dentro da Home */
+.home-profile-img {
+  /* Tamanho fluido mantendo proporção 1:1 */
+  width: clamp(18rem, 28vw, 34rem);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .home-profile-img {
+  margin-right: 2rem;
+  width: clamp(18rem, 36vw, 32rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .home-profile-img {
+    margin-right: 0;
+    width: clamp(16rem, 55vw, 30rem);
+  }
+}
+
+@media (max-width: 462px) {
+  .home-profile-img {
+    width: clamp(14rem, 70vw, 26rem);
+  }
 }
 
 
