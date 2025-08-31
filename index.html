@@ -27,6 +27,10 @@
 
           <span class="active-nav"></span>
         </nav>
+        <select id="lang-switch" aria-label="Language" class="lang-switch">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+        </select>
   <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle" title="Alterar tema"></button>
     </header>
 
@@ -39,21 +43,20 @@
       <div class="home-content">
         <h1>Hi, I'm <span>Leonardo Oliveira</span></h1>
         <div class="text-animate">
-          <h3>Full-Stack Developer</h3>
+          <h3 data-i18n="role">Full-Stack Developer</h3>
         </div>
 
-        <p>Profissional com experiência em desenvolvimento web completo, atuando tanto no front-end quanto no back-end. Utilizo tecnologias modernas como JavaScript, Node.js, React, Next.js e PostgreSQL para criar aplicações eficientes, seguras e escaláveis. Comprometido com boas práticas de código, performance e 
-          qualidade, estou sempre em busca de evolução técnica e novos desafios na área de tecnologia.</p>
+  <p data-i18n="intro">Profissional com experiência em desenvolvimento web completo, atuando tanto no front-end quanto no back-end. Utilizo tecnologias modernas como JavaScript, Node.js, React, Next.js e PostgreSQL para criar aplicações eficientes, seguras e escaláveis. Comprometido com boas práticas de código, performance e qualidade, estou sempre em busca de evolução técnica e novos desafios na área de tecnologia.</p>
 
         <div class="btn-box">
           <a href="curriculos/Curriculo-2.pdf" class="btn cv-btn" download>
             <i class='bx bx-download'></i>
-            <span class="btn-label">Currículo</span>
+            <span class="btn-label" data-i18n="cv">Currículo</span>
             <span class="btn-badge">PT</span>
           </a>
           <a href="curriculos/resume_en.pdf" class="btn cv-btn" download>
             <i class='bx bx-download'></i>
-            <span class="btn-label">Resume</span>
+            <span class="btn-label" data-i18n="resume">Resume</span>
             <span class="btn-badge">EN</span>
           </a>
         </div>
@@ -64,6 +67,7 @@
           <a href="https://github.com/PedroLeoo07"> <i class='bx bxl-github'></i></a>
          <a href="https://wa.me/5519988727143">  <i class='bx bxl-whatsapp'></i></a>
           <a href="https://www.instagram.com/oliveir._leo/"><i class='bx bxl-instagram'></i></a>
+          <a href="https://www.behance.net/" aria-label="Behance" target="_blank" rel="noopener"><i class='bx bxl-behance'></i></a>
       </div>
 
       <div class="home-imgHover">
@@ -80,9 +84,8 @@
       </div>
 
       <div class="about-content">
-        <h3>Full-Stack Developer</h3>
-        <p>Sou um desenvolvedor full stack com foco em criar soluções completas, escaláveis e de alta performance. Atuo no desenvolvimento de aplicações web utilizando tecnologias como JavaScript, Node.js, React, Next.js e bancos de dados relacionais e não relacionais. Tenho paixão por resolver problemas com código limpo, bem estruturado e alinhado às boas práticas. Estou em constante evolução profissional, 
-          sempre buscando aprender, melhorar e contribuir com projetos desafiadores.</p>
+  <h3 data-i18n="role">Full-Stack Developer</h3>
+  <p data-i18n="about">Sou um desenvolvedor full stack com foco em criar soluções completas, escaláveis e de alta performance. Atuo no desenvolvimento de aplicações web utilizando tecnologias como JavaScript, Node.js, React, Next.js e bancos de dados relacionais e não relacionais. Tenho paixão por resolver problemas com código limpo, bem estruturado e alinhado às boas práticas. Estou em constante evolução profissional, sempre buscando aprender, melhorar e contribuir com projetos desafiadores.</p>
         <div class="btn-box btns">
           <a href="#" class="btn">Read More</a>
         </div>
