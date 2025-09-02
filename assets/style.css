@@ -100,13 +100,13 @@ body{
   transition: .3s;
 }
 
-.header .stycky {
+.header.sticky {
   background: var(--bg-color);
 }
 
 .logo {
   position: relative;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   color: var(--text-color);
   font-weight: 600;
 }
@@ -116,10 +116,10 @@ body{
 }
 
 .navbar a{
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   color: var(--text-color);
   font-weight: 500;
-  margin-left: 3.5rem;
+  margin-left: clamp(1.5rem, 3vw, 3.5rem);
   transition: .3s;
 }
 
@@ -146,24 +146,21 @@ section{
   align-items: center;
   justify-content: space-between;
   padding: 0 9%;
-  gap: 5rem; /* gap aumentado */
+  gap: clamp(2rem, 5vw, 5rem);
   flex-wrap: wrap;
-
+  min-height: 100vh;
 }
 
-/* Imagem de perfil reutilizada da seção About dentro da Home */
 .home-profile-img {
-  /* Tamanho fluido mantendo proporção 1:1 */
-  width: clamp(18rem, 28vw, 34rem);
+  width: clamp(16rem, 28vw, 34rem);
   aspect-ratio: 1 / 1;
   height: auto;
   flex-shrink: 0;
-  margin-right: 0;
-  margin-left: 4rem; /* agora fica à direita do texto */
+  margin-left: clamp(1rem, 3vw, 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  order: 2; /* imagem à direita */
+  order: 2;
 }
 
 @media (max-width: 991px) {
@@ -186,30 +183,48 @@ section{
     order: 1; /* imagem primeiro em mobile */
     margin-bottom: .8rem; /* separação adicional antes do conteúdo */
   }
-  .home-content { text-align: center; }
-  .home-sci { position: static; margin-top: 1.2rem; padding-bottom: 1rem; }
+  .home-content { 
+    text-align: center;
+    order: 2;
+  }
+  
+  .home-content .text-animate {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .home-content .text-animate h3 {
+    text-align: center;
+  }
+  
+  .home-sci { position: static; margin-top: 1.2rem; padding-bottom: 1rem; order: 3; width: 100%; justify-content: center; gap: 1.5rem; }
 }
 
 @media (max-width: 462px) {
   .home-profile-img {
-    width: clamp(14rem, 70vw, 26rem);
+    width: clamp(12rem, 70vw, 24rem);
   }
 }
 
 
 .home-content {
-  max-width: 60rem;
+  max-width: min(60rem, 100%);
   z-index: 99;
+  flex: 1;
+  min-width: 0;
 }
 
 
 .home-content h1 {
   position: relative;
   display: inline-block;
-  font-size: clamp(3.4rem, 6vw, 5.6rem);
+  font-size: clamp(2.8rem, 6vw, 5.6rem);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
   max-width: 100%;
+  word-wrap: break-word;
 }
 .home-content h1 span {
   color: var(--text-color);
@@ -217,11 +232,12 @@ section{
 
 .home-content .text-animate{
   position: relative;
-  width: 32.8rem;
+  width: 100%;
+  max-width: 32.8rem;
 }
 
 .home-content .text-animate h3{
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: .7px var(--main-color);
@@ -249,17 +265,21 @@ section{
 
 .home-content p{
   position: relative;
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   margin: 2rem 0 4rem;
+  line-height: 1.6;
 }
 
 .btn-box{
   position: relative;
   display: flex;
-  justify-content: space-between;
-  width: 34.5rem;
-  height: 5rem;
-  margin-bottom: 3.2rem; /* mais espaço padrão */
+  justify-content: flex-start;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 3.2rem;
+  flex-wrap: wrap;
 }
 
 .btn-box .btn {
@@ -267,17 +287,18 @@ section{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 100%;
+  min-width: clamp(12rem, 25vw, 15rem);
+  height: clamp(4rem, 8vw, 5rem);
   background: var(--main-color);
   border: .2rem solid var(--main-color);
   border-radius: .8rem;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: 600;
   letter-spacing: .1rem;
   color: var(--bg-color);
   z-index: 1;
-  /* Remova o overflow: hidden */
+  flex: 1;
+  max-width: 20rem;
 }
 
 /* Estilo refinado para botões de CV */
@@ -285,23 +306,24 @@ section{
   padding: 0 1.2rem;
   gap: .6rem;
   width: auto;
-  min-width: 14rem;
+  min-width: clamp(12rem, 30vw, 14rem);
 }
 
 .cv-btn i {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   display: flex;
   align-items: center;
 }
 
 .cv-btn .btn-label {
   font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
 }
 
 .cv-btn .btn-badge {
   background: var(--bg-color);
   color: var(--main-color);
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   padding: .3rem .6rem;
   border-radius: .5rem;
   line-height: 1;
@@ -350,9 +372,10 @@ section{
 .home-sci{
   position: absolute;
   bottom: 4rem;
-  width: 170px;
+  width: clamp(15rem, 30vw, 17rem);
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .home-sci a {
@@ -360,16 +383,15 @@ section{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  background: var(--bg-color); ;
+  width: clamp(3.2rem, 6vw, 4rem);
+  height: clamp(3.2rem, 6vw, 4rem);
+  background: var(--bg-color);
   border: .2rem solid var(--main-color);
   border-radius: 50%;
-  font-size: 20px;
+  font-size: clamp(1.6rem, 3vw, 2rem);
   color: var(--text-color);
   z-index: 1;
   overflow: hidden;
-  gap: 2rem;
 }
 
 .home-sci a:hover{
@@ -405,7 +427,7 @@ section{
 
 .heading{
   position: relative;
-  font-size: 5rem;
+  font-size: clamp(3rem, 6vw, 5rem);
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -416,8 +438,8 @@ span {
 
 .about-img{
   position: relative;
-  width: 35rem;
-  height: 35rem;
+  width: clamp(25rem, 40vw, 35rem);
+  height: clamp(25rem, 40vw, 35rem);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -452,12 +474,14 @@ span {
 }
 
 .about-content h3{
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 4vw, 2.6rem);
 }
 
 .about-content p{
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   margin: 2rem 0 3rem;
+  line-height: 1.6;
+  max-width: 80rem;
 }
 
 .btn-box.btns{
@@ -482,15 +506,16 @@ span {
 .education .education-row{
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: clamp(2rem, 5vw, 5rem);
 }
 
 .education-row .education-column{
-  flex: 1 1 40rem;
+  flex: 1 1 clamp(25rem, 45%, 40rem);
+  min-width: 0;
 }
 
 .education-column .title{
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin: 0 0 1.5rem 2rem;
 }
 
@@ -549,12 +574,13 @@ span {
 }
 
 .education-content .content h3{
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2rem);
 }
 
 .education-content .content p{
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   margin: .5rem;
+  line-height: 1.5;
 }
 
 .skills{
@@ -567,15 +593,16 @@ span {
 .skills .skills-row{
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: clamp(2rem, 5vw, 5rem);
 }
 
 .skills-row .skills-column{
-  flex: 1 1 40rem;
+  flex: 1 1 clamp(25rem, 45%, 40rem);
+  min-width: 0;
 }
 
 .skills-column .title{
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin: 0 0 1.5rem;
 }
 
@@ -608,7 +635,7 @@ span {
 }
 
 .skills-content .progress h3{
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
   display: flex;
   justify-content: space-between;
 }
@@ -672,8 +699,8 @@ span {
 
 .projects .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(24rem, 45vw, 26rem), 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .project-box {
@@ -719,11 +746,11 @@ span {
 }
 
 .project-content h3 {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2rem);
 }
 
 .project-content p {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
   line-height: 1.5;
   color: var(--text-color);
 }
@@ -736,7 +763,7 @@ span {
 }
 
 .project-tags span {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   padding: .4rem .7rem;
   background: var(--main-color);
   color: var(--bg-color);
@@ -796,10 +823,13 @@ span {
 .certifications .cert-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: clamp(2rem, 5vw, 5rem);
 }
 
-.cert-row .cert-column { flex: 1 1 40rem; }
+.cert-row .cert-column { 
+  flex: 1 1 clamp(25rem, 45%, 40rem);
+  min-width: 0;
+}
 
 .cert-box { border-left: .2rem solid var(--main-color); }
 
@@ -820,8 +850,8 @@ span {
   border-radius: 50%;
 }
 
-.cert-item h3 { font-size: 2rem; }
-.cert-item p { font-size: 1.4rem; margin: .4rem 0 .8rem; }
+.cert-item h3 { font-size: clamp(1.6rem, 3vw, 2rem); }
+.cert-item p { font-size: clamp(1.2rem, 2.5vw, 1.4rem); margin: .4rem 0 .8rem; line-height: 1.5; }
 .cert-item .cert-year { font-size: 1.5rem; color: var(--main-color); padding-bottom: .4rem; }
 .cert-item .cert-year i { padding-right: .5rem; }
 .cert-item .cert-meta span { font-size: 1.2rem; opacity: .75; }
@@ -836,7 +866,7 @@ span {
 }
 
 .contact form{
-  max-width: 70rem;
+  max-width: min(70rem, 95%);
   margin: 0 auto;
   text-align: center;
 }
@@ -846,20 +876,22 @@ span {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .contact form .input-box .input-field{
   position: relative;
-  width: 49%;
+  width: 100%;
   margin: .8rem 0;
+  flex: 1 1 clamp(20rem, 45%, 25rem);
 }
 
 .contact form .input-box .input-field input,
 .contact form .textarea-field textarea{
   width: 100%;
   height: 100%;
-  padding: 1.5rem;
-  font-size: 1.6rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   color: var(--text-color);
   background: transparent;
   border-radius: .6rem;
@@ -911,10 +943,11 @@ span {
   flex-wrap: wrap;
   padding: 2rem 9%;
   background: var(--second-bg-color);
+  gap: 1rem;
 }
 
 .footer-text p{
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
 .footer-iconTop a {
@@ -955,9 +988,27 @@ span {
   color: var(--main-color);
 }
 
+/* RESPONSIVE BREAKPOINTS */
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
+  }
+  
+  .header {
+    padding: 2rem 6%;
+  }
+
+  section {
+    padding: 10rem 6% 2rem;
+  }
+
+  .home {
+    padding: 0 6%;
+  }
+
+  .footer {
+    padding: 2rem 6%;
   }
 }
 
@@ -972,16 +1023,32 @@ span {
 
   .home {
     padding: 0 4%;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .home-profile-img {
+    margin-left: 2rem;
+    width: clamp(18rem, 36vw, 32rem);
   }
 
   .footer {
     padding: 2rem 4%;
   }
+  
+  .btn-box {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 52%;
+  }
+
   .header {
     background: var(--bg-color);
+    padding: 1.5rem 4%;
   }
 
   #menu-icon {
@@ -1029,35 +1096,89 @@ span {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
-    transform: translateX(0); /* Corrigido para 0 para aparecer */
+    transform: translateX(0);
     transition: .25s ease;
     transition-delay: 0s;
     color: var(--text-color);
   }
 
-
-}
-
-@media (min-width: 769px) {
-  .navbar {
-    position: static;
-    left: 0;
+  .home {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 12rem 4% 2rem;
+    text-align: center;
+  }
+  
+  .home-profile-img {
+    margin-left: 0;
+    width: clamp(16rem, 55vw, 30rem);
+    order: 1;
+    margin-bottom: .8rem;
+  }
+  
+  .home-content { 
+    text-align: center;
+    order: 2;
+  }
+  
+  .home-content .text-animate {
     display: flex;
-    flex-direction: row;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
   }
-  .navbar a {
-    margin: 0 1.5rem;
-    display: inline-block;
-    font-size: 1.8rem;
+  
+  .home-content .text-animate h3 {
+    text-align: center;
   }
-}
+  
+  .home-sci { 
+    position: static; 
+    margin-top: 2rem; 
+    padding-bottom: 1rem;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 
-@media (min-width: 900px) and (max-width: 1200px) {
-  .home-content .btn-box { margin-bottom: 5rem; }
-  .home-sci { bottom: 2.4rem; }
+  .btn-box {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-box .btn {
+    max-width: 25rem;
+    width: 100%;
+  }
+
+  .about-img {
+    width: clamp(20rem, 50vw, 28rem);
+    height: clamp(20rem, 50vw, 28rem);
+  }
+
+  .education .education-row,
+  .skills .skills-row,
+  .certifications .cert-row {
+    gap: 3rem;
+  }
+
+  .education-row .education-column,
+  .skills-row .skills-column,
+  .cert-row .cert-column {
+    flex: 1 1 100%;
+  }
+
+  .projects .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2.5rem;
+  }
+
+  .contact form .input-box .input-field {
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1065,31 +1186,68 @@ span {
     font-size: 50%;
   }
 
-  .home-content h1  {
+  .header {
+    padding: 1.5rem 3%;
+  }
+
+  section {
+    padding: 10rem 3% 2rem;
+  }
+
+  .home {
+    padding: 12rem 3% 2rem;
+    gap: 3rem;
+  }
+
+  .home-content h1 {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
-  .home-content h1 span {
-    font-size: 4.5rem;
+  .home-profile-img {
+    width: clamp(14rem, 60vw, 26rem);
   }
 
-  .home-sci { width: 100%; justify-content: center; gap: 1.8rem; margin-top: 1.4rem; }
+  .home-sci {
+    width: 100%;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.4rem;
+  }
 
   .home-sci a {
-    width: 38px;
-    height: 38px;
+    width: clamp(3rem, 8vw, 3.8rem);
+    height: clamp(3rem, 8vw, 3.8rem);
   }
-} 
 
+  .btn-box .btn {
+    font-size: 1.4rem;
+    height: 4.5rem;
+  }
+
+  .about-img {
+    width: clamp(18rem, 60vw, 25rem);
+    height: clamp(18rem, 60vw, 25rem);
+  }
+
+  .projects .projects-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer {
+    padding: 2rem 3%;
+  }
+}
 
 @media (max-width: 462px) {
-  .home-content h1 {
-    font-size: 5.2rem;
+  .home-profile-img {
+    width: clamp(12rem, 70vw, 24rem);
   }
 
   .education {
-    padding: 10rem 4% 5rem 5%;
+    padding: 10rem 3% 5rem;
   }
 
   .contact form .input-box .input-field {
@@ -1098,19 +1256,24 @@ span {
 
   .footer {
     flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
   }
 
   .footer p {
     margin-top: 2rem;
     text-align: center;
   }
-
-} 
-
+}
 
 @media (max-width: 371px) {
+  html {
+    font-size: 48%;
+  }
+
   .home {
     justify-content: center;
+    padding: 12rem 2% 2rem;
   }
 
   .home-content {
@@ -1120,8 +1283,22 @@ span {
     text-align: center;
   }
 
-  .home-content h1 { font-size: clamp(3.2rem, 11vw, 4.6rem); }
+  .home-content h1 { 
+    font-size: clamp(2.8rem, 11vw, 4.2rem); 
+  }
 
+  .home-profile-img {
+    width: clamp(10rem, 75vw, 22rem);
+  }
+
+  .btn-box .btn {
+    font-size: 1.3rem;
+    min-width: 11rem;
+  }
+
+  section {
+    padding: 10rem 2% 2rem;
+  }
 }
 
 

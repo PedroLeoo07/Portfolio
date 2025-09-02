@@ -94,24 +94,64 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                const activeLink = document.querySelector('header nav a[href*=' + id + ']');
+                if(activeLink) activeLink.classList.add('active');
             });
 
             sec.classList.add('show-animate');
-        }
-
-        else {
+        } else {
             sec.classList.remove('show-animate');
         }
     });
+    
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
-      menuIcon.classList.remove('bx-x');
+    // Close mobile menu on scroll
+    menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
-
 }
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Close mobile menu when clicking a link
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    });
+});
+
+// Handle window resize events
+window.addEventListener('resize', () => {
+    // Close mobile menu on resize to larger screen
+    if (window.innerWidth > 768) {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    }
+});
+
+// Prevent horizontal scroll issues
+document.addEventListener('DOMContentLoaded', function() {
+    // Add viewport meta tag if not present
+    if (!document.querySelector('meta[name="viewport"]')) {
+        const viewport = document.createElement('meta');
+        viewport.name = 'viewport';
+        viewport.content = 'width=device-width, initial-scale=1.0';
+        document.head.appendChild(viewport);
+    }
+});
