@@ -1,0 +1,151 @@
+/* Enhanced Responsive Features - Optional additional styles */
+
+/* Improved CSS Grid Auto-fit for better responsive behavior */
+.projects .projects-container {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+}
+
+/* Better container queries support (when available) */
+@supports (container-type: inline-size) {
+  .project-box {
+    container-type: inline-size;
+  }
+  
+  @container (max-width: 300px) {
+    .project-content h3 {
+      font-size: 1.6rem;
+    }
+    
+    .project-content p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+/* Enhanced focus indicators for better accessibility */
+.btn:focus-visible,
+.home-sci a:focus-visible,
+#menu-icon:focus-visible,
+.theme-toggle:focus-visible,
+.lang-switch:focus-visible {
+  outline: 3px solid var(--main-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(240, 0, 0, 0.2);
+}
+
+/* Improved touch interactions */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover,
+  .home-sci a:hover,
+  .navbar a:hover {
+    /* Remove hover effects on touch devices */
+    transform: none;
+    background: initial;
+  }
+  
+  .btn:active,
+  .home-sci a:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --main-color: #ff0000;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+  }
+  
+  body.light {
+    --main-color: #cc0000;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .footer,
+  .home-sci,
+  .btn-box,
+  .theme-toggle,
+  .lang-switch,
+  #menu-icon {
+    display: none !important;
+  }
+  
+  .home {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .home-profile-img {
+    width: 8rem;
+    height: 8rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+    page-break-inside: avoid;
+  }
+  
+  .project-box {
+    page-break-inside: avoid;
+    border: 1px solid #000;
+  }
+}
+
+/* Dark mode specific enhancements */
+@media (prefers-color-scheme: dark) {
+  /* Improve readability in dark mode */
+  body:not(.light) {
+    --text-color: #f0f0f0;
+  }
+}
+
+/* Very wide screens optimization */
+@media (min-width: 1600px) {
+  .header,
+  section,
+  .footer {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .projects .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 4rem;
+  }
+}
+
+/* Orientation specific adjustments */
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  .home-profile-img {
+    width: clamp(14rem, 50vw, 24rem);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .home {
+    padding: 6rem 4% 2rem;
+  }
+  
+  section {
+    padding: 4rem 4% 2rem;
+  }
+}

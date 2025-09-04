@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+  <meta name="description" content="Portfolio de Leonardo Oliveira - Desenvolvedor Full-Stack especializado em JavaScript, Node.js, React e Next.js">
+  <meta name="theme-color" content="#f00000">
+  <title>Leonardo Oliveira - Portfolio</title>
   <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/responsive-enhancements.css">
+  <link rel="stylesheet" href="./assets/interactive-effects.css">
+  <link rel="stylesheet" href="./assets/ultra-interactive.css">
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> <!-- Adicionado aqui -->
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./assets/style.css" as="style">
+  <link rel="preload" href="./js/script.js" as="script">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">Leonardo.</a>
+    <header class="header" role="banner">
+        <a href="#" class="logo" aria-label="Leonardo Oliveira - Home">Leonardo.</a>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <button class="bx bx-menu" id="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navbar"></button>
 
-        <nav class="navbar">
-          <a href="#home" class="active">Home</a>
+        <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+          <a href="#home" class="active" aria-current="page">Home</a>
            <a href="#about">About</a>
           <a href="#education">Education</a>
           <a href="#certifications">Certifications</a>
@@ -25,23 +33,23 @@
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
 
-          <span class="active-nav"></span>
+          <span class="active-nav" aria-hidden="true"></span>
         </nav>
-        <select id="lang-switch" aria-label="Language" class="lang-switch">
+        <select id="lang-switch" aria-label="Escolher idioma" class="lang-switch">
           <option value="pt">PT</option>
           <option value="en">EN</option>
         </select>
-  <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle" title="Alterar tema"></button>
+  <button id="theme-toggle" aria-label="Alternar tema claro/escuro" class="theme-toggle" title="Alterar tema"></button>
     </header>
 
-    <section class="home" id="home">
+    <section class="home parallax-section reveal" id="home">
       <!-- Imagem adicionada da seção About para a Home (lado esquerdo) -->
-      <div class="about-img home-profile-img">
+      <div class="about-img home-profile-img parallax-element" data-speed="0.3">
         <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" loading="lazy">
         <span class="circle-spin"></span>
       </div>
-      <div class="home-content">
-        <h1>Hi, I'm <span>Leonardo Oliveira</span></h1>
+      <div class="home-content reveal">
+        <h1>Hi, I'm <span class="gradient-text">Leonardo Oliveira</span></h1>
         <div class="text-animate">
           <h3 data-i18n="role">Full-Stack Developer</h3>
         </div>
@@ -49,12 +57,12 @@
   <p data-i18n="intro">Profissional com experiência em desenvolvimento web completo, atuando tanto no front-end quanto no back-end. Utilizo tecnologias modernas como JavaScript, Node.js, React, Next.js e PostgreSQL para criar aplicações eficientes, seguras e escaláveis. Comprometido com boas práticas de código, performance e qualidade, estou sempre em busca de evolução técnica e novos desafios na área de tecnologia.</p>
 
         <div class="btn-box">
-          <a href="curriculos/Curriculo-2.pdf" class="btn cv-btn" download>
+          <a href="curriculos/Curriculo-2.pdf" class="btn cv-btn neon-button" download>
             <i class='bx bx-download'></i>
             <span class="btn-label" data-i18n="cv">Currículo</span>
             <span class="btn-badge">PT</span>
           </a>
-          <a href="curriculos/resume_en.pdf" class="btn cv-btn" download>
+          <a href="curriculos/resume_en.pdf" class="btn cv-btn neon-button" download>
             <i class='bx bx-download'></i>
             <span class="btn-label" data-i18n="resume">Resume</span>
             <span class="btn-badge">EN</span>
@@ -63,11 +71,13 @@
       </div>
 
       <div class="home-sci">
-          <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/"> <i class='bx bxl-linkedin'></i></a>
-          <a href="https://github.com/PedroLeoo07"> <i class='bx bxl-github'></i></a>
-         <a href="https://wa.me/5519988727143">  <i class='bx bxl-whatsapp'></i></a>
-          <a href="https://www.instagram.com/oliveir._leo/"><i class='bx bxl-instagram'></i></a>
-          <a href="https://www.behance.net/" aria-label="Behance" target="_blank" rel="noopener"><i class='bx bxl-behance'></i></a>
+          <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" title="LinkedIn"> <i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/PedroLeoo07" title="GitHub"> <i class='bx bxl-github'></i></a>
+         <a href="https://wa.me/5519988727143" title="WhatsApp">  <i class='bx bxl-whatsapp'></i></a>
+          <a href="https://www.instagram.com/oliveir._leo/" title="Instagram"><i class='bx bxl-instagram'></i></a>
+          <a href="https://www.behance.net/" aria-label="Behance" target="_blank" rel="noopener" title="Behance"><i class='bx bxl-behance'></i></a>
+          <!-- Easter Egg: Secret Developer Console -->
+          <a href="#" onclick="console.log('🎮 Developer Mode Activated! Try Ctrl+` for terminal')" title="Developer Console"><i class='bx bx-code-alt'></i></a>
       </div>
 
       <div class="home-imgHover">
@@ -75,10 +85,30 @@
       </div>
     </section>
 
-    <section class="about" id="about">
-      <h2 class="heading">About <span>Me</span></h2>
+    <section class="about reveal" id="about">
+      <h2 class="heading">About <span class="gradient-text">Me</span></h2>
 
-      <div class="about-img">
+      <!-- Seção de estatísticas -->
+      <div class="stats-container reveal">
+        <div class="stat-item">
+          <div class="counter" data-target="50">0</div>
+          <span>Projects Completed</span>
+        </div>
+        <div class="stat-item">
+          <div class="counter" data-target="3">0</div>
+          <span>Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <div class="counter" data-target="100">0</div>
+          <span>Happy Clients</span>
+        </div>
+        <div class="stat-item">
+          <div class="counter" data-target="15">0</div>
+          <span>Technologies</span>
+        </div>
+      </div>
+
+      <div class="about-img parallax-element" data-speed="0.2">
         <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" loading="lazy">
         <span class="circle-spin"></span>
       </div>
@@ -164,35 +194,42 @@
       </div>
     </section>
 
-    <section class="skills" id="skills">
-      <h2 class="heading">My <span>Skills</span></h2>
+    <section class="skills reveal" id="skills">
+      <h2 class="heading">My <span class="gradient-text">Skills</span></h2>
 
       <div class="skills-row">
 
-        <div class="skills-column">
-          <h3 class="title">Skills</h3>
+        <div class="skills-column reveal">
+          <h3 class="title">Frontend Skills</h3>
 
           <div class="skills-box">
             <div class="skills-content">
-              <div class="progress">
-                <h3>React <span>70%</span></h3>
-                <div class="bar"><span></span></div>
-
+              <div class="skill-item">
+                <h3>React <span>95%</span></h3>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar"></div>
+                </div>
               </div>
-              <div class="progress">
-                <h3>React Native <span>80%</span></h3>
-                <div class="bar"><span></span></div>
-
+              
+              <div class="skill-item">
+                <h3>Next.js <span>90%</span></h3>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar"></div>
+                </div>
               </div>
-              <div class="progress">
-                <h3>Next.js <span>80%</span></h3>
-                <div class="bar"><span></span></div>
-
+              
+              <div class="skill-item">
+                <h3>TypeScript <span>85%</span></h3>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar"></div>
+                </div>
               </div>
-              <div class="progress">
-                <h3>TypeScript <span>90%</span></h3>
-                <div class="bar"><span></span></div>
-
+              
+              <div class="skill-item">
+                <h3>JavaScript <span>88%</span></h3>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar"></div>
+                </div>
               </div>
 
             </div>
@@ -201,25 +238,23 @@
 
         </div>
 
-        <div class="skills-column">
-          <h3 class="title">Coading Skills</h3>
+        <div class="skills-column reveal">
+          <h3 class="title">Backend Skills</h3>
 
           <div class="skills-box">
             <div class="skills-content">
-              <div class="progress">
-                <h3>HTML <span>70%</span></h3>
-                <div class="bar"><span></span></div>
-
+              <div class="skill-item">
+                <h3>Node.js <span>92%</span></h3>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar"></div>
+                </div>
               </div>
-              <div class="progress">
-                <h3>CSS <span>80%</span></h3>
-                <div class="bar"><span></span></div>
-
-              </div>
-              <div class="progress">
-                <h3>JavaScript <span>80%</span></h3>
-                <div class="bar"><span></span></div>
-
+              
+              <div class="skill-item">
+                <h3>PostgreSQL <span>80%</span></h3>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar"></div>
+                </div>
               </div>
               <div class="progress">
                 <h3>Node.js <span>90%</span></h3>
@@ -267,10 +302,10 @@
       </div>
     </section>
 
-    <section class="projects" id="projects">
-      <h2 class="heading">Recent <span>Projects</span></h2>
+    <section class="projects reveal" id="projects">
+      <h2 class="heading">Recent <span class="gradient-text">Projects</span></h2>
       <div class="projects-container">
-        <div class="project-box">
+        <div class="project-box reveal" data-tilt>
           <div class="project-img-wrapper">
             <img src="images/dev2.png" alt="Project 1 preview" loading="lazy" />
           </div>
@@ -283,7 +318,7 @@
             </div>
           </div>
         </div>
-        <div class="project-box">
+        <div class="project-box reveal" data-tilt>
           <div class="project-img-wrapper">
             <img src="images/dev.jpg" alt="Project 2 preview" loading="lazy" />
           </div>
@@ -296,7 +331,7 @@
               </div>
             </div>
         </div>
-        <div class="project-box">
+        <div class="project-box reveal" data-tilt>
           <div class="project-img-wrapper">
             <img src="images/dev2.png" alt="Project 3 preview" loading="lazy" />
           </div>
@@ -312,17 +347,17 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me!</span></h2>
+    <section class="contact reveal" id="contact">
+      <h2 class="heading">Contact <span class="gradient-text">Me!</span></h2>
 
-      <form action="#">
+      <form action="#" class="reveal">
         <div class="input-box">
-          <div class="input-field">
+          <div class="input-field reveal">
             <input type="text" placeholder="Your Name" required>
             <span class="focus">  </span>
           </div>
 
-          <div class="input-field">
+          <div class="input-field reveal">
             <input type="text" placeholder="Email Address" required>
             <span class="focus">  </span>
           </div>
@@ -364,5 +399,10 @@
   
 
     <script src="js/script.js"></script>
+    <script src="js/interactive-config.js"></script>
+    <script src="js/audio-system.js"></script>
+    <script src="js/interactive-features.js"></script>
+    <script src="js/ultra-interactive.js"></script>
+    <script src="js/secret-features.js"></script>
 </body>
 </html>

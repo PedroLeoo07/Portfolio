@@ -9,6 +9,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Better tap highlights for mobile */
+* {
+  -webkit-tap-highlight-color: rgba(240, 0, 0, 0.2);
+  -webkit-touch-callout: none;
+}
+
 :root{
   --bg-color: #000000;
   --second-bg-color: #000508;
@@ -79,6 +85,8 @@ body.light .theme-toggle::before {
 html{
   font-size: 62.5%;
   overflow-x: hidden;
+  /* Improved font scaling for better readability across devices */
+  font-size: clamp(56%, 0.5rem + 1vw, 62.5%);
 }
 
 body{
@@ -98,6 +106,11 @@ body{
   align-items: center;
   z-index: 100;
   transition: .3s;
+  /* Better responsive padding */
+  padding: clamp(1.5rem, 2.5vw, 2rem) clamp(4%, 8vw, 9%);
+  /* Flex-wrap for better mobile handling */
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .header.sticky {
@@ -130,15 +143,33 @@ body{
 
 #menu-icon {
   position: relative;
-  font-size: 3.6rem;
+  font-size: clamp(3rem, 5vw, 3.6rem);
   color: var(--text-color);
   cursor: pointer;
   display: none;
+  /* Better touch target for mobile */
+  min-height: 44px;
+  min-width: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#menu-icon:hover,
+#menu-icon:focus {
+  background-color: rgba(240, 0, 0, 0.1);
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
 }
 
 section{
   min-height: 100vh;
-  padding: 10rem 9% 2rem;
+  padding: clamp(8rem, 12vw, 10rem) clamp(4%, 8vw, 9%) 2rem;
 }
 
 .home {
@@ -990,6 +1021,29 @@ span {
 
 /* RESPONSIVE BREAKPOINTS */
 
+/* Large tablets and small desktops */
+@media (max-width: 1400px) {
+  html {
+    font-size: 58%;
+  }
+  
+  .header {
+    padding: clamp(1.5rem, 2.5vw, 2rem) clamp(4%, 7vw, 8%);
+  }
+
+  section {
+    padding: clamp(8rem, 12vw, 10rem) clamp(4%, 7vw, 8%) 2rem;
+  }
+
+  .home {
+    padding: 0 clamp(4%, 7vw, 8%);
+  }
+
+  .footer {
+    padding: 2rem clamp(4%, 7vw, 8%);
+  }
+}
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
@@ -1038,6 +1092,44 @@ span {
   
   .btn-box {
     justify-content: center;
+  }
+  
+  /* Better navigation for tablets */
+  .navbar a {
+    margin-left: clamp(1.5rem, 2.5vw, 3rem);
+  }
+  
+  /* Improved project grid for tablets */
+  .projects .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(22rem, 40vw, 28rem), 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+}
+
+/* Tablets portrait */
+@media (max-width: 900px) {
+  html {
+    font-size: 53%;
+  }
+  
+  .home {
+    gap: clamp(2.5rem, 4vw, 3.5rem);
+  }
+  
+  .home-profile-img {
+    width: clamp(16rem, 40vw, 28rem);
+  }
+  
+  /* Better spacing for education/skills columns */
+  .education .education-row,
+  .skills .skills-row,
+  .certifications .cert-row {
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  /* Optimize form for tablets */
+  .contact form .input-box .input-field {
+    flex: 1 1 clamp(18rem, 40%, 22rem);
   }
 }
 
@@ -1274,6 +1366,7 @@ span {
   .home {
     justify-content: center;
     padding: 12rem 2% 2rem;
+    gap: clamp(2rem, 5vw, 3rem);
   }
 
   .home-content {
@@ -1292,12 +1385,65 @@ span {
   }
 
   .btn-box .btn {
-    font-size: 1.3rem;
-    min-width: 11rem;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    min-width: clamp(10rem, 85vw, 12rem);
+    height: clamp(4rem, 10vw, 4.5rem);
+    padding: 0.8rem 1rem;
   }
 
   section {
     padding: 10rem 2% 2rem;
+  }
+  
+  /* Better spacing for very small screens */
+  .home-sci {
+    gap: clamp(1rem, 4vw, 1.5rem);
+    margin-top: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .home-sci a {
+    width: clamp(3rem, 8vw, 3.5rem);
+    height: clamp(3rem, 8vw, 3.5rem);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+  
+  /* Improve form for very small screens */
+  .contact form .input-box .input-field {
+    flex: 1 1 100%;
+    margin: 0.5rem 0;
+  }
+  
+  /* Better project cards */
+  .projects .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home {
+    min-height: auto;
+    padding: 8rem 4% 2rem;
+    gap: 2rem;
+  }
+  
+  .home-profile-img {
+    width: clamp(12rem, 25vw, 18rem);
+  }
+  
+  section {
+    min-height: auto;
+    padding: 6rem 4% 2rem;
+  }
+  
+  .header {
+    padding: 1rem 4%;
+  }
+  
+  .navbar a {
+    margin: 1.5rem 0;
+    font-size: 1.6rem;
   }
 }
 

@@ -1,0 +1,463 @@
+/* Efeitos Interativos Ultra-Avançados */
+
+/* Matrix Rain Effect */
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.1;
+    overflow: hidden;
+}
+
+.matrix-char {
+    position: absolute;
+    color: var(--main-color);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    animation: matrix-fall linear infinite;
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Sound Visualizer Bars */
+.sound-visualizer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2px;
+    z-index: 1000;
+    opacity: 0.6;
+}
+
+.visualizer-bar {
+    width: 4px;
+    background: linear-gradient(to top, var(--main-color), #ff6b6b);
+    border-radius: 2px;
+    animation: visualizer-bounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes visualizer-bounce {
+    0% { height: 5px; }
+    100% { height: 30px; }
+}
+
+/* Interactive Code Terminal */
+.floating-terminal {
+    position: fixed;
+    bottom: 100px;
+    right: -400px;
+    width: 380px;
+    height: 250px;
+    background: #1a1a1a;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    transition: right 0.5s ease;
+    font-family: 'Courier New', monospace;
+}
+
+.floating-terminal.active {
+    right: 20px;
+}
+
+.terminal-header {
+    background: var(--main-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.terminal-content {
+    padding: 1rem;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    background: #000;
+    color: #0f0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: #0f0;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Konami Code Easter Egg */
+.konami-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00);
+    background-size: 400% 400%;
+    animation: rainbow-bg 2s ease infinite;
+    z-index: 9999;
+    display: none;
+}
+
+@keyframes rainbow-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Shooting Stars */
+.shooting-star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--main-color);
+    z-index: 1;
+    opacity: 0;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(to right, var(--main-color), transparent);
+    transform: translateY(-50%);
+}
+
+.shooting-star.active {
+    animation: shoot 3s linear;
+}
+
+@keyframes shoot {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(300px) translateY(300px);
+    }
+}
+
+/* Interactive DNA Helix */
+.dna-helix {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 200px;
+    z-index: 100;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.dna-helix:hover {
+    opacity: 0.8;
+}
+
+.dna-strand {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--main-color), #ff6b6b);
+    border-radius: 2px;
+    animation: dna-rotate 4s linear infinite;
+}
+
+.dna-strand:nth-child(1) {
+    left: 0;
+    transform-origin: center;
+}
+
+.dna-strand:nth-child(2) {
+    right: 0;
+    transform-origin: center;
+    animation-delay: -2s;
+}
+
+@keyframes dna-rotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Mouse Trail Effect */
+.mouse-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--main-color);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.8;
+    transition: transform 0.1s ease;
+}
+
+/* Typewriter Effect for Multiple Elements */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--main-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--main-color); }
+}
+
+/* Interactive Floating Elements */
+.floating-element {
+    position: absolute;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: float-around 20s infinite linear;
+}
+
+.floating-element.code {
+    font-family: 'Courier New', monospace;
+    color: var(--main-color);
+    font-size: 12px;
+}
+
+.floating-element.icon {
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+@keyframes float-around {
+    0% {
+        transform: translate(0, 100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(100px, -100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff0000;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ffff;
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+        transform: translate(0);
+    }
+    15%, 49% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 20%, 21%, 62%, 63%, 99%, 100% {
+        transform: translate(0);
+    }
+    21%, 62% {
+        transform: translate(2px, -1px);
+    }
+}
+
+/* Interactive Loading Bars */
+.loading-simulation {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
+    z-index: 10000;
+    display: none;
+    font-family: 'Courier New', monospace;
+    color: #0f0;
+    font-size: 12px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-color), #ff6b6b);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Neon Glow Button */
+.neon-button {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px var(--main-color);
+    box-shadow: 
+        0 0 10px var(--main-color),
+        0 0 20px var(--main-color),
+        0 0 40px var(--main-color);
+}
+
+.neon-button:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 
+        0 0 20px var(--main-color),
+        0 0 40px var(--main-color),
+        0 0 80px var(--main-color);
+}
+
+/* Radar Scan Effect */
+.radar-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    z-index: 1000;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.radar-sweep {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: var(--main-color);
+    transform-origin: bottom;
+    transform: translate(-50%, -100%) rotate(0deg);
+    animation: radar-sweep 2s linear infinite;
+}
+
+@keyframes radar-sweep {
+    0% { transform: translate(-50%, -100%) rotate(0deg); }
+    100% { transform: translate(-50%, -100%) rotate(360deg); }
+}
+
+.radar-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--main-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: radar-ping 2s ease-in-out infinite;
+}
+
+@keyframes radar-ping {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .matrix-rain,
+    .dna-helix,
+    .floating-terminal,
+    .radar-container,
+    .mouse-trail {
+        display: none;
+    }
+    
+    .sound-visualizer {
+        scale: 0.7;
+    }
+    
+    .shooting-star {
+        opacity: 0.3;
+    }
+}
+
+/* Print Mode */
+@media print {
+    .matrix-rain,
+    .sound-visualizer,
+    .floating-terminal,
+    .dna-helix,
+    .mouse-trail,
+    .radar-container,
+    .shooting-star,
+    .floating-element {
+        display: none !important;
+    }
+}
