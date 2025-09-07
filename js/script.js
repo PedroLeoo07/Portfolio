@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentText = texts[currentTextIndex];
         
         if (isWaiting) {
-            setTimeout(typeText, 1500); // Pausa para ler o texto completo
+            setTimeout(typeText, 2000); // Pausa para ler o texto completo (mais longa)
             isWaiting = false;
             isDeleting = true;
             return;
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 isWaiting = true;
             }
             
-            setTimeout(typeText, 100); // Velocidade de digitação
+            setTimeout(typeText, 150); // Velocidade de digitação mais devagar
         } else {
             // Apagando
             typingText.textContent = currentText.substring(0, currentCharIndex);
@@ -328,9 +328,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 isDeleting = false;
                 currentTextIndex = (currentTextIndex + 1) % texts.length;
                 currentCharIndex = 0;
-                setTimeout(typeText, 300); // Pausa antes de começar o próximo texto
+                setTimeout(typeText, 500); // Pausa antes de começar o próximo texto (mais longa)
             } else {
-                setTimeout(typeText, 50); // Velocidade de apagar
+                setTimeout(typeText, 80); // Velocidade de apagar (um pouco mais devagar)
             }
         }
     }
