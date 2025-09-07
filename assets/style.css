@@ -107,10 +107,9 @@ body{
   z-index: 100;
   transition: .3s;
   /* Better responsive padding */
-  padding: clamp(1.5rem, 2.5vw, 2rem) clamp(4%, 8vw, 9%);
-  /* Flex-wrap for better mobile handling */
-  flex-wrap: wrap;
-  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 2rem) clamp(2%, 4vw, 9%);
+  /* Improved mobile layout */
+  min-height: 6rem;
 }
 
 .header.sticky {
@@ -169,16 +168,21 @@ body{
 
 section{
   min-height: 100vh;
-  padding: clamp(8rem, 12vw, 10rem) clamp(4%, 8vw, 9%) 2rem;
+  padding: clamp(8rem, 12vw, 10rem) clamp(2%, 4vw, 9%) 2rem;
+  /* Better mobile padding */
+  padding: clamp(6rem, 10vh, 10rem) clamp(3%, 5vw, 9%) clamp(2rem, 4vh, 3rem);
 }
 
 .home {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 9%;
+  padding: 0 clamp(2%, 4vw, 9%);
   gap: clamp(2rem, 5vw, 5rem);
   flex-wrap: wrap;
+  min-height: 100vh;
+  /* Better mobile layout */
+  padding: clamp(8rem, 12vh, 10rem) clamp(3%, 5vw, 9%) 2rem;
   min-height: 100vh;
 }
 
@@ -1208,10 +1212,14 @@ span {
   .header {
     background: var(--bg-color);
     padding: 1.5rem 4%;
+    /* Improve mobile header height */
+    min-height: 7rem;
+    flex-wrap: nowrap;
   }
 
   #menu-icon {
-    display: block;
+    display: flex;
+    font-size: 3.2rem;
   }
 
   .navbar {
@@ -1219,18 +1227,36 @@ span {
     top: 100%;
     left: -100%;
     width: 100%;
-    padding: 1rem 4%;
-    background: var(--main-color);
+    padding: 2rem 4%;
+    background: var(--bg-color);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
     z-index: 1;
     transition: .25s ease;
     transition-delay: .25s;
     display: block;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
   }
 
   .navbar.active {
     left: 0;
     transition-delay: 0s;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    background: var(--main-color);
+    color: white;
   }
 
   .navbar .active-nav {
@@ -1411,17 +1437,119 @@ span {
 }
 
 @media (max-width: 462px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .header {
+    padding: 1rem 3%;
+    min-height: 6rem;
+  }
+  
+  .logo {
+    font-size: 2.2rem;
+  }
+  
+  #menu-icon {
+    font-size: 2.8rem;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  
+  /* Improved mobile typography */
+  .home-content h1 {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .home-content .text-animate h3 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+  
+  .home-content p {
+    font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+    line-height: 1.6;
+    margin: 1.5rem 0 2rem;
+  }
+
   .home-profile-img {
     width: clamp(12rem, 70vw, 24rem);
+    margin: 0 auto 2rem auto;
+  }
+  
+  /* Better button spacing on small screens */
+  .btn-box {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 25rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
   }
 
   .education {
-    padding: 10rem 3% 5rem;
+    padding: 8rem 3% 4rem;
+  }
+  
+  /* Improve form spacing */
+  .contact {
+    padding: 8rem 3% 4rem;
   }
 
   .contact form .input-box .input-field {
     width: 100%;
+    margin: 0.8rem 0;
   }
+  
+  .contact form .input-box .input-field input,
+  .contact form .input-box .input-field textarea {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  /* Better social media icons spacing */
+  .home-sci {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .home-sci a {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.8rem;
+  }
+  
+  /* Improve section headings */
+  .heading {
+    font-size: clamp(3.5rem, 8vw, 4.5rem);
+    margin-bottom: 4rem;
+  }
+  
+  /* Better project cards for mobile */
+  .projects .projects-container {
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  .project-box {
+    padding: 2rem 1.5rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-content p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+}
 
   .footer {
     flex-direction: column-reverse;
@@ -1448,8 +1576,56 @@ span {
 
   .home {
     justify-content: center;
-    padding: 12rem 2% 2rem;
+    padding: 10rem 2% 2rem;
     gap: clamp(2rem, 5vw, 3rem);
+  }
+  
+  .header {
+    padding: 1rem 2%;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  #menu-icon {
+    font-size: 2.5rem;
+    min-height: 36px;
+    min-width: 36px;
+  }
+  
+  .home-content h1 {
+    font-size: clamp(2.5rem, 9vw, 4rem);
+  }
+  
+  .home-content .text-animate h3 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+  
+  .home-profile-img {
+    width: clamp(10rem, 75vw, 20rem);
+  }
+  
+  .btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .heading {
+    font-size: clamp(3rem, 9vw, 4rem);
+  }
+  
+  /* Ultra-small screen optimizations */
+  section {
+    padding: clamp(6rem, 10vh, 8rem) 2% clamp(1.5rem, 3vh, 2rem);
+  }
+  
+  .contact,
+  .education,
+  .portfolio-app {
+    padding: 6rem 2% 2rem;
+  }
+}
   }
 
   .home-content {
@@ -1884,47 +2060,129 @@ span {
   .app-showcase {
     grid-template-columns: 1fr;
     gap: 4rem;
+    text-align: center;
   }
   
   .phone-mockup {
     width: 20rem;
     height: 40rem;
     transform: none;
+    margin: 0 auto;
   }
   
   .app-features {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .app-actions {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .app-stats {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 }
 
 @media (max-width: 768px) {
+  .portfolio-app {
+    padding: 6rem 3% 2rem;
+  }
+  
   .phone-mockup {
     width: 18rem;
     height: 36rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .app-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .app-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  
+  .app-features {
+    margin-bottom: 2rem;
+  }
+  
+  .feature-item {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+  
+  .feature-item i {
+    font-size: 1.8rem;
+  }
+  
+  .feature-item span {
+    font-size: 1.3rem;
   }
   
   .app-stats {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .stat-card {
     padding: 2rem 1.5rem;
   }
+  
+  .stat-card i {
+    font-size: 3rem;
+  }
+  
+  .stat-card h4 {
+    font-size: 1.8rem;
+  }
+  
+  .stat-card p {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 462px) {
+  .portfolio-app {
+    padding: 5rem 4% 2rem;
+  }
+  
+  .phone-mockup {
+    width: 16rem;
+    height: 32rem;
+  }
+  
+  .app-content h3 {
+    font-size: 2rem;
+  }
+  
+  .app-content p {
+    font-size: 1.3rem;
+  }
+  
   .app-actions {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .app-btn {
     width: 100%;
     justify-content: center;
+    max-width: 25rem;
+  }
+  
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem 1rem;
   }
 }
 
