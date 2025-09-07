@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
   <meta name="description" content="Portfolio de Leonardo Oliveira - Desenvolvedor Full-Stack especializado em JavaScript, Node.js, React e Next.js">
   <meta name="theme-color" content="#f00000">
+  <!-- Cache busting -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Leonardo Oliveira - Portfolio</title>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="./assets/responsive-enhancements.css">
@@ -33,6 +37,7 @@
           <a href="#certifications">Certifications</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#portfolio-app">Portfolio App</a>
           <a href="#contact">Contact</a>
 
           <span class="active-nav" aria-hidden="true"></span>
@@ -351,6 +356,79 @@
                 <a href="https://github.com/PedroLeoo07" aria-label="GitHub" target="_blank" rel="noopener"><i class='bx bxl-github'></i></a>
               </div>
             </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio App Section -->
+    <section class="portfolio-app reveal" id="portfolio-app">
+      <h2 class="heading">Portfolio <span class="gradient-text">App</span></h2>
+      
+      <div class="app-container reveal">
+        <div class="app-showcase">
+          <div class="app-preview">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <iframe src="index.html" class="app-iframe" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+          
+          <div class="app-content">
+            <h3>Experiência em App</h3>
+            <p>
+              Explore o meu aplicativo em um formato otimizado para dispositivos móveis. Esta versão interativa do app
+              exibe todos os meus projetos, habilidades e experiências de forma otimizada para todos os dispositivos.
+            </p>
+            
+            <div class="app-features">
+              <div class="feature-item">
+                <i class='bx bx-mobile-alt'></i>
+                <span>Mobile Optimized</span>
+              </div>
+              <div class="feature-item">
+                <i class='bx bx-code-alt'></i>
+                <span>Interactive Design</span>
+              </div>
+              <div class="feature-item">
+                <i class='bx bx-rocket'></i>
+                <span>Fast Loading</span>
+              </div>
+              <div class="feature-item">
+                <i class='bx bx-palette'></i>
+                <span>Modern UI/UX</span>
+              </div>
+            </div>
+            
+            <div class="app-actions">
+              <a href="index.html" class="btn app-btn" target="_blank">
+                <i class='bx bx-link-external'></i>
+                <span>Open App</span>
+              </a>
+              <a href="#contact" class="btn app-btn secondary">
+                <i class='bx bx-message-dots'></i>
+                <span>Get in Touch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="app-stats">
+          <div class="stat-card">
+            <i class='bx bx-devices'></i>
+            <h4>Responsive Design</h4>
+            <p>Works perfectly on desktop, tablet, and mobile devices</p>
+          </div>
+          <div class="stat-card">
+            <i class='bx bx-time'></i>
+            <h4>Real-time Updates</h4>
+            <p>Always up-to-date with my latest projects and skills</p>
+          </div>
+          <div class="stat-card">
+            <i class='bx bx-shield-check'></i>
+            <h4>Secure & Fast</h4>
+            <p>Built with modern web technologies for optimal performance</p>
+          </div>
         </div>
       </div>
     </section>
