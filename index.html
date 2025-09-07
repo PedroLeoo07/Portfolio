@@ -14,6 +14,8 @@
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Preload critical resources -->
   <link rel="preload" href="./assets/style.css" as="style">
   <link rel="preload" href="./js/script.js" as="script">
@@ -51,7 +53,7 @@
       <div class="home-content reveal">
         <h1>Hi, I'm <span class="gradient-text">Leonardo Oliveira</span></h1>
         <div class="text-animate">
-          <h3 data-i18n="role">Full-Stack Developer</h3>
+          <h3 class="typing-text" data-i18n="role">Desenvolvedor Full-Stack</h3>
         </div>
 
   <p data-i18n="intro">Profissional com experiência em desenvolvimento web completo, atuando tanto no front-end quanto no back-end. Utilizo tecnologias modernas como JavaScript, Node.js, React, Next.js e PostgreSQL para criar aplicações eficientes, seguras e escaláveis. Comprometido com boas práticas de código, performance e qualidade, estou sempre em busca de evolução técnica e novos desafios na área de tecnologia.</p>
@@ -76,8 +78,7 @@
          <a href="https://wa.me/5519988727143" title="WhatsApp">  <i class='bx bxl-whatsapp'></i></a>
           <a href="https://www.instagram.com/oliveir._leo/" title="Instagram"><i class='bx bxl-instagram'></i></a>
           <a href="https://www.behance.net/" aria-label="Behance" target="_blank" rel="noopener" title="Behance"><i class='bx bxl-behance'></i></a>
-          <!-- Easter Egg: Secret Developer Console -->
-          <a href="#" onclick="console.log('🎮 Developer Mode Activated! Try Ctrl+` for terminal')" title="Developer Console"><i class='bx bx-code-alt'></i></a>
+          
       </div>
 
       <div class="home-imgHover">
@@ -350,46 +351,67 @@
     <section class="contact reveal" id="contact">
       <h2 class="heading">Contact <span class="gradient-text">Me!</span></h2>
 
-      <form action="#" class="reveal">
+      <form id="contact-form" class="reveal">
         <div class="input-box">
           <div class="input-field reveal">
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" name="from_name" placeholder="Your Name" required>
             <span class="focus">  </span>
           </div>
 
           <div class="input-field reveal">
-            <input type="text" placeholder="Email Address" required>
+            <input type="email" name="from_email" placeholder="Email Address" required>
             <span class="focus">  </span>
           </div>
         </div>
 
         <div class="input-box">
           <div class="input-field">
-            <input type="number" placeholder="Mobile Number" required>
+            <input type="tel" name="phone" placeholder="Mobile Number">
             <span class="focus">  </span>
           </div>
 
           <div class="input-field">
-            <input type="text" placeholder="Email subject" required>
+            <input type="text" name="subject" placeholder="Email subject" required>
             <span class="focus">  </span>
           </div>
         </div>
 
         <div class="textarea-field">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
           <span class="focus"></span>
         </div>
 
         <div class="btn-box btns">
-          <button type="submit" class="btn">Submit</button>
+          <button type="submit" class="btn" id="submit-btn">
+            <span class="btn-text">Submit</span>
+            <span class="btn-loader" style="display: none;">
+              <i class='bx bx-loader-alt bx-spin'></i>
+            </span>
+          </button>
         </div>
+        
+        <div id="form-status" class="form-status"></div>
       </form>
     </section>
 
     <footer class="footer">
       <div class="footer-text">
         <p>Copyright &copy; 2025 by Leonardo Oliveira | All Right Reserved</p>
+      </div>
 
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class='bx bxl-linkedin'></i>
+        </a>
+        <a href="https://github.com/PedroLeoo07" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class='bx bxl-github'></i>
+        </a>
+        <a href="mailto:leonardo.p.oliveira12@aluno.senai.br" aria-label="Email">
+          <i class='bx bx-envelope'></i>
+        </a>
+        <a href="https://lab-oliveira-leo.vercel.app/" target="_blank" rel="noopener" aria-label="Portfolio">
+          <i class='bx bx-globe'></i>
+        </a>
       </div>
 
       <div class="footer-iconTop">
@@ -404,5 +426,6 @@
     <script src="js/interactive-features.js"></script>
     <script src="js/ultra-interactive.js"></script>
     <script src="js/secret-features.js"></script>
+    <script src="js/contact-form.js"></script>
 </body>
 </html>

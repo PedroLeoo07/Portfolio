@@ -289,3 +289,52 @@ document.addEventListener('DOMContentLoaded', function() {
     window.removeEventListener('scroll', window.onscroll);
     window.addEventListener('scroll', updateOnScroll, { passive: true });
 });
+
+// Animação de texto alternado com efeito de digitação
+document.addEventListener('DOMContentLoaded', () => {
+    const typingText = document.querySelector('.typing-text');
+    const texts = ['Desenvolvedor Full-Stack', 'Desenvolvedor Mobile'];
+    let currentTextIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let isWaiting = false;
+    
+    function typeText() {
+        const currentText = texts[currentTextIndex];
+        
+        if (isWaiting) {
+            setTimeout(typeText, 1500); // Pausa para ler o texto completo
+            isWaiting = false;
+            isDeleting = true;
+            return;
+        }
+        
+        if (!isDeleting) {
+            // Digitando
+            typingText.textContent = currentText.substring(0, currentCharIndex + 1);
+            currentCharIndex++;
+            
+            if (currentCharIndex === currentText.length) {
+                isWaiting = true;
+            }
+            
+            setTimeout(typeText, 100); // Velocidade de digitação
+        } else {
+            // Apagando
+            typingText.textContent = currentText.substring(0, currentCharIndex);
+            currentCharIndex--;
+            
+            if (currentCharIndex < 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                currentCharIndex = 0;
+                setTimeout(typeText, 300); // Pausa antes de começar o próximo texto
+            } else {
+                setTimeout(typeText, 50); // Velocidade de apagar
+            }
+        }
+    }
+    
+    // Inicia a animação
+    typeText();
+});

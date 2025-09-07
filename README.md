@@ -5,8 +5,8 @@
 ### *Desenvolvedor Full Stack | Inovação Digital | Experiências Interativas*
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Portfolio-6C63FF?style=for-the-badge)](https://lab-oliveira-leo.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/leonardo-oliveira-38aab7321/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroLeoo07)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/leonardo-oliveira-38aab7321/)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroLeoo07)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:leonardo.p.oliveira12@aluno.senai.br)
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&width=800&height=60&lines=Desenvolvedor+Full+Stack+Apaixonado;Criador+de+Experiências+Digitais+Únicas;Especialista+em+Frontend+Moderno;Sempre+Aprendendo%2C+Sempre+Inovando)
@@ -209,9 +209,9 @@ cd Portfolio
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-lab--oliveira--leo.vercel.app-6C63FF?style=for-the-badge)](https://lab-oliveira-leo.vercel.app/)
 
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-leonardo--oliveira-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/leonardo-oliveira-38aab7321/)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/leonardo-oliveira-38aab7321/)
 
-[![GitHub](https://img.shields.io/badge/👨‍💻_GitHub-PedroLeoo07-181717?style=for-the-badge&logo=github)](https://github.com/PedroLeoo07)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroLeoo07)
 
 [![Email](https://img.shields.io/badge/📧_Email-leonardo.p.oliveira12-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:leonardo.p.oliveira12@aluno.senai.br)
 

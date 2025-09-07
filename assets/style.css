@@ -264,34 +264,26 @@ section{
 .home-content .text-animate{
   position: relative;
   width: 100%;
-  max-width: 32.8rem;
+  max-width: 45rem;
+  min-height: 4rem;
 }
 
 .home-content .text-animate h3{
   font-size: clamp(1.8rem, 4.5vw, 3.2rem);
   font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: .7px var(--main-color);
-  background-image: linear-gradient(var(--main-color), var(--main-color));
-  background-repeat: no-repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-position: -33rem 0;
-  animation: homeBgText 6s linear infinite;
-  animation-delay: 2s;
+  color: var(--main-color);
+  position: relative;
+  white-space: nowrap;
+  min-width: fit-content;
+  width: auto;
 }
 
-.home-content .text-animate h3::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  border-right: 2px solid var(--main-color);
-  z-index: -1;
-   animation:  homeCursorText 6s linear infinite;
-  animation-delay: 2s;
+.home-content .text-animate h3::after {
+  content: '|';
+  position: relative;
+  color: var(--main-color);
+  animation: cursor-blink 1s infinite;
+  margin-left: 2px;
 }
 
 .home-content p{
@@ -977,6 +969,34 @@ span {
   gap: 1rem;
 }
 
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-social a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: .2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--main-color);
+  transition: .5s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+  transform: translateY(-0.3rem);
+}
+
 .footer-text p{
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
@@ -1271,6 +1291,16 @@ span {
   .contact form .input-box .input-field {
     flex: 1 1 100%;
   }
+
+  .footer-social {
+    gap: 0.8rem;
+  }
+
+  .footer-social a {
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1.9rem;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1350,6 +1380,12 @@ span {
     flex-direction: column-reverse;
     text-align: center;
     gap: 1.5rem;
+  }
+
+  .footer-social a {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.8rem;
   }
 
   .footer p {
@@ -1448,25 +1484,11 @@ span {
 }
 
 
-@keyframes homeBgText {
-  0%, 10%, 100% {
-    background-position: -33rem 0;
-  }
-  65%, 85% {
-    background-position: 0 0;
-  }
-}
-
-@keyframes homeCursorText {
-  0%, 10%, 100% {
-  width: 0;
-  }
-  65%, 78%, 85% {
-    width: 100%;
+@keyframes cursor-blink {
+  0%, 50% {
     opacity: 1;
   }
-
-  75%, 81% {
+  51%, 100% {
     opacity: 0;
   }
 }
@@ -1517,5 +1539,99 @@ span {
 @keyframes showRight {
   100% {
     width: 0;
+  }
+}
+
+/* Estilos do Formulário de Contato */
+.input-field.error input,
+.input-field.error textarea,
+.textarea-field.error textarea {
+  border-color: #ff4757;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+.error-message {
+  color: #ff4757;
+  font-size: 1.2rem;
+  display: block;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-status {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.status-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  animation: slideIn 0.5s ease;
+}
+
+.status-message.success {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+  border: 1px solid #2ed573;
+}
+
+.status-message.error {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+  border: 1px solid #ff4757;
+}
+
+.status-message i {
+  font-size: 2rem;
+}
+
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn-loader {
+  color: var(--main-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para mensagens */
+@media (max-width: 768px) {
+  .status-message {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .error-message {
+    font-size: 1.1rem;
   }
 }
