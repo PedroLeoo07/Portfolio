@@ -188,8 +188,8 @@ section{
 
 .home-profile-img {
   width: clamp(16rem, 28vw, 34rem);
+  height: clamp(16rem, 28vw, 34rem);
   aspect-ratio: 1 / 1;
-  height: auto;
   flex-shrink: 0;
   margin-left: clamp(1rem, 3vw, 4rem);
   display: flex;
@@ -197,6 +197,8 @@ section{
   justify-content: center;
   order: 2;
   position: relative;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .home-profile-img img {
@@ -206,6 +208,7 @@ section{
   transform: translate(-50%, -50%);
   width: calc(100% - .4rem); /* Ajuste para compensar a borda */
   height: calc(100% - .4rem);
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center center; /* Centraliza a imagem dentro do círculo */
   border-radius: 50%;
@@ -216,9 +219,11 @@ section{
 
 @media (max-width: 991px) {
   .home-profile-img {
-  margin-left: 2rem;
-  width: clamp(18rem, 36vw, 32rem);
-  margin: 0 auto; /* centraliza horizontalmente */
+    margin-left: 2rem;
+    width: clamp(18rem, 36vw, 32rem);
+    height: clamp(18rem, 36vw, 32rem);
+    margin: 0 auto; /* centraliza horizontalmente */
+    aspect-ratio: 1/1;
   }
   .home { 
     justify-content: center;
@@ -234,11 +239,13 @@ section{
     align-items: center; /* centraliza todos os elementos */
   }
   .home-profile-img {
-  margin-left: 0;
+    margin-left: 0;
     width: clamp(16rem, 55vw, 30rem);
+    height: clamp(16rem, 55vw, 30rem);
     order: 1; /* imagem primeiro em mobile */
     margin-bottom: .8rem; /* separação adicional antes do conteúdo */
     margin: 0 auto .8rem auto; /* centraliza horizontalmente */
+    aspect-ratio: 1/1;
   }
   .home-content { 
     text-align: center;
@@ -354,20 +361,24 @@ section{
 
 /* Estilo refinado para botões de CV */
 .cv-btn {
-  padding: 0 1.2rem;
-  gap: .6rem;
+  padding: 0 1.6rem;
+  gap: .8rem;
   width: auto;
-  min-width: clamp(12rem, 30vw, 14rem);
-  background: rgba(255, 0, 0, 0.7) !important;
-  border-color: rgba(255, 0, 0, 0.7) !important;
-  box-shadow: none !important;
+  min-width: clamp(13rem, 32vw, 15rem);
+  background: linear-gradient(90deg, #ff4d4d 0%, #ffb366 100%) !important;
+  border-color: #fff !important;
+  box-shadow: 0 2px 12px rgba(255,77,77,0.10), 0 1px 4px #ffb366;
+  color: #fff !important;
+  transition: box-shadow .3s, transform .3s;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 
 .cv-btn:hover {
-  background: rgba(255, 0, 0, 0.5) !important;
-  border-color: rgba(255, 0, 0, 0.8) !important;
-  color: rgba(255, 0, 0, 0.9) !important;
-  box-shadow: none !important;
+  background: linear-gradient(90deg, #ffb366 0%, #ff4d4d 100%) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(255,77,77,0.15), 0 1px 8px #ffb366;
+  transform: scale(1.02);
 }
 
 .cv-btn i {
@@ -377,8 +388,10 @@ section{
 }
 
 .cv-btn .btn-label {
-  font-weight: 600;
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(255,0,0,0.25), 0 0px 2px #fff;
 }
 
 .cv-btn .btn-badge {
@@ -504,27 +517,31 @@ span {
 
 .about-img{
   position: relative;
-  width: clamp(25rem, 40vw, 35rem);
-  height: clamp(25rem, 40vw, 35rem);
-  border-radius: 50%;
+  width: clamp(16rem, 28vw, 34rem);
+  height: clamp(16rem, 28vw, 34rem);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden; /* Garante que nada saia do círculo */
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .about-img img {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: calc(100% - .4rem); /* Ajuste para compensar a borda */
-   height: calc(100% - .4rem);
-   object-fit: cover;
-   object-position: center center; /* Centraliza a imagem dentro do círculo */
-   border-radius: 50%; /* Deixa a imagem perfeitamente redonda */
-   border: .2rem solid var(--main-color);
-   z-index: 1; /* Fica atrás do círculo animado */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - .4rem); /* Ajuste para compensar a borda */
+  height: calc(100% - .4rem);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center center; /* Centraliza a imagem dentro do círculo */
+  border-radius: 50%;
+  border: .2rem solid var(--main-color);
+  display: block;
+  z-index: 1; /* Fica atrás do círculo animado */
 }
 
 .about-img .circle-spin{
@@ -1340,8 +1357,9 @@ span {
   }
 
   .about-img {
-    width: clamp(20rem, 50vw, 28rem);
-    height: clamp(20rem, 50vw, 28rem);
+    width: clamp(18rem, 36vw, 32rem);
+    height: clamp(18rem, 36vw, 32rem);
+    aspect-ratio: 1/1;
   }
 
   .education .education-row,
@@ -1422,8 +1440,9 @@ span {
   }
 
   .about-img {
-    width: clamp(18rem, 60vw, 25rem);
-    height: clamp(18rem, 60vw, 25rem);
+    width: clamp(16rem, 55vw, 30rem);
+    height: clamp(16rem, 55vw, 30rem);
+    aspect-ratio: 1/1;
   }
 
   .projects .projects-container {
