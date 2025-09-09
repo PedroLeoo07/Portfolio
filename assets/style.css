@@ -1031,6 +1031,36 @@ span {
 
 .contact form .btn-box.btns .btn{
   cursor: pointer;
+  background: linear-gradient(135deg, #ff0040 0%, #ff6600 100%) !important;
+  border: .2rem solid #fff !important;
+  color: #fff !important;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(255,0,64,0.25), 0 2px 8px rgba(255,102,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.contact form .btn-box.btns .btn .btn-text{
+  color: #fff !important;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.contact form .btn-box.btns .btn:hover{
+  background: linear-gradient(135deg, #ff6600 0%, #ff0040 100%) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  box-shadow: 0 6px 28px rgba(255,0,64,0.35), 0 3px 12px rgba(255,102,0,0.25);
+  transform: translateY(-2px);
+}
+
+.contact form .btn-box.btns .btn:hover .btn-text{
+  color: #fff !important;
+}
+
+.contact form .btn-box.btns .btn:active{
+  transform: translateY(0);
+  box-shadow: 0 2px 12px rgba(255,0,64,0.3);
 }
 
 .footer {

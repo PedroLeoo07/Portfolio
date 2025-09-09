@@ -57,18 +57,182 @@ let navLinks = document.querySelectorAll('header nav a');
 // Traduções
 const translations = {
     pt: {
+        // Navegação
+        'nav-home': 'Home',
+        'nav-about': 'Sobre',
+        'nav-education': 'Educação',
+        'nav-certifications': 'Certificações',
+        'nav-skills': 'Habilidades',
+        'nav-projects': 'Projetos',
+        'nav-contact': 'Contato',
+        
+        // Home
         role: 'Desenvolvedor Full-Stack',
         intro: 'Profissional com experiência em desenvolvimento web completo, atuando tanto no front-end quanto no back-end. Utilizo tecnologias modernas como JavaScript, Node.js, React, Next.js e PostgreSQL para criar aplicações eficientes, seguras e escaláveis. Comprometido com boas práticas de código, performance e qualidade, estou sempre em busca de evolução técnica e novos desafios na área de tecnologia.',
         cv: 'Currículo',
-        resume: 'Resume',
-        about: 'Sou um desenvolvedor full stack com foco em criar soluções completas, escaláveis e de alta performance. Atuo no desenvolvimento de aplicações web utilizando tecnologias como JavaScript, Node.js, React, Next.js e bancos de dados relacionais e não relacionais. Tenho paixão por resolver problemas com código limpo, bem estruturado e alinhado às boas práticas. Estou em constante evolução profissional, sempre buscando aprender, melhorar e contribuir com projetos desafiadores.'
+        resume: 'Currículo',
+        
+        // Seções principais
+        'about-heading': 'Sobre <span class="gradient-text">Mim</span>',
+        'education-heading': 'Minha <span>Jornada</span>',
+        'skills-heading': 'Minhas <span class="gradient-text">Habilidades</span>',
+        'certifications-heading': 'Minhas <span>Certificações</span>',
+        'projects-heading': 'Projetos <span class="gradient-text">Recentes</span>',
+        'contact-heading': 'Entre em <span class="gradient-text">Contato!</span>',
+        
+        // About
+        about: 'Sou um desenvolvedor full stack com foco em criar soluções completas, escaláveis e de alta performance. Atuo no desenvolvimento de aplicações web utilizando tecnologias como JavaScript, Node.js, React, Next.js e bancos de dados relacionais e não relacionais. Tenho paixão por resolver problemas com código limpo, bem estruturado e alinhado às boas práticas. Estou em constante evolução profissional, sempre buscando aprender, melhorar e contribuir com projetos desafiadores.',
+        
+        // Botões e ações
+        'read-more': 'Leia Mais',
+        'submit-btn': 'Enviar',
+        
+        // Estatísticas
+        'stat-projects': 'Projetos Concluídos',
+        'stat-experience': 'Anos de Experiência',
+        'stat-clients': 'Clientes Satisfeitos',
+        'stat-technologies': 'Tecnologias',
+        
+        // Educação
+        'education-title': 'Educação',
+        'extra-courses-title': 'Cursos Extras',
+        'edu-games-title': 'Curso de Designer de Games',
+        'edu-games-desc': 'Formação focada na criação de jogos 2D e 3D, com ênfase em programação, modelagem 3D, animações e uso de engines como Unity. Desenvolvi projetos completos, unindo criatividade e técnica para transformar ideias em experiências interativas.',
+        'edu-it-title': 'Curso de Informática',
+        'edu-it-desc': 'Curso voltado para o uso prático da tecnologia, com foco em informática básica, pacote Office, lógica de programação e fundamentos de design gráfico. Aprimorei habilidades em ferramentas como Excel, Word, PowerPoint, Photoshop e Illustrator, além de noções de edição de vídeo e comandos do Windows.',
+        'edu-tech-title': 'Curso Técnico em Análise e Desenvolvimento de Sistemas',
+        'edu-tech-desc': 'Formação técnica com foco em análise, desenvolvimento e manutenção de sistemas. Estudei lógica de programação, banco de dados, front-end, back-end e metodologias ágeis. Utilizei linguagens e ferramentas como HTML, CSS, JavaScript, Node.js, SQL e versionamento com Git, desenvolvendo projetos práticos e soluções completas para web e sistemas empresariais.',
+        
+        // Cursos extras
+        'course-js-title': 'Curso de JavaScript',
+        'course-js-desc': 'Curso focado no desenvolvimento web com JavaScript, abordando desde os fundamentos da linguagem até conceitos avançados como manipulação do DOM, funções assíncronas, APIs, orientação a objetos e integração com front-end e back-end. Realizei projetos práticos que reforçaram minha lógica de programação e habilidades em aplicações dinâmicas e interativas.',
+        'course-fullstack-title': 'Curso de Desenvolvimento Full-Stack',
+        'course-fullstack-desc': 'Formação completa voltada para o desenvolvimento de aplicações web, abrangendo front-end e back-end. Estudei tecnologias como HTML, CSS, JavaScript, React, Node.js, Express e bancos de dados como PostgreSQL e MongoDB. Aprendi a criar sistemas completos, responsivos e escaláveis, com foco em boas práticas, performance e integração entre as camadas da aplicação.',
+        'course-nodejs-title': 'Curso de Node.js',
+        'course-nodejs-desc': 'Curso focado no desenvolvimento de aplicações back-end com Node.js. Aprendi a criar APIs RESTful, trabalhar com Express, manipular dados com bancos de dados como MongoDB e PostgreSQL, e aplicar conceitos como middleware, autenticação, rotas e estruturação de projetos. O curso reforçou minha base em JavaScript no servidor e na construção de sistemas escaláveis e performáticos.',
+        
+        // Skills
+        'frontend-skills': 'Habilidades Frontend',
+        'backend-skills': 'Habilidades Backend',
+        
+        // Certificações
+        'cert-js-title': 'Especialista JavaScript',
+        'cert-js-desc': 'Certificação cobrindo fundamentos, ES6+, assíncrono, DOM e padrões modernos.',
+        'cert-issued': 'Emitido por: Plataforma X',
+        'cert-react-title': 'Desenvolvedor React',
+        'cert-react-desc': 'Hooks, estado global, otimização, roteamento e integração com APIs.',
+        'cert-issued-2': 'Emitido por: Plataforma Y',
+        'cert-node-title': 'Profissional Node.js API',
+        'cert-node-desc': 'APIs REST, autenticação JWT, banco de dados relacional e testes.',
+        'cert-issued-3': 'Emitido por: Plataforma Z',
+        
+        // Projetos
+        'project1-title': 'Site Portfolio',
+        'project1-desc': 'Site pessoal responsivo com modo claro/escuro e seções animadas.',
+        'project2-title': 'API Node.js',
+        'project2-desc': 'API RESTful com autenticação JWT e banco relacional.',
+        'project3-title': 'Aplicação React',
+        'project3-desc': 'Aplicação SPA com roteamento, contexto e consumo de API externa.',
+        
+        // Portfolio App
+        'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
+        'app-experience-title': 'Experiência em App',
+        'app-experience-desc': 'Explore o meu aplicativo em um formato otimizado para dispositivos móveis. Esta versão interativa do app exibe todos os meus projetos, habilidades e experiências de forma otimizada para todos os dispositivos.',
+        'feature-mobile': 'Otimizado para Mobile',
+        'feature-interactive': 'Design Interativo',
+        'feature-fast': 'Carregamento Rápido',
+        'feature-modern': 'UI/UX Moderno',
+        'open-app': 'Abrir App',
+        'get-in-touch': 'Entre em Contato'
     },
     en: {
+        // Navigation
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'nav-education': 'Education',
+        'nav-certifications': 'Certifications',
+        'nav-skills': 'Skills',
+        'nav-projects': 'Projects',
+        'nav-contact': 'Contact',
+        
+        // Home
         role: 'Full-Stack Developer',
         intro: 'Professional with experience in full web development, working on both front-end and back-end. I use modern technologies such as JavaScript, Node.js, React, Next.js and PostgreSQL to build efficient, secure and scalable applications. Committed to best practices, performance and quality, always seeking technical growth and new challenges.',
-        cv: 'CV',
+        cv: 'Resume',
         resume: 'Resume',
-        about: 'I am a full stack developer focused on building complete, scalable and high-performance solutions. I work with technologies like JavaScript, Node.js, React, Next.js and relational and non-relational databases. Passionate about solving problems with clean, well-structured code aligned with best practices. Constantly improving and contributing to challenging projects.'
+        
+        // Main sections
+        'about-heading': 'About <span class="gradient-text">Me</span>',
+        'education-heading': 'My <span>Journey</span>',
+        'skills-heading': 'My <span class="gradient-text">Skills</span>',
+        'certifications-heading': 'My <span>Certifications</span>',
+        'projects-heading': 'Recent <span class="gradient-text">Projects</span>',
+        'contact-heading': 'Contact <span class="gradient-text">Me!</span>',
+        
+        // About
+        about: 'I am a full stack developer focused on building complete, scalable and high-performance solutions. I work with technologies like JavaScript, Node.js, React, Next.js and relational and non-relational databases. Passionate about solving problems with clean, well-structured code aligned with best practices. Constantly improving and contributing to challenging projects.',
+        
+        // Buttons and actions
+        'read-more': 'Read More',
+        'submit-btn': 'Submit',
+        
+        // Statistics
+        'stat-projects': 'Projects Completed',
+        'stat-experience': 'Years Experience',
+        'stat-clients': 'Happy Clients',
+        'stat-technologies': 'Technologies',
+        
+        // Education
+        'education-title': 'Education',
+        'extra-courses-title': 'Extra Courses',
+        'edu-games-title': 'Game Design Course',
+        'edu-games-desc': 'Training focused on creating 2D and 3D games, with emphasis on programming, 3D modeling, animations and using engines like Unity. I developed complete projects, combining creativity and technique to transform ideas into interactive experiences.',
+        'edu-it-title': 'Information Technology Course',
+        'edu-it-desc': 'Course focused on practical use of technology, with focus on basic computing, Office suite, programming logic and graphic design fundamentals. I improved skills in tools like Excel, Word, PowerPoint, Photoshop and Illustrator, plus video editing basics and Windows commands.',
+        'edu-tech-title': 'Technical Course in Systems Analysis and Development',
+        'edu-tech-desc': 'Technical training focused on analysis, development and maintenance of systems. I studied programming logic, databases, front-end, back-end and agile methodologies. Used languages and tools like HTML, CSS, JavaScript, Node.js, SQL and version control with Git, developing practical projects and complete solutions for web and enterprise systems.',
+        
+        // Extra courses
+        'course-js-title': 'JavaScript Course',
+        'course-js-desc': 'Course focused on web development with JavaScript, covering from language fundamentals to advanced concepts like DOM manipulation, asynchronous functions, APIs, object-oriented programming and front-end/back-end integration. I completed practical projects that reinforced my programming logic and skills in dynamic and interactive applications.',
+        'course-fullstack-title': 'Full-Stack Development Course',
+        'course-fullstack-desc': 'Complete training focused on web application development, covering front-end and back-end. I studied technologies like HTML, CSS, JavaScript, React, Node.js, Express and databases like PostgreSQL and MongoDB. I learned to create complete, responsive and scalable systems, with focus on best practices, performance and integration between application layers.',
+        'course-nodejs-title': 'Node.js Course',
+        'course-nodejs-desc': 'Course focused on back-end application development with Node.js. I learned to create RESTful APIs, work with Express, manipulate data with databases like MongoDB and PostgreSQL, and apply concepts like middleware, authentication, routing and project structuring. The course reinforced my JavaScript foundation on the server and in building scalable and performant systems.',
+        
+        // Skills
+        'frontend-skills': 'Frontend Skills',
+        'backend-skills': 'Backend Skills',
+        
+        // Certifications
+        'cert-js-title': 'JavaScript Specialist',
+        'cert-js-desc': 'Certification covering fundamentals, ES6+, asynchronous, DOM and modern patterns.',
+        'cert-issued': 'Issued by: Platform X',
+        'cert-react-title': 'React Developer',
+        'cert-react-desc': 'Hooks, global state, optimization, routing and API integration.',
+        'cert-issued-2': 'Issued by: Platform Y',
+        'cert-node-title': 'Node.js API Professional',
+        'cert-node-desc': 'REST APIs, JWT authentication, relational databases and testing.',
+        'cert-issued-3': 'Issued by: Platform Z',
+        
+        // Projects
+        'project1-title': 'Portfolio Website',
+        'project1-desc': 'Responsive personal website with light/dark mode and animated sections.',
+        'project2-title': 'Node.js API',
+        'project2-desc': 'RESTful API with JWT authentication and relational database.',
+        'project3-title': 'React App',
+        'project3-desc': 'SPA application with routing, context and external API consumption.',
+        
+        // Portfolio App
+        'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
+        'app-experience-title': 'App Experience',
+        'app-experience-desc': 'Explore my application in a format optimized for mobile devices. This interactive app version displays all my projects, skills and experiences optimized for all devices.',
+        'feature-mobile': 'Mobile Optimized',
+        'feature-interactive': 'Interactive Design',
+        'feature-fast': 'Fast Loading',
+        'feature-modern': 'Modern UI/UX',
+        'open-app': 'Open App',
+        'get-in-touch': 'Get in Touch'
     }
 };
 
@@ -77,17 +241,54 @@ const langStorageKey = 'portfolio-lang';
 
 function applyLanguage(lang){
     const dict = translations[lang] || translations.pt;
+    
+    // Aplica traduções para elementos com data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if(dict[key]) el.textContent = dict[key];
+        if(dict[key]) {
+            // Se contém HTML tags, usa innerHTML, senão usa textContent
+            if(dict[key].includes('<') && dict[key].includes('>')) {
+                el.innerHTML = dict[key];
+            } else {
+                el.textContent = dict[key];
+            }
+        }
     });
-    // Atualiza nav itens básicos (fixo, poderia ter data-i18n também)
-    const navMap = {
-        pt: ['Home','About','Education','Certifications','Skills','Projects','Contact'],
-        en: ['Home','About','Education','Certifications','Skills','Projects','Contact']
+    
+    // Atualiza placeholders do formulário
+    const placeholders = {
+        pt: {
+            'input[name="from_name"]': 'Seu Nome',
+            'input[name="from_email"]': 'Seu Email',
+            'input[name="phone"]': 'Seu Telefone',
+            'input[name="subject"]': 'Assunto do Email',
+            'textarea[name="message"]': 'Sua Mensagem'
+        },
+        en: {
+            'input[name="from_name"]': 'Your Name',
+            'input[name="from_email"]': 'Email Address',
+            'input[name="phone"]': 'Mobile Number',
+            'input[name="subject"]': 'Email Subject',
+            'textarea[name="message"]': 'Your Message'
+        }
     };
-    const navItems = document.querySelectorAll('header nav a');
-    navItems.forEach((a,i)=>{ if(navMap[lang] && navMap[lang][i]) a.textContent = navMap[lang][i]; });
+    
+    if(placeholders[lang]) {
+        Object.entries(placeholders[lang]).forEach(([selector, placeholder]) => {
+            const element = document.querySelector(selector);
+            if(element) element.placeholder = placeholder;
+        });
+    }
+    
+
+    
+    // Atualiza footer
+    const footerText = document.querySelector('.footer-text p');
+    if(footerText) {
+        footerText.innerHTML = lang === 'pt' ? 
+            'Copyright &copy; 2025 por Leonardo Oliveira | Todos os Direitos Reservados' :
+            'Copyright &copy; 2025 by Leonardo Oliveira | All Rights Reserved';
+    }
 }
 
 // Carrega idioma salvo
