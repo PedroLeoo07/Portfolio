@@ -133,6 +133,12 @@ body{
   font-weight: 500;
   margin-left: clamp(1.5rem, 3vw, 3.5rem);
   transition: .3s;
+  position: relative;
+}
+
+.navbar a::before,
+.navbar a::after {
+  display: none;
 }
 
 .navbar a:hover,
