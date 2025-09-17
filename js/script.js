@@ -347,8 +347,18 @@ window.onscroll = () => {
             });
 
             sec.classList.add('show-animate');
+            
+            // Ativar animações das barras de habilidades quando a seção skills aparecer
+            if(id === 'skills') {
+                sec.classList.add('active');
+            }
         } else {
             sec.classList.remove('show-animate');
+            
+            // Remover animações quando sair da seção
+            if(id === 'skills') {
+                sec.classList.remove('active');
+            }
         }
     });
     

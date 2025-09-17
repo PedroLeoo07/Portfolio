@@ -707,6 +707,31 @@ span {
   align-items: center;
   gap: 1rem;
   justify-content: center;
+  position: relative;
+}
+
+/* Texto motivacional que aparece durante a animação */
+.skills-column .title::after {
+  content: 'Carregando habilidades...';
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: var(--main-color);
+  opacity: 0;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.skills.reveal.active .skills-column .title::after {
+  opacity: 1;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
 }
 
 /* Ícones para títulos das habilidades */
@@ -781,65 +806,99 @@ span {
   display: block;
   height: 100%;
   border-radius: .3rem;
-  background: var(--main-color);
+  background: linear-gradient(90deg, var(--main-color), #ff3333, var(--main-color));
+  background-size: 200% 100%;
   width: 0%;
   transition: width 0.8s ease-in-out;
   animation: none;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Animação quando a seção fica visível */
-.skills.reveal.active .progress .bar span {
-  animation: progressAnimation 2s ease-in-out forwards;
+/* Efeito de brilho que se move pela barra */
+.skills-content .progress .bar span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 1s ease-in-out;
 }
 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
-  width: 95%; /* React */
+.skills.reveal.active .progress .bar span::after {
+  left: 100%;
+  transition-delay: 0.5s;
 }
 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
-  width: 90%; /* Next.js */
+/* Animações específicas para cada habilidade quando a seção fica visível */
+
+/* Frontend Skills */
+.skills.reveal.active .skills-column:nth-child(1) .progress:nth-child(1) .bar span {
+  animation: progress95 2s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
-  width: 85%; /* TypeScript */
+.skills.reveal.active .skills-column:nth-child(1) .progress:nth-child(2) .bar span {
+  animation: progress90 2s ease-in-out forwards;
+  animation-delay: 0.4s;
 }
 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
-  width: 88%; /* JavaScript */
+.skills.reveal.active .skills-column:nth-child(1) .progress:nth-child(3) .bar span {
+  animation: progress85 2s ease-in-out forwards;
+  animation-delay: 0.6s;
 }
 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
-  width: 92%; /* Node.js */
+.skills.reveal.active .skills-column:nth-child(1) .progress:nth-child(4) .bar span {
+  animation: progress88 2s ease-in-out forwards;
+  animation-delay: 0.8s;
 }
 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
-  width: 80%; /* PostgreSQL */
+/* Backend Skills */
+.skills.reveal.active .skills-column:nth-child(2) .progress:nth-child(1) .bar span {
+  animation: progress92 2s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
-  width: 94%; /* Express */
+.skills.reveal.active .skills-column:nth-child(2) .progress:nth-child(2) .bar span {
+  animation: progress80 2s ease-in-out forwards;
+  animation-delay: 0.4s;
 }
 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
-  width: 100%; /* NPM */
+.skills.reveal.active .skills-column:nth-child(2) .progress:nth-child(3) .bar span {
+  animation: progress94 2s ease-in-out forwards;
+  animation-delay: 0.6s;
 }
 
-/* Mobile Development Skills - Terceira coluna */
-.skills-column:nth-child(3) .skills-content .progress:nth-child(1) .bar span{
-  width: 90%; /* React Native */
+.skills.reveal.active .skills-column:nth-child(2) .progress:nth-child(4) .bar span {
+  animation: progress100 2s ease-in-out forwards;
+  animation-delay: 0.8s;
 }
 
-.skills-column:nth-child(3) .skills-content .progress:nth-child(2) .bar span{
-  width: 88%; /* Expo */
+/* Mobile Skills */
+.skills.reveal.active .skills-column:nth-child(3) .progress:nth-child(1) .bar span {
+  animation: progress90 2s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
-.skills-column:nth-child(3) .skills-content .progress:nth-child(3) .bar span{
-  width: 78%; /* Native APIs */
+.skills.reveal.active .skills-column:nth-child(3) .progress:nth-child(2) .bar span {
+  animation: progress88 2s ease-in-out forwards;
+  animation-delay: 0.4s;
 }
 
-.skills-column:nth-child(3) .skills-content .progress:nth-child(4) .bar span{
-  width: 85%; /* App Store Deploy */
+.skills.reveal.active .skills-column:nth-child(3) .progress:nth-child(3) .bar span {
+  animation: progress78 2s ease-in-out forwards;
+  animation-delay: 0.6s;
 }
+
+.skills.reveal.active .skills-column:nth-child(3) .progress:nth-child(4) .bar span {
+  animation: progress85 2s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+/* As barras agora são animadas pelo JavaScript - larguras removidas */
 
 /* Projects Section */
 .projects {
@@ -2014,6 +2073,38 @@ span {
 /* Mobile Skills Animations */
 @keyframes progress78 {
   to { width: 78%; }
+}
+
+/* Efeito de partículas nas barras */
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0);
+  }
+}
+
+.progress .bar::before {
+  content: '✨';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0;
+  z-index: 10;
+}
+
+.skills.reveal.active .progress .bar::before {
+  animation: sparkle 1s ease-out;
+  animation-delay: 2.2s;
 }
 
 /* Portfolio App Section */
