@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./assets/responsive-fixes.css">
   <link rel="stylesheet" href="./assets/interactive-effects.css">
   <link rel="stylesheet" href="./assets/ultra-interactive.css">
+  <link rel="stylesheet" href="./assets/app-modal.css">
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -362,53 +363,135 @@
 
     <!-- Portfolio App Section -->
     <section class="portfolio-app reveal" id="portfolio-app">
-      <h2 class="heading" data-i18n="portfolio-app-heading">Portfolio <span class="gradient-text">App</span></h2>
+      <h2 class="heading" data-i18n="portfolio-app-heading">Meu App <span class="gradient-text">React Native</span></h2>
       
       <div class="app-container reveal">
+        <!-- App Preview Tabs -->
+        <div class="app-tabs">
+          <button class="tab-btn active" data-tab="demo">Demo Interativo</button>
+          <button class="tab-btn" data-tab="screenshots">Screenshots</button>
+          <button class="tab-btn" data-tab="video">Vídeo Demo</button>
+        </div>
+
         <div class="app-showcase">
-          <div class="app-preview">
-            <div class="phone-mockup">
-              <div class="phone-screen">
-                <iframe src="index.html" class="app-iframe" loading="lazy"></iframe>
+          <!-- Demo Tab -->
+          <div class="tab-content active" id="demo-tab">
+            <div class="app-preview">
+              <div class="phone-mockup">
+                <div class="phone-screen">
+                  <!-- Aqui você pode colocar um Expo Snack ou link do app -->
+                  <div class="app-demo-content">
+                    <div class="demo-header">
+                      <div class="demo-status-bar">
+                        <span class="demo-time">9:41</span>
+                        <div class="demo-indicators">
+                          <i class='bx bx-signal-5'></i>
+                          <i class='bx bx-wifi'></i>
+                          <i class='bx bx-battery'></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="demo-app-content">
+                      <h4>Meu App React Native</h4>
+                      <p>Clique no botão abaixo para ver o app funcionando!</p>
+                      <button class="demo-launch-btn" id="launchApp">
+                        <i class='bx bx-play'></i>
+                        Abrir App
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="app-content">
+              <h3>Aplicativo React Native</h3>
+              <p>
+                Desenvolvido com React Native, este aplicativo demonstra minhas habilidades em desenvolvimento mobile 
+                nativo. Explore as funcionalidades e a interface otimizada para dispositivos móveis.
+              </p>
+              
+              <div class="app-features">
+                <div class="feature-item">
+                  <i class='bx bxl-react'></i>
+                  <span>React Native</span>
+                </div>
+                <div class="feature-item">
+                  <i class='bx bx-mobile-vibration'></i>
+                  <span>Performance Nativa</span>
+                </div>
+                <div class="feature-item">
+                  <i class='bx bx-palette'></i>
+                  <span>UI/UX Moderna</span>
+                </div>
+                <div class="feature-item">
+                  <i class='bx bx-code-curly'></i>
+                  <span>TypeScript</span>
+                </div>
+              </div>
+              
+              <div class="app-actions">
+                <a href="#" class="btn app-btn" id="openExpoBtn">
+                  <i class='bx bxl-expo'></i>
+                  <span>Ver no Expo</span>
+                </a>
+                <a href="#" class="btn app-btn secondary" id="githubRepoBtn">
+                  <i class='bx bxl-github'></i>
+                  <span>Código no GitHub</span>
+                </a>
+                <a href="#contact" class="btn app-btn secondary">
+                  <i class='bx bx-message-dots'></i>
+                  <span>Entre em Contato</span>
+                </a>
               </div>
             </div>
           </div>
-          
-          <div class="app-content">
-            <h3 data-i18n="app-experience-title">Experiência em App</h3>
-            <p data-i18n="app-experience-desc">
-              Explore o meu aplicativo em um formato otimizado para dispositivos móveis. Esta versão interativa do app
-              exibe todos os meus projetos, habilidades e experiências de forma otimizada para todos os dispositivos.
-            </p>
-            
-            <div class="app-features">
-              <div class="feature-item">
-                <i class='bx bx-mobile-alt'></i>
-                <span data-i18n="feature-mobile">Mobile Optimized</span>
-              </div>
-              <div class="feature-item">
-                <i class='bx bx-code-alt'></i>
-                <span data-i18n="feature-interactive">Interactive Design</span>
-              </div>
-              <div class="feature-item">
-                <i class='bx bx-rocket'></i>
-                <span data-i18n="feature-fast">Fast Loading</span>
-              </div>
-              <div class="feature-item">
-                <i class='bx bx-palette'></i>
-                <span data-i18n="feature-modern">Modern UI/UX</span>
+
+          <!-- Screenshots Tab -->
+          <div class="tab-content" id="screenshots-tab">
+            <div class="app-screenshots">
+              <div class="screenshots-grid">
+                <div class="screenshot-item">
+                  <div class="phone-frame">
+                    <img src="./images/app-screenshot1.jpg" alt="App Screenshot 1" loading="lazy">
+                  </div>
+                  <h4>Tela Principal</h4>
+                </div>
+                <div class="screenshot-item">
+                  <div class="phone-frame">
+                    <img src="./images/app-screenshot2.jpg" alt="App Screenshot 2" loading="lazy">
+                  </div>
+                  <h4>Navegação</h4>
+                </div>
+                <div class="screenshot-item">
+                  <div class="phone-frame">
+                    <img src="./images/app-screenshot3.jpg" alt="App Screenshot 3" loading="lazy">
+                  </div>
+                  <h4>Funcionalidades</h4>
+                </div>
               </div>
             </div>
-            
-            <div class="app-actions">
-              <a href="index.html" class="btn app-btn" target="_blank">
-                <i class='bx bx-link-external'></i>
-                <span data-i18n="open-app">Open App</span>
-              </a>
-              <a href="#contact" class="btn app-btn secondary">
-                <i class='bx bx-message-dots'></i>
-                <span data-i18n="get-in-touch">Get in Touch</span>
-              </a>
+          </div>
+
+          <!-- Video Tab -->
+          <div class="tab-content" id="video-tab">
+            <div class="app-video">
+              <div class="video-container">
+                <div class="video-placeholder">
+                  <i class='bx bx-play-circle'></i>
+                  <h4>Vídeo Demo do App</h4>
+                  <p>Clique para assistir a demonstração completa</p>
+                  <button class="video-play-btn" id="playVideoBtn">
+                    <i class='bx bx-play'></i>
+                    Reproduzir Vídeo
+                  </button>
+                </div>
+                <!-- Você pode substituir por um iframe do YouTube/Vimeo -->
+                <video controls style="display: none;" id="appVideo">
+                  <source src="./videos/app-demo.mp4" type="video/mp4">
+                  Seu navegador não suporta vídeo HTML5.
+                </video>
+              </div>
             </div>
           </div>
         </div>
@@ -512,5 +595,6 @@
     <script src="js/ultra-interactive.js"></script>
     <script src="js/secret-features.js"></script>
     <script src="js/contact-form.js"></script>
+    <script src="js/portfolio-app.js"></script>
 </body>
 </html>
