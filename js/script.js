@@ -127,12 +127,12 @@ const translations = {
         'cert-issued-3': 'Emitido por: Plataforma Z',
         
         // Projetos
-        'project1-title': 'Site Portfolio',
-        'project1-desc': 'Site pessoal responsivo com modo claro/escuro e seções animadas.',
-        'project2-title': 'API Node.js',
-        'project2-desc': 'API RESTful com autenticação JWT e banco relacional.',
-        'project3-title': 'Aplicação React',
-        'project3-desc': 'Aplicação SPA com roteamento, contexto e consumo de API externa.',
+        'project1-title': 'TurboX',
+        'project1-desc': 'Plataforma com simulações e preparações de carros turbo.',
+        'project2-title': 'Playstation API',
+        'project2-desc': 'API da playstation com jogos e informações detalhadas. (Crud)',
+        'project3-title': 'FunDev',
+        'project3-desc': 'Plataforma com jogos feito em HTML, CSS E JavaScript',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
@@ -216,12 +216,12 @@ const translations = {
         'cert-issued-3': 'Issued by: Platform Z',
         
         // Projects
-        'project1-title': 'Portfolio Website',
-        'project1-desc': 'Responsive personal website with light/dark mode and animated sections.',
-        'project2-title': 'Node.js API',
-        'project2-desc': 'RESTful API with JWT authentication and relational database.',
-        'project3-title': 'React App',
-        'project3-desc': 'SPA application with routing, context and external API consumption.',
+        'project1-title': 'TurboX',
+        'project1-desc': 'Platform with turbo car simulations and preparations.',
+        'project2-title': 'Playstation API',
+        'project2-desc': 'PlayStation API with games and detailed information. (Crud)',
+        'project3-title': 'FunDev',
+        'project3-desc': 'Platform with games made in HTML, CSS and JavaScript',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
