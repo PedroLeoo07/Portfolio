@@ -133,6 +133,10 @@ const translations = {
         'project2-desc': 'API Full-Stack completa do EA FC com gerenciamento de jogadores, times e estatísticas detalhadas.',
         'project3-title': 'FrienZone',
         'project3-desc': 'Rede social Full-Stack com sistema de posts, amizades, chat em tempo real e perfis personalizados.',
+        'project4-title': 'Playstation API',
+        'project4-desc': 'API da PlayStation com jogos e informações detalhadas. (CRUD)',
+        'project5-title': 'FunDev',
+        'project5-desc': 'Plataforma com jogos feito em HTML, CSS e JavaScript',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
@@ -222,6 +226,10 @@ const translations = {
         'project2-desc': 'Complete Full-Stack EA FC API with player management, teams and detailed statistics.',
         'project3-title': 'FrienZone',
         'project3-desc': 'Full-Stack social network with posts system, friendships, real-time chat and custom profiles.',
+        'project4-title': 'Playstation API',
+        'project4-desc': 'PlayStation API with games and detailed information. (CRUD)',
+        'project5-title': 'FunDev',
+        'project5-desc': 'Platform with games made in HTML, CSS and JavaScript',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',

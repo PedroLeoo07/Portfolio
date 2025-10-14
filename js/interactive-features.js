@@ -330,6 +330,38 @@ const projectsData = {
             { icon: 'bx-notification', text: 'Notificações instantâneas' }
         ],
         github: 'https://github.com/PedroLeoo07/FrienZone'
+    },
+    'Playstation API': {
+        features: [
+            'API RESTful completa com operações CRUD',
+            'Catálogo de jogos PlayStation com informações detalhadas',
+            'Sistema de busca e filtros avançados',
+            'Interface moderna com Next.js e Tailwind CSS',
+            'Validação de dados e tratamento de erros',
+            'Documentação completa da API'
+        ],
+        highlights: [
+            { icon: 'bx-server', text: 'API REST escalável e eficiente' },
+            { icon: 'bx-shield', text: 'Validação e segurança de dados' },
+            { icon: 'bx-palette', text: 'Interface moderna com Tailwind' }
+        ],
+        github: 'https://github.com/PedroLeoo07/API-Playstation'
+    },
+    'FunDev': {
+        features: [
+            'Plataforma com múltiplos jogos interativos',
+            'Jogos desenvolvidos puramente com JavaScript vanilla',
+            'Sistema de pontuação e ranking',
+            'Interface intuitiva e animações suaves',
+            'Compatível com diferentes dispositivos',
+            'Design responsivo e acessível'
+        ],
+        highlights: [
+            { icon: 'bx-game', text: 'Múltiplos jogos em uma plataforma' },
+            { icon: 'bx-code-alt', text: 'JavaScript vanilla puro' },
+            { icon: 'bx-mobile', text: 'Totalmente responsivo' }
+        ],
+        github: 'https://github.com/PedroLeoo07/FunDev'
     }
 };
 
