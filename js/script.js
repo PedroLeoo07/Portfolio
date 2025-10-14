@@ -129,10 +129,10 @@ const translations = {
         // Projetos
         'project1-title': 'TurboX',
         'project1-desc': 'Plataforma com simulações e preparações de carros turbo.',
-        'project2-title': 'Playstation API',
-        'project2-desc': 'API da playstation com jogos e informações detalhadas. (Crud)',
-        'project3-title': 'FunDev',
-        'project3-desc': 'Plataforma com jogos feito em HTML, CSS E JavaScript',
+        'project2-title': 'EA FC API',
+        'project2-desc': 'API Full-Stack completa do EA FC com gerenciamento de jogadores, times e estatísticas detalhadas.',
+        'project3-title': 'FrienZone',
+        'project3-desc': 'Rede social Full-Stack com sistema de posts, amizades, chat em tempo real e perfis personalizados.',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
@@ -218,10 +218,10 @@ const translations = {
         // Projects
         'project1-title': 'TurboX',
         'project1-desc': 'Platform with turbo car simulations and preparations.',
-        'project2-title': 'Playstation API',
-        'project2-desc': 'PlayStation API with games and detailed information. (Crud)',
-        'project3-title': 'FunDev',
-        'project3-desc': 'Platform with games made in HTML, CSS and JavaScript',
+        'project2-title': 'EA FC API',
+        'project2-desc': 'Complete Full-Stack EA FC API with player management, teams and detailed statistics.',
+        'project3-title': 'FrienZone',
+        'project3-desc': 'Full-Stack social network with posts system, friendships, real-time chat and custom profiles.',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',

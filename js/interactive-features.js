@@ -296,35 +296,40 @@ const projectsData = {
         ],
         github: 'https://github.com/PedroLeoo07/TurboX-FrontEnd'
     },
-    'Playstation API': {
+    'EA FC API': {
         features: [
-            'API RESTful completa com operações CRUD',
-            'Catálogo de jogos PlayStation com informações detalhadas',
-            'Sistema de busca e filtros avançados',
-            'Documentação completa da API',
-            'Validação de dados e tratamento de erros'
+            'API RESTful Full-Stack com operações CRUD completas',
+            'Gerenciamento de jogadores com estatísticas detalhadas',
+            'Sistema de times e formações táticas',
+            'Backend robusto com Node.js e Express',
+            'Banco de dados PostgreSQL com relacionamentos complexos',
+            'Autenticação e autorização de usuários',
+            'Interface React moderna e responsiva'
         ],
         highlights: [
-            { icon: 'bx-server', text: 'API REST escalável e eficiente' },
-            { icon: 'bx-shield', text: 'Validação e segurança de dados' },
-            { icon: 'bx-book', text: 'Documentação completa' }
+            { icon: 'bx-football', text: 'Sistema completo de gerenciamento EA FC' },
+            { icon: 'bx-data', text: 'PostgreSQL com relacionamentos complexos' },
+            { icon: 'bx-shield', text: 'Autenticação segura e validações' }
         ],
-        github: 'https://github.com/PedroLeoo07/API-Playstation'
+        github: 'https://github.com/PedroLeoo07/EA-FC-API'
     },
-    'FunDev': {
+    'FrienZone': {
         features: [
-            'Plataforma com múltiplos jogos interativos',
-            'Jogos desenvolvidos puramente com JavaScript vanilla',
-            'Sistema de pontuação e ranking',
-            'Interface intuitiva e animações suaves',
-            'Compatível com diferentes dispositivos'
+            'Rede social Full-Stack completa com Next.js',
+            'Sistema de posts com curtidas e comentários',
+            'Chat em tempo real com Socket.io',
+            'Sistema de amizades e solicitações',
+            'Perfis personalizados com fotos e bio',
+            'Feed dinâmico e responsivo',
+            'Backend Node.js com MongoDB',
+            'Sistema de notificações em tempo real'
         ],
         highlights: [
-            { icon: 'bx-game', text: 'Múltiplos jogos em uma plataforma' },
-            { icon: 'bx-code-alt', text: 'JavaScript vanilla puro' },
-            { icon: 'bx-mobile', text: 'Totalmente responsivo' }
+            { icon: 'bx-chat', text: 'Chat em tempo real com Socket.io' },
+            { icon: 'bx-group', text: 'Sistema completo de rede social' },
+            { icon: 'bx-notification', text: 'Notificações instantâneas' }
         ],
-        github: 'https://github.com/PedroLeoo07/FunDev'
+        github: 'https://github.com/PedroLeoo07/FrienZone'
     }
 };
 
