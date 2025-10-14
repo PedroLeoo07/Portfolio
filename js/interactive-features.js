@@ -365,21 +365,39 @@ const projectsData = {
     },
     'ChatBoxIA': {
         features: [
-            'Chatbot inteligente com processamento de linguagem natural',
             'Interface de chat moderna e intuitiva',
             'Desenvolvido com JavaScript puro (vanilla)',
-            'Sistema de respostas contextuais',
+            'Sistema de mensagens com animações',
             'Histórico de conversas salvo localmente',
             'Animações suaves e feedback visual',
             'Design responsivo e acessível',
-            'Sem dependências externas de frameworks'
+            'Sem dependências externas de frameworks',
+            'Código limpo e bem estruturado'
         ],
         highlights: [
-            { icon: 'bx-bot', text: 'Chatbot com IA integrada' },
+            { icon: 'bx-chat', text: 'Interface de chat moderna' },
             { icon: 'bx-code-curly', text: '100% JavaScript vanilla' },
-            { icon: 'bx-chat', text: 'Interface de chat moderna' }
+            { icon: 'bx-palette', text: 'Design limpo e responsivo' }
         ],
         github: 'https://github.com/PedroLeoo07/ChatBoxIA'
+    },
+    'Calculadora Python': {
+        features: [
+            'Interface gráfica intuitiva com Tkinter',
+            'Operações matemáticas básicas e avançadas',
+            'Cálculo de percentagens e operações científicas',
+            'Histórico de cálculos realizados',
+            'Design limpo e responsivo',
+            'Tratamento de erros e validações',
+            'Desenvolvido 100% em Python puro',
+            'Código modular e bem documentado'
+        ],
+        highlights: [
+            { icon: 'bx-calculator', text: 'Calculadora completa e funcional' },
+            { icon: 'bxl-python', text: 'Desenvolvido em Python' },
+            { icon: 'bx-window', text: 'Interface gráfica com Tkinter' }
+        ],
+        github: 'https://github.com/PedroLeoo07/Calculadora-Python'
     }
 };
 

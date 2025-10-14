@@ -138,7 +138,9 @@ const translations = {
         'project5-title': 'FunDev',
         'project5-desc': 'Plataforma com jogos feito em HTML, CSS e JavaScript',
         'project6-title': 'ChatBoxIA',
-        'project6-desc': 'Chatbot inteligente com IA feito com JavaScript puro, HTML e CSS',
+        'project6-desc': 'Interface de chatbot moderna feita com JavaScript puro, HTML e CSS',
+        'project7-title': 'Calculadora Python',
+        'project7-desc': 'Calculadora com interface gráfica desenvolvida em Python',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
@@ -233,7 +235,9 @@ const translations = {
         'project5-title': 'FunDev',
         'project5-desc': 'Platform with games made in HTML, CSS and JavaScript',
         'project6-title': 'ChatBoxIA',
-        'project6-desc': 'Intelligent AI chatbot made with pure JavaScript, HTML and CSS',
+        'project6-desc': 'Modern chatbot interface made with pure JavaScript, HTML and CSS',
+        'project7-title': 'Python Calculator',
+        'project7-desc': 'Calculator with graphical interface developed in Python',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
