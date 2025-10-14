@@ -362,6 +362,24 @@ const projectsData = {
             { icon: 'bx-mobile', text: 'Totalmente responsivo' }
         ],
         github: 'https://github.com/PedroLeoo07/FunDev'
+    },
+    'ChatBoxIA': {
+        features: [
+            'Chatbot inteligente com processamento de linguagem natural',
+            'Interface de chat moderna e intuitiva',
+            'Desenvolvido com JavaScript puro (vanilla)',
+            'Sistema de respostas contextuais',
+            'Histórico de conversas salvo localmente',
+            'Animações suaves e feedback visual',
+            'Design responsivo e acessível',
+            'Sem dependências externas de frameworks'
+        ],
+        highlights: [
+            { icon: 'bx-bot', text: 'Chatbot com IA integrada' },
+            { icon: 'bx-code-curly', text: '100% JavaScript vanilla' },
+            { icon: 'bx-chat', text: 'Interface de chat moderna' }
+        ],
+        github: 'https://github.com/PedroLeoo07/ChatBoxIA'
     }
 };
 

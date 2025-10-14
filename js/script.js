@@ -137,6 +137,8 @@ const translations = {
         'project4-desc': 'API da PlayStation com jogos e informações detalhadas. (CRUD)',
         'project5-title': 'FunDev',
         'project5-desc': 'Plataforma com jogos feito em HTML, CSS e JavaScript',
+        'project6-title': 'ChatBoxIA',
+        'project6-desc': 'Chatbot inteligente com IA feito com JavaScript puro, HTML e CSS',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
@@ -230,6 +232,8 @@ const translations = {
         'project4-desc': 'PlayStation API with games and detailed information. (CRUD)',
         'project5-title': 'FunDev',
         'project5-desc': 'Platform with games made in HTML, CSS and JavaScript',
+        'project6-title': 'ChatBoxIA',
+        'project6-desc': 'Intelligent AI chatbot made with pure JavaScript, HTML and CSS',
         
         // Portfolio App
         'portfolio-app-heading': 'Portfolio <span class="gradient-text">App</span>',
