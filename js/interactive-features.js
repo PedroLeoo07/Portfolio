@@ -236,8 +236,26 @@ function createProjectModal() {
                 <h3 id="modal-title"></h3>
                 <img id="modal-image" alt="Project preview">
                 <p id="modal-description"></p>
-                <div id="modal-technologies"></div>
-                <div id="modal-links"></div>
+                
+                <div class="modal-section">
+                    <h4 class="section-title"><i class='bx bx-code-block'></i> Tecnologias Utilizadas</h4>
+                    <div id="modal-technologies"></div>
+                </div>
+                
+                <div class="modal-section" id="modal-features-section">
+                    <h4 class="section-title"><i class='bx bx-star'></i> Principais Funcionalidades</h4>
+                    <ul id="modal-features"></ul>
+                </div>
+                
+                <div class="modal-section" id="modal-highlights-section">
+                    <h4 class="section-title"><i class='bx bx-trophy'></i> Destaques do Projeto</h4>
+                    <div id="modal-highlights"></div>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="section-title"><i class='bx bx-link-alt'></i> Links do Projeto</h4>
+                    <div id="modal-links"></div>
+                </div>
             </div>
         </div>
     `;
@@ -261,6 +279,55 @@ function createProjectModal() {
     return modal;
 }
 
+// Dados detalhados dos projetos
+const projectsData = {
+    'TurboX': {
+        features: [
+            'Sistema completo de simulação de preparação de carros turbo',
+            'Gerenciamento de peças e upgrades com cálculo de performance',
+            'Interface responsiva e moderna com Next.js',
+            'Integração com banco de dados para persistência de dados',
+            'Sistema de autenticação e perfis de usuário'
+        ],
+        highlights: [
+            { icon: 'bx-rocket', text: 'Performance otimizada com Next.js 14' },
+            { icon: 'bx-palette', text: 'Design moderno e responsivo' },
+            { icon: 'bx-data', text: 'Integração completa com backend Node.js' }
+        ],
+        github: 'https://github.com/PedroLeoo07/TurboX-FrontEnd'
+    },
+    'Playstation API': {
+        features: [
+            'API RESTful completa com operações CRUD',
+            'Catálogo de jogos PlayStation com informações detalhadas',
+            'Sistema de busca e filtros avançados',
+            'Documentação completa da API',
+            'Validação de dados e tratamento de erros'
+        ],
+        highlights: [
+            { icon: 'bx-server', text: 'API REST escalável e eficiente' },
+            { icon: 'bx-shield', text: 'Validação e segurança de dados' },
+            { icon: 'bx-book', text: 'Documentação completa' }
+        ],
+        github: 'https://github.com/PedroLeoo07/API-Playstation'
+    },
+    'FunDev': {
+        features: [
+            'Plataforma com múltiplos jogos interativos',
+            'Jogos desenvolvidos puramente com JavaScript vanilla',
+            'Sistema de pontuação e ranking',
+            'Interface intuitiva e animações suaves',
+            'Compatível com diferentes dispositivos'
+        ],
+        highlights: [
+            { icon: 'bx-game', text: 'Múltiplos jogos em uma plataforma' },
+            { icon: 'bx-code-alt', text: 'JavaScript vanilla puro' },
+            { icon: 'bx-mobile', text: 'Totalmente responsivo' }
+        ],
+        github: 'https://github.com/PedroLeoo07/FunDev'
+    }
+};
+
 // Adicionar funcionalidade de modal aos projetos
 function setupProjectModals() {
     const modal = createProjectModal();
@@ -272,14 +339,45 @@ function setupProjectModals() {
             const description = box.querySelector('p').textContent;
             const image = box.querySelector('img').src;
             const tags = Array.from(box.querySelectorAll('.project-tags span')).map(tag => tag.textContent);
+            const links = box.querySelectorAll('.project-links a');
             
-            // Preencher modal
+            // Preencher informações básicas
             document.getElementById('modal-title').textContent = title;
             document.getElementById('modal-description').textContent = description;
             document.getElementById('modal-image').src = image;
             
+            // Preencher tecnologias
             const techContainer = document.getElementById('modal-technologies');
             techContainer.innerHTML = tags.map(tag => `<span class="tech-tag">${tag}</span>`).join('');
+            
+            // Preencher funcionalidades se existir dados
+            const projectData = projectsData[title];
+            if (projectData) {
+                const featuresContainer = document.getElementById('modal-features');
+                featuresContainer.innerHTML = projectData.features
+                    .map(feature => `<li><i class='bx bx-check-circle'></i> ${feature}</li>`)
+                    .join('');
+                
+                const highlightsContainer = document.getElementById('modal-highlights');
+                highlightsContainer.innerHTML = projectData.highlights
+                    .map(highlight => `
+                        <div class="highlight-item">
+                            <i class='bx ${highlight.icon}'></i>
+                            <span>${highlight.text}</span>
+                        </div>
+                    `).join('');
+            } else {
+                document.getElementById('modal-features-section').style.display = 'none';
+                document.getElementById('modal-highlights-section').style.display = 'none';
+            }
+            
+            // Preencher links
+            const linksContainer = document.getElementById('modal-links');
+            linksContainer.innerHTML = '';
+            links.forEach(link => {
+                const clone = link.cloneNode(true);
+                linksContainer.appendChild(clone);
+            });
             
             modal.classList.add('active');
         });
