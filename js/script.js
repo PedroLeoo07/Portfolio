@@ -28,6 +28,18 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Link do currículo online na Vercel
+document.addEventListener('DOMContentLoaded', function() {
+    const curriculoBtn = document.getElementById('curriculo-btn');
+    if (curriculoBtn) {
+        curriculoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Substitua pela URL do seu currículo na Vercel
+            window.open('https://seu-curriculo.vercel.app', '_blank');
+        });
+    }
+});
+
 // Handle touch gestures for mobile navigation
 let touchStartX = 0;
 let touchEndX = 0;

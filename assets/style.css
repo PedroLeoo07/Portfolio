@@ -30,9 +30,9 @@ body.light {
   --main-color: #d10000;
 }
 
-/* Transições suaves */
+/* Transições ultra fluidas */
 body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content .content, .footer, section, .about-img img, .about-img .circle-spin {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Botão de alternância de tema */
@@ -50,12 +50,12 @@ body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content 
   justify-content: center;
   font-size: 1.8rem;
   color: var(--main-color);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .theme-toggle::before {
   content: '\2600'; /* Sol */
-  transition: transform .4s ease, opacity .3s;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 body.light .theme-toggle::before {
@@ -65,6 +65,8 @@ body.light .theme-toggle::before {
 .theme-toggle:hover {
   background: var(--main-color);
   color: var(--bg-color);
+  transform: scale(1.08) rotate(15deg);
+  box-shadow: 0 4px 20px rgba(240, 0, 0, 0.3);
 }
 
 /* Language switcher */
@@ -77,10 +79,15 @@ body.light .theme-toggle::before {
   padding: .6rem .8rem;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .lang-switch:focus { outline: none; }
-.lang-switch:hover { background: var(--main-color); color: var(--bg-color); }
+.lang-switch:hover { 
+  background: var(--main-color); 
+  color: var(--bg-color); 
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 12px rgba(240, 0, 0, 0.25);
+}
 
 html{
   font-size: 62.5%;
@@ -132,7 +139,7 @@ body{
   color: var(--text-color);
   font-weight: 500;
   margin-left: clamp(1.5rem, 3vw, 3.5rem);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
 }
 
@@ -144,6 +151,8 @@ body{
 .navbar a:hover,
 .navbar a.active{
   color: var(--main-color);
+  transform: translateY(-1px);
+  text-shadow: 0 2px 8px rgba(240, 0, 0, 0.4);
 }
 
 #menu-icon {
@@ -351,19 +360,19 @@ section{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: clamp(12rem, 25vw, 15rem);
-  height: clamp(4rem, 8vw, 5rem);
-  background: rgba(255, 0, 0, 0.8);
-  border: .2rem solid rgba(255, 0, 0, 0.8);
+  min-width: clamp(15rem, 30vw, 22rem);
+  height: clamp(4.5rem, 9vw, 5.5rem);
+  background: var(--main-color);
+  border: .2rem solid var(--main-color);
   border-radius: .8rem;
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: 600;
   letter-spacing: .1rem;
   color: var(--bg-color);
   z-index: 1;
-  flex: 1;
-  max-width: 20rem;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
 }
 
 /* Botões de CV mais humanos */
@@ -376,7 +385,7 @@ section{
   border: 2px solid var(--main-color);
   border-radius: 8px;
   color: white;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   font-family: inherit;
   text-decoration: none;
   display: inline-flex;
@@ -387,8 +396,8 @@ section{
 .cv-btn:hover {
   background: transparent;
   color: var(--main-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(240, 0, 0, 0.2);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(240, 0, 0, 0.3);
 }
 
 .cv-btn i {
@@ -500,13 +509,13 @@ section{
   color: var(--text-color);
   z-index: 1;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .home-sci a:hover{
   color: var(--bg-color);
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 6px 16px rgba(240, 0, 0, 0.4);
+  transform: translateY(-4px) scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(240, 0, 0, 0.5);
 }
 
 .home-sci a::before{
@@ -518,7 +527,7 @@ section{
   height: 100%;
   background: var(--main-color);
   z-index: -1;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .home-sci a:hover::before{
@@ -565,15 +574,22 @@ span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% - .4rem); /* Ajuste para compensar a borda */
-  height: calc(100% - .4rem);
+  width: calc(100% - .6rem); /* Ajuste para compensar a borda */
+  height: calc(100% - .6rem);
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center center; /* Centraliza a imagem dentro do círculo */
   border-radius: 50%;
-  border: .2rem solid var(--main-color);
+  border: .3rem solid var(--main-color);
   display: block;
   z-index: 1; /* Fica atrás do círculo animado */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-img img:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  border-color: var(--main-color);
+  box-shadow: 0 0 30px var(--main-color), 0 0 50px rgba(240, 0, 0, 0.3);
 }
 
 .about-img .circle-spin{
@@ -668,7 +684,7 @@ span {
   border: .2rem solid var(--main-color);
   border-radius: .6rem;
   margin-bottom: 2rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .education-content .content::before{
@@ -680,7 +696,7 @@ span {
   height: 100%;
   background: var(--second-bg-color);
   z-index: -1;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .education-content .content:hover::before{
@@ -688,8 +704,8 @@ span {
 }
 
 .education-content .content:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(240, 0, 0, 0.1);
 }
 
 .education-content  .content .year{
@@ -795,7 +811,7 @@ span {
   padding: .5rem 1.5rem;
   z-index: 1;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .skills-box .skills-content::before{
@@ -807,7 +823,7 @@ span {
   height: 100%;
   background: var(--bg-color);
   z-index: -1;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .skills-box .skills-content:hover::before{
@@ -815,8 +831,8 @@ span {
 }
 
 .skills-box .skills-content:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(240, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 30px rgba(240, 0, 0, 0.2), 0 0 20px rgba(240, 0, 0, 0.1);
 }
 
 .skills-content .progress{
@@ -848,7 +864,7 @@ span {
   background: linear-gradient(90deg, var(--main-color), #ff3333, var(--main-color));
   background-size: 200% 100%;
   width: 0%;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation: none;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
   position: relative;
@@ -959,12 +975,13 @@ span {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-box:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.25), 0 0 2rem rgba(240, 0, 0, 0.1);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 1.5rem 4rem rgba(0,0,0,.3), 0 0 3rem rgba(240, 0, 0, 0.2);
+  border-color: rgba(240, 0, 0, 0.8);
 }
 
 .project-img-wrapper {
@@ -978,12 +995,12 @@ span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-box:hover .project-img-wrapper img {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+  transform: scale(1.08);
+  filter: brightness(1.15) saturate(1.1);
 }
 
 .project-content {
@@ -1039,7 +1056,7 @@ span {
   font-size: 2rem;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-links a::before {
@@ -1051,7 +1068,7 @@ span {
   height: 100%;
   background: var(--main-color);
   z-index: -1;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .project-links a:hover::before {
@@ -1060,8 +1077,8 @@ span {
 
 .project-links a:hover {
   color: var(--bg-color);
-  transform: translateY(-2px) scale(1.1);
-  box-shadow: 0 4px 12px rgba(240, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.2) rotate(10deg);
+  box-shadow: 0 6px 20px rgba(240, 0, 0, 0.4);
 }
 
 /* Certifications Section */
@@ -1191,7 +1208,7 @@ span {
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   box-shadow: 0 4px 20px rgba(255,0,64,0.25), 0 2px 8px rgba(255,102,0,0.15);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .contact form .btn-box.btns .btn .btn-text{
@@ -1204,8 +1221,8 @@ span {
   background: linear-gradient(135deg, #ff6600 0%, #ff0040 100%) !important;
   border-color: #fff !important;
   color: #fff !important;
-  box-shadow: 0 8px 32px rgba(255,0,64,0.4), 0 4px 16px rgba(255,102,0,0.3);
-  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 40px rgba(255,0,64,0.5), 0 5px 20px rgba(255,102,0,0.4);
+  transform: translateY(-4px) scale(1.05);
 }
 
 .contact form .btn-box.btns .btn:hover .btn-text{
@@ -1244,15 +1261,15 @@ span {
   border-radius: 50%;
   font-size: 2rem;
   color: var(--main-color);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
 }
 
 .footer-social a:hover {
   background: var(--main-color);
   color: var(--second-bg-color);
-  box-shadow: 0 0 2rem rgba(240, 0, 0, 0.5);
-  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 3rem rgba(240, 0, 0, 0.6);
+  transform: translateY(-5px) scale(1.15) rotate(8deg);
 }
 
 .footer-text p{
@@ -1270,6 +1287,7 @@ span {
   border-radius: .6rem;
   z-index: 1;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .footer-iconTop a::before{
@@ -1286,6 +1304,11 @@ span {
 
 .footer-iconTop a:hover::before{
   width: 100%;
+}
+
+.footer-iconTop a:hover {
+  transform: translateY(-3px) scale(1.05) rotate(-5deg);
+  box-shadow: 0 6px 20px rgba(240, 0, 0, 0.4);
 }
 
 .footer-iconTop a i{
