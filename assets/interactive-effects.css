@@ -202,8 +202,8 @@
 }
 
 .project-box:hover {
-    transform: perspective(1000px) rotateX(5deg) translateY(-10px);
-    box-shadow: 0 20px 40px rgba(240, 0, 0, 0.3);
+    transform: perspective(1000px) rotateX(3deg) rotateY(-1deg) translateY(-6px) translateX(2px);
+    box-shadow: 0 12px 32px rgba(240, 0, 0, 0.25), 3px 4px 15px rgba(240, 0, 0, 0.15);
 }
 
 /* Enhanced project tags */
@@ -221,11 +221,12 @@
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
-    transition: transform 0.3s ease;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.32s ease-out;
 }
 
 .project-tags span:hover {
-    transform: scale(1.1);
+    transform: translateY(-1px) translateX(-0.5px) scale(1.06) rotate(1deg);
+    box-shadow: 0 3px 12px rgba(240, 0, 0, 0.3), 1px 2px 6px rgba(240, 0, 0, 0.15);
 }
 
 /* Project Modal */

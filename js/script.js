@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (curriculoBtn) {
         curriculoBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            // Substitua pela URL do seu currículo na Vercel
-            window.open('https://seu-curriculo.vercel.app', '_blank');
+            // Abre o currículo online na Vercel
+            window.open('https://curriculo-online-three.vercel.app/', '_blank');
         });
     }
 });
