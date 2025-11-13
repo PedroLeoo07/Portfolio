@@ -61,8 +61,9 @@ function revealOnScroll() {
     });
 }
 
-// Cursor personalizado
+// Cursor personalizado - DESABILITADO
 function createCustomCursor() {
+    return; // Função desabilitada
     if (window.innerWidth <= 768) return; // Não mostrar em dispositivos móveis
     
     const cursor = document.createElement('div');

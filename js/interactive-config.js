@@ -15,7 +15,7 @@ const InteractiveConfig = {
     effects: {
         matrixRain: true,
         soundVisualizer: true,
-        mouseTrail: true,
+        mouseTrail: false,
         shootingStars: true,
         floatingElements: true,
         dnaHelix: true,

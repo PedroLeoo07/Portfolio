@@ -32,7 +32,7 @@ body.light {
 
 /* Transições suaves */
 body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content .content, .footer, section, .about-img img, .about-img .circle-spin {
-  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Botão de alternância de tema */
@@ -50,7 +50,7 @@ body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content 
   justify-content: center;
   font-size: 1.8rem;
   color: var(--main-color);
-  transition: background .35s ease, color .35s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .theme-toggle::before {
@@ -77,7 +77,7 @@ body.light .theme-toggle::before {
   padding: .6rem .8rem;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background .35s, color .35s, border-color .35s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .lang-switch:focus { outline: none; }
 .lang-switch:hover { background: var(--main-color); color: var(--bg-color); }
@@ -132,7 +132,7 @@ body{
   color: var(--text-color);
   font-weight: 500;
   margin-left: clamp(1.5rem, 3vw, 3.5rem);
-  transition: .3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -170,6 +170,7 @@ body{
   background-color: rgba(240, 0, 0, 0.1);
   outline: 2px solid var(--main-color);
   outline-offset: 2px;
+  transform: scale(1.05);
 }
 
 section{
@@ -365,26 +366,29 @@ section{
   transition: all 0.3s ease;
 }
 
-/* Estilo refinado para botões de CV */
+/* Botões de CV mais humanos */
 .cv-btn {
-  padding: 0 1.6rem;
+  padding: 1.2rem 2rem;
   gap: .8rem;
   width: auto;
   min-width: clamp(13rem, 32vw, 15rem);
-  background: linear-gradient(90deg, #ff4d4d 0%, #ffb366 100%) !important;
-  border-color: #fff !important;
-  box-shadow: 0 2px 12px rgba(255,77,77,0.10), 0 1px 4px #ffb366;
-  color: #fff !important;
-  transition: box-shadow .3s, transform .3s;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  background: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cv-btn:hover {
-  background: linear-gradient(90deg, #ffb366 0%, #ff4d4d 100%) !important;
-  border-color: #fff !important;
-  color: #fff !important;
-  box-shadow: 0 4px 16px rgba(255,77,77,0.15), 0 1px 8px #ffb366;
-  transform: scale(1.02);
+  background: transparent;
+  color: var(--main-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 0, 0, 0.2);
 }
 
 .cv-btn i {
@@ -394,26 +398,45 @@ section{
 }
 
 .cv-btn .btn-label {
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-  color: #fff !important;
-  text-shadow: 0 2px 8px rgba(255,0,0,0.25), 0 0px 2px #fff;
+  color: inherit;
+}
+
+.cv-btn.secondary {
+  background: transparent;
+  color: var(--main-color);
+}
+
+.cv-btn.secondary:hover {
+  background: var(--main-color);
+  color: white;
 }
 
 .cv-btn .btn-badge {
-  background: var(--bg-color);
-  color: rgba(255, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  padding: .3rem .6rem;
-  border-radius: .5rem;
+  padding: .2rem .5rem;
+  border-radius: 4px;
   line-height: 1;
-  border: .1rem solid rgba(255, 0, 0, 0.8);
-  transition: background .35s, color .35s;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .cv-btn:hover .btn-badge {
-  background: rgba(255, 0, 0, 0.8);
-  color: var(--bg-color);
+  background: rgba(240, 0, 0, 0.2);
+  color: var(--main-color);
+}
+
+.cv-btn.secondary .btn-badge {
+  background: rgba(240, 0, 0, 0.1);
+  color: var(--main-color);
+}
+
+.cv-btn.secondary:hover .btn-badge {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .btn-box .btn:hover{
@@ -477,10 +500,13 @@ section{
   color: var(--text-color);
   z-index: 1;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .home-sci a:hover{
   color: var(--bg-color);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 16px rgba(240, 0, 0, 0.4);
 }
 
 .home-sci a::before{
@@ -492,7 +518,7 @@ section{
   height: 100%;
   background: var(--main-color);
   z-index: -1;
-  transition: .5s;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .home-sci a:hover::before{
@@ -642,6 +668,7 @@ span {
   border: .2rem solid var(--main-color);
   border-radius: .6rem;
   margin-bottom: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .education-content .content::before{
@@ -653,11 +680,16 @@ span {
   height: 100%;
   background: var(--second-bg-color);
   z-index: -1;
-  transition: .5s;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .education-content .content:hover::before{
   width: 100%;
+}
+
+.education-content .content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .education-content  .content .year{
@@ -763,6 +795,7 @@ span {
   padding: .5rem 1.5rem;
   z-index: 1;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skills-box .skills-content::before{
@@ -774,10 +807,16 @@ span {
   height: 100%;
   background: var(--bg-color);
   z-index: -1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skills-box .skills-content:hover::before{
   width: 100%;
+}
+
+.skills-box .skills-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 0, 0, 0.15);
 }
 
 .skills-content .progress{
@@ -809,7 +848,7 @@ span {
   background: linear-gradient(90deg, var(--main-color), #ff3333, var(--main-color));
   background-size: 200% 100%;
   width: 0%;
-  transition: width 0.8s ease-in-out;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   animation: none;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
   position: relative;
@@ -920,12 +959,12 @@ span {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform .4s ease, box-shadow .4s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 1.2rem 2.4rem rgba(0,0,0,.35);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.25), 0 0 2rem rgba(240, 0, 0, 0.1);
 }
 
 .project-img-wrapper {
@@ -939,11 +978,12 @@ span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .6s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-box:hover .project-img-wrapper img {
-  transform: scale(1.08);
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .project-content {
@@ -999,7 +1039,7 @@ span {
   font-size: 2rem;
   position: relative;
   overflow: hidden;
-  transition: background .4s, color .4s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-links a::before {
@@ -1011,7 +1051,7 @@ span {
   height: 100%;
   background: var(--main-color);
   z-index: -1;
-  transition: .5s;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-links a:hover::before {
@@ -1020,6 +1060,8 @@ span {
 
 .project-links a:hover {
   color: var(--bg-color);
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 4px 12px rgba(240, 0, 0, 0.3);
 }
 
 /* Certifications Section */
@@ -1149,7 +1191,7 @@ span {
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   box-shadow: 0 4px 20px rgba(255,0,64,0.25), 0 2px 8px rgba(255,102,0,0.15);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact form .btn-box.btns .btn .btn-text{
@@ -1162,8 +1204,8 @@ span {
   background: linear-gradient(135deg, #ff6600 0%, #ff0040 100%) !important;
   border-color: #fff !important;
   color: #fff !important;
-  box-shadow: 0 6px 28px rgba(255,0,64,0.35), 0 3px 12px rgba(255,102,0,0.25);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255,0,64,0.4), 0 4px 16px rgba(255,102,0,0.3);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .contact form .btn-box.btns .btn:hover .btn-text{
@@ -1202,15 +1244,15 @@ span {
   border-radius: 50%;
   font-size: 2rem;
   color: var(--main-color);
-  transition: .5s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
 }
 
 .footer-social a:hover {
   background: var(--main-color);
   color: var(--second-bg-color);
-  box-shadow: 0 0 1rem var(--main-color);
-  transform: translateY(-0.3rem);
+  box-shadow: 0 0 2rem rgba(240, 0, 0, 0.5);
+  transform: translateY(-4px) scale(1.1);
 }
 
 .footer-text p{
