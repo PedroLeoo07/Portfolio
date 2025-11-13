@@ -2565,6 +2565,33 @@ span {
   line-height: 1.5;
 }
 
+/* Classes utilitárias para elementos ocultos */
+.hidden-video {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Estilo para introdução do contato */
+.contact-intro {
+  max-width: min(70rem, 95%);
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.contact-intro p {
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.9;
+  padding: 2rem;
+  background: var(--second-bg-color);
+  border-radius: 1rem;
+  border-left: 4px solid var(--main-color);
+}
+
 /* Responsive */
 @media (max-width: 991px) {
   .portfolio-app {
