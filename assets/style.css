@@ -127,9 +127,10 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   z-index: 100;
   transition: all 0.3s ease;
-  padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(4%, 5vw, 9%);
+  padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(3%, 4vw, 6%);
   min-height: 7.5rem;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(240, 0, 0, 0.1);
@@ -138,7 +139,8 @@ body{
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  flex-shrink: 0;
 }
 
 .header.sticky {
@@ -179,20 +181,38 @@ body.light .header.sticky {
 }
 
 .navbar{
-  display: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
 }
 
 .navbar a{
-  display: none;
+  font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  padding: 0.8rem 0;
+  opacity: 0.9;
+  white-space: nowrap;
 }
 
 .navbar a::after {
-  display: none;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+  transition: width 0.3s ease;
 }
 
 .navbar a:hover::after,
 .navbar a.active::after {
-  display: none;
+  width: 100%;
 }
 
 .navbar a::before,
@@ -202,7 +222,9 @@ body.light .header.sticky {
 
 .navbar a:hover,
 .navbar a.active{
-  display: none;
+  color: var(--main-color);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 #menu-icon {
@@ -1495,11 +1517,21 @@ span {
   
   /* Header responsivo para tablets */
   .header {
-    padding: 1.5rem 5%;
+    padding: 1.2rem 3%;
+    gap: 1rem;
+  }
+  
+  .navbar {
+    gap: 0.8rem;
+  }
+  
+  .navbar a {
+    font-size: 1.3rem;
+    padding: 0.6rem 0;
   }
   
   .header-controls {
-    gap: 1.2rem;
+    gap: 1rem;
   }
   
   /* Improved project grid for tablets */
@@ -1544,17 +1576,42 @@ span {
   .header {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(15px);
-    padding: 1.2rem 4%;
-    min-height: 6.5rem;
-    flex-wrap: nowrap;
-  }
-  
-  .header-controls {
+    padding: 1rem 3%;
+    min-height: auto;
+    flex-wrap: wrap;
     gap: 1rem;
   }
   
   .logo {
     font-size: 2rem;
+    order: 1;
+  }
+  
+  .header-controls {
+    gap: 1rem;
+    order: 2;
+    margin-left: auto;
+  }
+  
+  .navbar {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .navbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .navbar a {
+    font-size: 1.4rem;
+    padding: 0.5rem 0;
   }
   
   .lang-switch {
@@ -1586,33 +1643,7 @@ span {
     font-size: 2rem;
   }
 
-  .navbar {
-    display: none !important;
-  }
 
-  .navbar.active {
-    display: none !important;
-  }
-
-  .navbar a {
-    display: none !important;
-  }
-  
-  .navbar a:hover,
-  .navbar a.active {
-    display: none !important;
-  }
-
-  .navbar .active-nav {
-    display: none !important;
-  }
-
-  .navbar.active .active-nav {
-    display: none !important;
-  }
-
-  .navbar a {
-    display: none !important;
     color: var(--text-color);
   }
 
@@ -1729,16 +1760,35 @@ span {
   }
 
   .header {
-    padding: 1rem 4%;
-    min-height: 6rem;
-  }
-  
-  .header-controls {
+    padding: 1rem 3%;
+    min-height: auto;
+    flex-wrap: wrap;
     gap: .8rem;
   }
   
   .logo {
     font-size: 1.8rem;
+    order: 1;
+  }
+  
+  .header-controls {
+    gap: .8rem;
+    order: 2;
+    margin-left: auto;
+  }
+  
+  .navbar {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 0.3rem;
+    flex-wrap: wrap;
+  }
+  
+  .navbar a {
+    font-size: 1.2rem;
+    padding: 0.4rem 0;
   }
   
   .lang-switch {
