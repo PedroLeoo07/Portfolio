@@ -149,3 +149,55 @@
     padding: 4rem 4% 2rem;
   }
 }
+
+/* ===========================================
+   GARANTIA DE ÍCONES REDONDOS PROFISSIONAIS
+   =========================================== */
+
+/* Forçar todos os ícones a serem perfeitamente redondos em qualquer situação */
+.home-sci a,
+.footer-social a,
+.project-links a,
+.theme-toggle,
+#menu-icon {
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Tamanhos consistentes para ícones sociais e de projetos */
+.home-sci a,
+.footer-social a,
+.project-links a {
+  min-width: 4rem !important;
+  min-height: 4rem !important;
+  max-width: 4rem !important;
+  max-height: 4rem !important;
+}
+
+/* Tamanho consistente para botão de tema */
+.theme-toggle {
+  min-width: 4rem !important;
+  min-height: 4rem !important;
+  max-width: 4rem !important;
+  max-height: 4rem !important;
+}
+
+/* Menu mobile sempre redondo */
+#menu-icon {
+  min-width: 4.5rem !important;
+  min-height: 4.5rem !important;
+  max-width: 4.5rem !important;
+  max-height: 4.5rem !important;
+}
+
+/* Garantir que ícones dentro dos botões estejam centralizados */
+.home-sci a i,
+.footer-social a i,
+.project-links a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

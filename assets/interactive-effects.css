@@ -53,40 +53,64 @@
     51%, 100% { opacity: 0; }
 }
 
-/* Stats counter section */
+/* Stats counter section - Profissional e Humanizado */
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: rgba(240, 0, 0, 0.05);
-    border-radius: 15px;
-    border: 1px solid rgba(240, 0, 0, 0.2);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(240, 0, 0, 0.03), rgba(255, 51, 51, 0.05));
+    border-radius: 20px;
+    border: 1px solid rgba(240, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .stat-item {
     text-align: center;
-    padding: 1rem;
-    transition: transform 0.3s ease;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    position: relative;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(240, 0, 0, 0.05), transparent);
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(240, 0, 0, 0.15);
+}
+
+.stat-item:hover::before {
+    opacity: 1;
 }
 
 .counter {
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--main-color);
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--main-color), #ff3333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: -1px;
 }
 
 .stat-item span {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--text-color);
-    opacity: 0.8;
+    opacity: 0.85;
+    font-weight: 500;
+    letter-spacing: 0.2px;
 }
 
 /* Enhanced hover effects for profile image */

@@ -1,3 +1,8 @@
+/* ===========================================
+   PORTFOLIO PROFISSIONAL - LEONARDO OLIVEIRA
+   Todos os ícones são perfeitamente redondos
+   =========================================== */
+
 *{
   margin: 0;
   padding: 0;
@@ -37,9 +42,8 @@ body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content 
 
 /* Botão de alternância de tema */
 .theme-toggle {
-  width: 3.6rem;
-  height: 3.6rem;
-  margin-left: 2rem;
+  width: clamp(4rem, 5vw, 4.5rem);
+  height: clamp(4rem, 5vw, 4.5rem);
   border-radius: 50%;
   border: .2rem solid var(--main-color);
   background: var(--bg-color);
@@ -48,9 +52,10 @@ body, .header, .navbar a, .btn, .skills-box .skills-content, .education-content 
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
   color: var(--main-color);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex-shrink: 0;
 }
 
 .theme-toggle::before {
@@ -71,34 +76,43 @@ body.light .theme-toggle::before {
 
 /* Language switcher */
 .lang-switch {
-  margin-left: 1.5rem;
   background: var(--bg-color);
   color: var(--text-color);
   border: .2rem solid var(--main-color);
-  border-radius: .6rem;
-  padding: .6rem .8rem;
-  font-size: 1.2rem;
+  border-radius: .8rem;
+  padding: .8rem 1.2rem;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 6rem;
 }
-.lang-switch:focus { outline: none; }
+.lang-switch:focus { 
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
 .lang-switch:hover { 
   background: var(--main-color); 
   color: var(--bg-color); 
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 3px 12px rgba(240, 0, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(240, 0, 0, 0.3);
 }
 
 html{
   font-size: 62.5%;
   overflow-x: hidden;
-  /* Improved font scaling for better readability across devices */
+  scroll-behavior: smooth;
   font-size: clamp(56%, 0.5rem + 1vw, 62.5%);
 }
 
 body{
   background: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .header{
@@ -107,40 +121,78 @@ body{
   left: 0;
   width: 100%;
   padding: 2rem 9%;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  transition: .3s;
-  /* Better responsive padding */
-  padding: clamp(1rem, 2.5vw, 2rem) clamp(2%, 4vw, 9%);
-  /* Improved mobile layout */
-  min-height: 6rem;
+  transition: all 0.3s ease;
+  padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(4%, 5vw, 9%);
+  min-height: 7.5rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(240, 0, 0, 0.1);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .header.sticky {
-  background: var(--bg-color);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(240, 0, 0, 0.2);
+}
+
+body.light .header {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(209, 0, 0, 0.1);
+}
+
+body.light .header.sticky {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(209, 0, 0, 0.2);
 }
 
 .logo {
   position: relative;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--text-color);
-  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  background: linear-gradient(135deg, var(--main-color), #ff3333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  letter-spacing: 1px;
+  transform: translateY(-1px);
 }
 
 .navbar{
-  position: relative;
+  display: none;
 }
 
 .navbar a{
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  color: var(--text-color);
-  font-weight: 500;
-  margin-left: clamp(1.5rem, 3vw, 3.5rem);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
+  display: none;
+}
+
+.navbar a::after {
+  display: none;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  display: none;
 }
 
 .navbar a::before,
@@ -150,40 +202,16 @@ body{
 
 .navbar a:hover,
 .navbar a.active{
-  color: var(--main-color);
-  background: rgba(240, 0, 0, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transform: translateY(-1px);
-  text-shadow: 0 2px 8px rgba(240, 0, 0, 0.4);
+  display: none;
 }
 
 #menu-icon {
-  position: relative;
-  font-size: clamp(3rem, 5vw, 3.6rem);
-  color: var(--text-color);
-  cursor: pointer;
-  display: none;
-  /* Better touch target for mobile */
-  min-height: 44px;
-  min-width: 44px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
+  display: none !important;
 }
 
 #menu-icon:hover,
 #menu-icon:focus {
-  background: var(--main-color);
-  color: var(--bg-color);
-  outline: 2px solid var(--main-color);
-  outline-offset: 2px;
-  transform: scale(1.05);
+  display: none !important;
 }
 
 section{
@@ -207,8 +235,8 @@ section{
 }
 
 .home-profile-img {
-  width: clamp(16rem, 28vw, 34rem);
-  height: clamp(16rem, 28vw, 34rem);
+  width: clamp(18rem, 30vw, 36rem);
+  height: clamp(18rem, 30vw, 36rem);
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
   margin-left: clamp(1rem, 3vw, 4rem);
@@ -218,7 +246,14 @@ section{
   order: 2;
   position: relative;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
+  filter: drop-shadow(0 8px 30px rgba(240, 0, 0, 0.2));
+  transition: all 0.4s ease;
+}
+
+.home-profile-img:hover {
+  transform: translateY(-5px) scale(1.02);
+  filter: drop-shadow(0 12px 40px rgba(240, 0, 0, 0.3));
 }
 
 .home-profile-img img {
@@ -226,15 +261,17 @@ section{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% - .4rem); /* Ajuste para compensar a borda */
-  height: calc(100% - .4rem);
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  object-position: center center; /* Centraliza a imagem dentro do círculo */
+  object-position: center center;
   border-radius: 50%;
-  border: .2rem solid var(--main-color);
+  border: 4px solid var(--main-color);
   display: block;
-  z-index: 1; /* Fica atrás do círculo animado */
+  z-index: 1;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
 @media (max-width: 991px) {
@@ -305,11 +342,13 @@ section{
 .home-content h1 {
   position: relative;
   display: inline-block;
-  font-size: clamp(2.8rem, 6vw, 5.6rem);
+  font-size: clamp(3rem, 6vw, 5.6rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
   max-width: 100%;
   word-wrap: break-word;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 .home-content h1 span {
   color: var(--text-color);
@@ -323,13 +362,17 @@ section{
 }
 
 .home-content .text-animate h3{
-  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  color: var(--main-color);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--main-color), #ff3333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   position: relative;
   white-space: nowrap;
   min-width: fit-content;
   width: auto;
+  letter-spacing: 0.3px;
 }
 
 .home-content .text-animate h3::after {
@@ -342,9 +385,12 @@ section{
 
 .home-content p{
   position: relative;
-  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-  margin: 2rem 0 4rem;
-  line-height: 1.6;
+  font-size: clamp(1.4rem, 2.5vw, 1.65rem);
+  margin: 2.5rem 0 4rem;
+  line-height: 1.8;
+  opacity: 0.92;
+  font-weight: 400;
+  letter-spacing: 0.2px;
 }
 
 .btn-box{
@@ -364,46 +410,56 @@ section{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: clamp(15rem, 30vw, 22rem);
-  height: clamp(4.5rem, 9vw, 5.5rem);
+  min-width: clamp(16rem, 30vw, 22rem);
+  height: clamp(5rem, 9vw, 5.8rem);
   background: var(--main-color);
   border: .2rem solid var(--main-color);
-  border-radius: .8rem;
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  border-radius: 1rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
   font-weight: 600;
-  letter-spacing: .1rem;
+  letter-spacing: .05rem;
   color: #fff;
   z-index: 1;
   text-decoration: none;
-  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.28s ease-out, box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(240, 0, 0, 0.3);
 }
 
-/* Botões de CV mais humanos */
+.btn-box .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(240, 0, 0, 0.4);
+  border-color: #ff3333;
+  background: linear-gradient(135deg, var(--main-color), #ff3333);
+}
+
+/* Botões de CV mais profissionais e humanizados */
 .cv-btn {
-  padding: 1.2rem 2rem;
-  gap: .8rem;
+  padding: 1.4rem 2.5rem;
+  gap: 1rem;
   width: auto;
-  min-width: clamp(13rem, 32vw, 15rem);
-  background: var(--main-color);
-  border: 2px solid var(--main-color);
-  border-radius: 8px;
+  min-width: clamp(16rem, 32vw, 18rem);
+  background: linear-gradient(135deg, var(--main-color), #ff3333);
+  border: 2px solid transparent;
+  border-radius: 1rem;
   color: #fff;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-family: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 20px rgba(240, 0, 0, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .cv-btn:hover {
-  background: var(--main-color);
+  background: linear-gradient(135deg, #ff3333, var(--main-color));
   color: #fff;
-  transform: translateY(-2px) translateX(-0.5px) scale(1.03) rotate(0.3deg);
-  box-shadow: 0 6px 22px rgba(240, 0, 0, 0.35), 1px 3px 12px rgba(255, 0, 0, 0.15);
-  border-color: var(--main-color);
-  filter: brightness(1.06) contrast(1.05);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(240, 0, 0, 0.45);
+  filter: brightness(1.1);
 }
 
 .cv-btn i {
@@ -496,12 +552,12 @@ section{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: clamp(3.2rem, 6vw, 4rem);
-  height: clamp(3.2rem, 6vw, 4rem);
+  width: 4rem;
+  height: 4rem;
   background: var(--bg-color);
   border: .2rem solid var(--main-color);
   border-radius: 50%;
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: 2rem;
   color: var(--text-color);
   z-index: 1;
   overflow: hidden;
@@ -545,9 +601,12 @@ section{
 
 .heading{
   position: relative;
-  font-size: clamp(3rem, 6vw, 5rem);
-  margin-bottom: 3rem;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  margin-bottom: 4rem;
   text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 span {
@@ -556,15 +615,22 @@ span {
 
 .about-img{
   position: relative;
-  width: clamp(16rem, 28vw, 34rem);
-  height: clamp(16rem, 28vw, 34rem);
+  width: clamp(18rem, 28vw, 36rem);
+  height: clamp(18rem, 28vw, 36rem);
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
+  filter: drop-shadow(0 8px 30px rgba(240, 0, 0, 0.2));
+  transition: all 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 12px 40px rgba(240, 0, 0, 0.3));
 }
 
 .about-img img {
@@ -572,22 +638,23 @@ span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% - .6rem); /* Ajuste para compensar a borda */
-  height: calc(100% - .6rem);
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  object-position: center center; /* Centraliza a imagem dentro do círculo */
+  object-position: center center;
   border-radius: 50%;
-  border: .3rem solid var(--main-color);
+  border: 4px solid var(--main-color);
   display: block;
-  z-index: 1; /* Fica atrás do círculo animado */
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
 .about-img img:hover {
-  transform: translate(-50%, -50%) scale(1.03) rotate(0.5deg);
-  border-color: var(--main-color);
-  box-shadow: 0 0 25px rgba(240, 0, 0, 0.5), 2px 2px 15px rgba(240, 0, 0, 0.2);
+  transform: translate(-50%, -50%) scale(1.02);
+  border-color: #ff3333;
+  box-shadow: 0 0 30px rgba(240, 0, 0, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-img .circle-spin{
@@ -598,12 +665,31 @@ span {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border-top: .2rem solid var(--second-bg-color);
-  border-bottom: .2rem solid var(--second-bg-color);
-  border-left: .2rem solid var(--main-color);
-  border-right: .2rem solid var(--main-color);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid var(--main-color);
+  border-right: 3px solid #ff3333;
   animation: abountSpinner 8s linear infinite;
-  z-index: 2; /* Fica na frente da imagem */
+  z-index: 2;
+  opacity: 0.8;
+}
+
+/* Círculo animado da home também */
+.home-profile-img .circle-spin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid var(--main-color);
+  border-right: 3px solid #ff3333;
+  animation: abountSpinner 8s linear infinite;
+  z-index: 2;
+  opacity: 0.8;
 }
 
 .about-content {
@@ -611,14 +697,24 @@ span {
 }
 
 .about-content h3{
-  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--main-color), #ff3333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.3px;
 }
 
 .about-content p{
-  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.65rem);
   margin: 2rem 0 3rem;
-  line-height: 1.6;
-  max-width: 80rem;
+  line-height: 1.8;
+  max-width: 85rem;
+  opacity: 0.92;
+  font-weight: 400;
+  letter-spacing: 0.2px;
 }
 
 .btn-box.btns{
@@ -1261,6 +1357,7 @@ span {
   color: var(--main-color);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .footer-social a:hover {
@@ -1396,9 +1493,13 @@ span {
     justify-content: center;
   }
   
-  /* Better navigation for tablets */
-  .navbar a {
-    margin-left: clamp(1.5rem, 2.5vw, 3rem);
+  /* Header responsivo para tablets */
+  .header {
+    padding: 1.5rem 5%;
+  }
+  
+  .header-controls {
+    gap: 1.2rem;
   }
   
   /* Improved project grid for tablets */
@@ -1441,80 +1542,77 @@ span {
   }
 
   .header {
-    background: var(--bg-color);
-    padding: 1.5rem 4%;
-    /* Improve mobile header height */
-    min-height: 7rem;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 1.2rem 4%;
+    min-height: 6.5rem;
     flex-wrap: nowrap;
+  }
+  
+  .header-controls {
+    gap: 1rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .lang-switch {
+    padding: .7rem 1rem;
+    font-size: 1.2rem;
+    min-width: 5.5rem;
+  }
+  
+  .theme-toggle {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.8rem;
   }
 
   #menu-icon {
-    display: flex;
-    font-size: 3.2rem;
+    display: none !important;
+    font-size: 3rem;
+  }
+  
+  .footer-social a {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+  }
+  
+  .theme-toggle {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
   }
 
   .navbar {
-    position: absolute;
-    top: 100%;
-    left: -100%;
-    width: 100%;
-    padding: 2rem 4%;
-    background: var(--bg-color);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-    z-index: 1;
-    transition: .25s ease;
-    transition-delay: .25s;
-    display: block;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    display: none !important;
   }
 
   .navbar.active {
-    left: 0;
-    transition-delay: 0s;
+    display: none !important;
   }
 
   .navbar a {
-    display: block;
-    font-size: 2rem;
-    margin: 1.5rem 0;
-    color: var(--text-color);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
+    display: none !important;
   }
   
   .navbar a:hover,
   .navbar a.active {
-    background: var(--main-color);
-    color: white;
+    display: none !important;
   }
 
   .navbar .active-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-    border-top: .1rem solid rgba(0, 0, 0, .2);
-    z-index: -1;
-    transition: .25s ease;
-    transition-delay: .25s;
+    display: none !important;
   }
 
   .navbar.active .active-nav {
-    left: 0;
-    transition-delay: .25s;
+    display: none !important;
   }
 
   .navbar a {
-    display: block;
-    font-size: 2rem;
-    margin: 3rem 0;
-    transform: translateX(0);
-    transition: .25s ease;
-    transition-delay: 0s;
+    display: none !important;
     color: var(--text-color);
   }
 
@@ -1556,6 +1654,12 @@ span {
     width: 100%;
     justify-content: center;
     gap: 1.5rem;
+  }
+  
+  .home-sci a {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
   }
 
   .btn-box {
@@ -1625,7 +1729,28 @@ span {
   }
 
   .header {
-    padding: 1.5rem 3%;
+    padding: 1rem 4%;
+    min-height: 6rem;
+  }
+  
+  .header-controls {
+    gap: .8rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+  }
+  
+  .lang-switch {
+    padding: .6rem .9rem;
+    font-size: 1.1rem;
+    min-width: 5rem;
+  }
+  
+  .theme-toggle {
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1.7rem;
   }
 
   section {
@@ -2757,6 +2882,48 @@ span {
   }
 }
 
+/* ===========================================
+   ÍCONES PROFISSIONAIS - PADRÃO REDONDO
+   =========================================== */
+
+/* Garantindo que TODOS os ícones sejam perfeitamente redondos */
+.home-sci a,
+.footer-social a,
+.project-links a,
+.theme-toggle,
+#menu-icon {
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Padronização de tamanhos para consistência profissional */
+.home-sci a,
+.footer-social a,
+.project-links a {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border: .2rem solid var(--main-color);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-toggle {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+}
+
+/* Hover effects profissionais */
+.home-sci a:hover,
+.footer-social a:hover,
+.project-links a:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(240, 0, 0, 0.4);
+}
+
 @media (max-width: 462px) {
   .portfolio-app {
     padding: 5rem 4% 2rem;
@@ -2810,5 +2977,43 @@ span {
   
   .error-message {
     font-size: 1.1rem;
+  }
+}
+
+/* Responsividade extra para telas muito pequenas */
+@media (max-width: 365px) {
+  .header {
+    padding: .9rem 3%;
+    min-height: 5.8rem;
+  }
+  
+  .header-controls {
+    gap: .7rem;
+  }
+  
+  .logo {
+    font-size: 1.7rem;
+  }
+  
+  .lang-switch {
+    padding: .6rem .8rem;
+    font-size: 1.1rem;
+    min-width: 4.8rem;
+  }
+  
+  .theme-toggle {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 1.6rem;
+  }
+  
+  .home-profile-img {
+    width: clamp(10rem, 75vw, 20rem);
+    height: clamp(10rem, 75vw, 20rem);
+  }
+  
+  .about-img {
+    width: clamp(10rem, 65vw, 18rem);
+    height: clamp(10rem, 65vw, 18rem);
   }
 }
