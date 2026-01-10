@@ -196,11 +196,12 @@ body {
   font-weight: var(--font-weight-bold);
   color: var(--primary);
   text-decoration: none;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: rotate(-0.5deg);
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(0.8deg);
 }
 
 .navbar ul {
@@ -370,10 +371,27 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
+  margin-top: 0.5rem;
 }
 
 .stat {
   text-align: center;
+  padding: 1rem 0.8rem;
+  background: rgba(37, 99, 235, 0.03);
+  border-radius: 12px 16px 14px 18px;
+  border: 1px solid rgba(37, 99, 235, 0.08);
+  transform: rotate(0.2deg);
+  transition: all 0.3s ease;
+}
+
+.stat:nth-child(2) {
+  transform: rotate(-0.3deg);
+  margin-top: 0.5rem;
+}
+
+.stat:nth-child(3) {
+  transform: rotate(0.4deg);
+  margin-top: -0.3rem;
 }
 
 .stat-number {
@@ -397,20 +415,21 @@ body {
 
 .hero-image-wrapper {
   position: relative;
-  width: 400px;
-  height: 500px;
-  border-radius: var(--radius-xl);
+  width: 385px;
+  height: 485px;
+  border-radius: 24px 28px 22px 26px;
   overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  padding: 8px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+  background: linear-gradient(138deg, var(--primary), var(--secondary));
+  padding: 6px 8px 7px 6px;
+  transform: rotate(-1.2deg);
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  border-radius: 18px 22px 20px 24px;
 }
 
 .floating-element {
@@ -424,9 +443,10 @@ body {
   justify-content: center;
   font-size: 1.4rem;
   color: var(--primary);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.12), 0 1px 3px rgba(0,0,0,0.05);
   animation: floatOrganic 7s ease-in-out infinite;
-  transform: rotate(1deg);
+  transform: rotate(1.2deg);
+  border: 1px solid rgba(37, 99, 235, 0.08);
 }
 
 @keyframes floatOrganic {
@@ -442,27 +462,33 @@ body {
 }
 
 .floating-element-1 {
-  top: 10%;
-  right: -10%;
-  animation-delay: 0s;
+  top: 12%;
+  right: -8%;
+  animation-delay: 0.3s;
 }
 
 .floating-element-2 {
-  top: 50%;
-  left: -15%;
-  animation-delay: 2s;
+  top: 52%;
+  left: -13%;
+  animation-delay: 2.1s;
 }
 
 .floating-element-3 {
-  bottom: 20%;
-  right: -5%;
-  animation-delay: 4s;
+  bottom: 18%;
+  right: -3%;
+  animation-delay: 4.2s;
 }
 
 .floating-element-4 {
-  top: 75%;
-  left: 15%;
-  animation-delay: 6s;
+  top: 78%;
+  left: 18%;
+  animation-delay: 6.1s;
+}
+
+.floating-element-5 {
+  top: 28%;
+  right: 12%;
+  animation-delay: 1.5s;
 }
 
 @keyframes float {
@@ -482,16 +508,30 @@ body {
 }
 
 .scroll-arrow {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--transition);
-  animation: bounce 2s infinite;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: bounceOrganic 3s infinite;
+  transform: rotate(-1deg);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+@keyframes bounceOrganic {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  45% {
+    transform: translateY(-4px) rotate(-0.3deg);
+  }
 }
 
 .scroll-arrow:hover {
@@ -537,13 +577,17 @@ body {
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-md);
   color: var(--text-primary);
+  transform: rotate(-0.2deg);
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
   font-size: var(--font-size-lg);
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
+  line-height: 1.65;
+  transform: rotate(0.1deg);
 }
 
 /* ===== BUTTONS ===== */
@@ -743,26 +787,48 @@ body {
 }
 
 /* ===== SKILL CARDS ===== */
+.skill-card {
+  background: var(--bg-secondary);
+  padding: 1.8rem 2rem 2rem 1.9rem;
+  border-radius: 16px 20px 18px 22px;
+  border: 1px solid var(--border);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: rotate(0.2deg);
+  position: relative;
+}
+
+.skill-card:nth-child(even) {
+  transform: rotate(-0.3deg);
+  margin-top: 0.5rem;
+}
+
+.skill-card:nth-child(odd) {
+  transform: rotate(0.4deg);
+  margin-bottom: 0.3rem;
+}
+
 .skill-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) rotate(0.3deg);
+  border-color: rgba(37, 99, 235, 0.7);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
 }
 
 .skill-bar {
-  height: 8px;
-  background: rgba(37, 99, 235, 0.1);
-  border-radius: 50px;
+  height: 9px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 6px 8px 7px 9px;
   overflow: hidden;
   position: relative;
+  margin: 0.4rem 0;
 }
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-radius: 50px;
-  transition: width 1.5s ease-in-out;
+  background: linear-gradient(92deg, var(--primary), var(--secondary));
+  border-radius: 6px 8px 7px 9px;
+  transition: width 1.8s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .skill-progress::after {
@@ -814,9 +880,21 @@ body {
 
 /* ===== PROJECT CARD ENHANCEMENTS ===== */
 .project-card {
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
   position: relative;
+  border-radius: 18px 22px 20px 24px;
+  transform: rotate(0.1deg);
+}
+
+.project-card:nth-child(even) {
+  transform: rotate(-0.2deg);
+  margin-top: 0.8rem;
+}
+
+.project-card:nth-child(odd) {
+  transform: rotate(0.3deg);
+  margin-bottom: 0.5rem;
 }
 
 .project-card::before {
@@ -826,9 +904,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.05));
+  background: linear-gradient(138deg, rgba(37, 99, 235, 0.04), rgba(59, 130, 246, 0.04));
   opacity: 0;
-  transition: var(--transition);
+  transition: all 0.4s ease;
   pointer-events: none;
 }
 
@@ -837,9 +915,9 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--primary);
+  transform: translateY(-8px) scale(1.015) rotate(-0.2deg);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border-color: rgba(37, 99, 235, 0.6);
 }
 
 /* ===== SOCIAL LINKS HOVER ===== */
@@ -854,16 +932,17 @@ a[href*="whatsapp"]:hover {
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(0.2deg);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1.05);
+    opacity: 0.85;
+    transform: scale(1.03) rotate(-0.1deg);
   }
 }
 
 .hero-greeting {
-  animation: pulse 3s ease-in-out infinite;
+  animation: pulse 4s ease-in-out infinite;
+  transform-origin: left center;
 }
 
 /* ===== SCROLL INDICATOR ENHANCEMENT ===== */
@@ -885,4 +964,250 @@ textarea:focus {
   outline: none !important;
   border-color: var(--primary) !important;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* ===== TIMELINE HUMANIZADO ===== */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  border-radius: 1.5px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--primary);
+  border: 3px solid var(--bg-primary);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-content {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px); /* Movimento orgânico no hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* ===== FEATURE CARDS HUMANIZADOS ===== */
+.feature-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, transparent, rgba(37, 99, 235, 0.03));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card:nth-child(even) {
+  /* Remover rotação */
+}
+
+.feature-card:nth-child(odd) {
+  /* Remover rotação */
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== SKILL CARDS ORGÂNICOS ===== */
+.skill-card {
+  transition: all 0.3s ease;
+}
+
+.skill-card:nth-child(2) {
+  /* Remover rotação */
+}
+
+.skill-card:nth-child(3) {
+  /* Remover rotação */
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== SKILL BARS MELHORADOS ===== */
+.skill-bar {
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 4px;
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ===== BOTÕES MAIS HUMANIZADOS ===== */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* ===== HERO STATS MELHORADOS ===== */
+.stat {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stat:nth-child(1) {
+  /* Remover rotação */
+}
+
+.stat:nth-child(2) {
+  /* Remover rotação */
+}
+
+.stat:nth-child(3) {
+  /* Remover rotação */
+}
+
+.stat:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ===== ELEMENTOS FLUTUANTES ORGÂNICOS ===== */
+.floating-element {
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.floating-element-1 {
+  animation-name: float1;
+  animation-delay: 0s;
+}
+
+.floating-element-2 {
+  animation-name: float2;
+  animation-delay: 1s;
+}
+
+.floating-element-3 {
+  animation-name: float3;
+  animation-delay: 2s;
+}
+
+.floating-element-4 {
+  animation-name: float4;
+  animation-delay: 0.5s;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(-5px) rotate(-0.5deg); }
+  75% { transform: translateY(-15px) rotate(0.8deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(-1deg); }
+  66% { transform: translateY(-12px) rotate(0.7deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  20% { transform: translateY(-6px) rotate(0.5deg); }
+  40% { transform: translateY(-14px) rotate(-0.8deg); }
+  80% { transform: translateY(-4px) rotate(0.3deg); }
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-9px) rotate(-0.6deg); }
+  70% { transform: translateY(-11px) rotate(1.2deg); }
 }
