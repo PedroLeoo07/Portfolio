@@ -1,0 +1,339 @@
+/* ===========================================
+   SISTEMA DE TEMAS PARA PROJETOS
+   Design profissional com foco em leitura e UX
+   =========================================== */
+
+/* =================== TOKENS CSS =================== */
+:root {
+  /* Tema Claro (Light Mode) - Foco em leitura */
+  --project-bg-light: #F8FAFC;
+  --project-card-bg-light: #FFFFFF;
+  --project-title-light: #020617;
+  --project-text-light: #475569;
+  --project-badge-bg-light: #E0E7FF;
+  --project-badge-text-light: #3730A3;
+  --project-btn-primary-light: #2563EB;
+  --project-btn-github-light: #0F172A;
+  --project-border-light: #E2E8F0;
+  
+  /* Tema Escuro (Dark Mode) - Visual tech moderno */
+  --project-bg-dark: #020617;
+  --project-card-bg-dark: #0F172A;
+  --project-title-dark: #E5E7EB;
+  --project-text-dark: #94A3B8;
+  --project-badge-bg-dark: #1E293B;
+  --project-badge-text-dark: #93C5FD;
+  --project-btn-primary-dark: #38BDF8;
+  --project-btn-github-dark: #E5E7EB;
+  --project-border-dark: #1E293B;
+  
+  /* Variáveis ativas (padrão: tema escuro) */
+  --project-bg: var(--project-bg-dark);
+  --project-card-bg: var(--project-card-bg-dark);
+  --project-title: var(--project-title-dark);
+  --project-text: var(--project-text-dark);
+  --project-badge-bg: var(--project-badge-bg-dark);
+  --project-badge-text: var(--project-badge-text-dark);
+  --project-btn-primary: var(--project-btn-primary-dark);
+  --project-btn-github: var(--project-btn-github-dark);
+  --project-border: var(--project-border-dark);
+}
+
+/* Tema claro ativo */
+body.light {
+  --project-bg: var(--project-bg-light);
+  --project-card-bg: var(--project-card-bg-light);
+  --project-title: var(--project-title-light);
+  --project-text: var(--project-text-light);
+  --project-badge-bg: var(--project-badge-bg-light);
+  --project-badge-text: var(--project-badge-text-light);
+  --project-btn-primary: var(--project-btn-primary-light);
+  --project-btn-github: var(--project-btn-github-light);
+  --project-border: var(--project-border-light);
+}
+
+/* =================== LAYOUT DA SEÇÃO =================== */
+.projects {
+  background: var(--project-bg);
+  padding: 8rem 9% 7rem;
+  min-height: 100vh;
+  transition: background-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.projects .heading {
+  text-align: center;
+  margin-bottom: 5rem;
+  color: var(--project-title);
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =================== CARDS DOS PROJETOS =================== */
+.project-box {
+  background: var(--project-card-bg);
+  border: 1px solid var(--project-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Featured project (opcional) */
+.project-box.featured {
+  border: 2px solid var(--project-btn-primary);
+  position: relative;
+}
+
+.project-box.featured::before {
+  content: 'FEATURED';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--project-btn-primary);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+/* Hover sutil no card */
+.project-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px var(--project-btn-primary);
+  border-color: var(--project-btn-primary);
+}
+
+/* =================== HIERARQUIA DO CONTEÚDO =================== */
+
+/* 1. Imagem / Preview */
+.project-img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--project-border);
+  position: relative;
+}
+
+.project-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-box:hover .project-img-wrapper img {
+  transform: scale(1.05);
+}
+
+/* 2. Nome do projeto (forte) */
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--project-title);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* 3. Descrição curta (1-2 linhas) */
+.project-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--project-text);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 4. Stack (badges discretos) */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.project-tags span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  background: var(--project-badge-bg);
+  color: var(--project-badge-text);
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.project-tags span:hover {
+  background: var(--project-btn-primary);
+  color: white;
+  border-color: var(--project-btn-primary);
+}
+
+/* 5. Ações (Demo / GitHub) */
+.project-links {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.project-links a {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Botão "Ver projeto" */
+.project-links a.btn-demo {
+  background: var(--project-btn-primary);
+  color: white;
+  border: 2px solid var(--project-btn-primary);
+}
+
+.project-links a.btn-demo:hover {
+  background: transparent;
+  color: var(--project-btn-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão "GitHub" */
+.project-links a.btn-github {
+  background: transparent;
+  color: var(--project-btn-github);
+  border: 2px solid var(--project-border);
+}
+
+.project-links a.btn-github:hover {
+  background: var(--project-btn-github);
+  color: white;
+  border-color: var(--project-btn-github);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .projects {
+    padding: 6rem 5% 5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-content {
+    padding: 20px;
+  }
+  
+  .project-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .project-content p {
+    font-size: 0.9rem;
+  }
+  
+  .project-img-wrapper {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 5rem 3% 4rem;
+  }
+  
+  .project-content {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .project-img-wrapper {
+    height: 160px;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* =================== ESTADOS E ANIMAÇÕES =================== */
+.project-box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-box.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Transições suaves entre temas */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* =================== LOADING STATES =================== */
+.project-img-wrapper {
+  background: linear-gradient(
+    90deg,
+    var(--project-border) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    var(--project-border) 100%
+  );
+  background-size: 200% 100%;
+}
+
+.project-img-wrapper:empty {
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
