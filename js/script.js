@@ -1,30 +1,80 @@
-let menuIcon = document.querySelector('#menu-icon');
+// Mobile menu toggle functionality
+let mobileToggle = document.querySelector('#mobile-toggle');
 let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-    const isOpen = menuIcon.classList.contains('bx-x');
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-    
-    // Update ARIA attributes for accessibility
-    menuIcon.setAttribute('aria-expanded', !isOpen);
-    
-    // Focus management
-    if (!isOpen) {
-        // Menu is opening - focus first nav item
-        const firstNavItem = navbar.querySelector('a');
-        if (firstNavItem) {
-            setTimeout(() => firstNavItem.focus(), 100);
+// Função para toggle do menu mobile
+function toggleMobileMenu() {
+    if (mobileToggle && navbar) {
+        const isOpen = navbar.classList.contains('active');
+        
+        navbar.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+        
+        // Update ARIA attributes for accessibility
+        mobileToggle.setAttribute('aria-expanded', !isOpen);
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isOpen ? 'hidden' : '';
+        
+        // Focus management
+        if (!isOpen) {
+            // Menu is opening - focus first nav item
+            const firstNavItem = navbar.querySelector('.nav-link');
+            if (firstNavItem) {
+                setTimeout(() => firstNavItem.focus(), 100);
+            }
         }
     }
 }
 
+// Event listener for mobile toggle
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', toggleMobileMenu);
+}
+
+// Close menu when clicking nav links (mobile)
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navbar.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
-        menuIcon.classList.remove('bx-x');
+    if (navbar && mobileToggle && 
+        !navbar.contains(e.target) && 
+        !mobileToggle.contains(e.target) && 
+        navbar.classList.contains('active')) {
         navbar.classList.remove('active');
-        menuIcon.setAttribute('aria-expanded', 'false');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+});
+
+// Handle escape key to close mobile menu
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navbar && navbar.classList.contains('active')) {
+        navbar.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        mobileToggle.focus();
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navbar && navbar.classList.contains('active')) {
+        navbar.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
     }
 });
 
@@ -44,9 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
 let touchStartX = 0;
 let touchEndX = 0;
 
-navbar.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-});
+if (navbar) {
+    navbar.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+}
 
 navbar.addEventListener('touchend', e => {
     touchEndX = e.changedTouches[0].screenX;
