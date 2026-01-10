@@ -4,19 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0, minimum-scale=0.5">
-  <meta name="description" content="Portfolio de Leonardo Oliveira - Desenvolvedor Full-Stack especializado em JavaScript, Node.js, React e Next.js">
-  <meta name="theme-color" content="#3B82F6">
+  <meta name="description" content="Leonardo Oliveira - Desenvolvedor Full Stack especializado em tecnologias modernas. Criando experiências digitais excepcionais com React, Node.js, Next.js e mais.">
+  <meta name="theme-color" content="#2563EB">
   <meta name="format-detection" content="telephone=no">
   <meta name="mobile-web-app-capable" content="yes">
-  <!-- Cache busting -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>Leonardo Oliveira - Portfolio</title>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Leonardo Oliveira - Desenvolvedor Full Stack">
+  <meta property="og:description" content="Desenvolvedor Full Stack especializado em tecnologias modernas. Criando experiências digitais excepcionais.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./images/fotodoPai.jpg">
+  
+  <title>Leonardo Oliveira - Desenvolvedor Full Stack</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/final-professional.css">
+  <link rel="stylesheet" href="./assets/modern-system.css">
+  <link rel="stylesheet" href="./assets/modern-components.css">
+  <link rel="stylesheet" href="./assets/premium-components.css">
+  <link rel="stylesheet" href="./assets/education-skills.css">
   <link rel="stylesheet" href="./assets/project-themes.css">
   <link rel="stylesheet" href="./assets/professional-enhancements.css">
   <link rel="stylesheet" href="./assets/responsive-enhancements.css">
@@ -24,277 +35,655 @@
   <link rel="stylesheet" href="./assets/interactive-effects.css">
   <link rel="stylesheet" href="./assets/ultra-interactive.css">
   <link rel="stylesheet" href="./assets/app-modal.css">
+  
+  <!-- Icons -->
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <!-- Preload critical resources -->
-  <link rel="preload" href="./assets/style.css" as="style">
-  <link rel="preload" href="./js/script.js" as="script">
 </head>
 <body>
-    <header class="header" role="banner">
-        <a href="#" class="logo" aria-label="Leonardo Oliveira - Home">Leonardo.</a>
-
-        <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
-          <a href="#home" class="active" aria-current="page" data-i18n="nav-home">Home</a>
-          <a href="#about" data-i18n="nav-about">About</a>
-          <a href="#education" data-i18n="nav-education">Education</a>
-          <a href="#certifications" data-i18n="nav-certifications">Certifications</a>
-          <a href="#skills" data-i18n="nav-skills">Skills</a>
-          <a href="#projects" data-i18n="nav-projects">Projects</a>
-          <a href="#contact" data-i18n="nav-contact">Contact</a>
-        </nav>
-
-        <div class="header-controls">
-          <select id="lang-switch" aria-label="Escolher idioma" class="lang-switch">
-            <option value="pt">PT</option>
-            <option value="en">EN</option>
-          </select>
-          <button id="theme-toggle" aria-label="Alternar tema claro/escuro" class="theme-toggle" title="Alterar tema"></button>
-        </div>
-    </header>
-
-    <section class="home parallax-section reveal" id="home">
-      <!-- Imagem adicionada da seção About para a Home (lado esquerdo) -->
-      <div class="about-img home-profile-img parallax-element" data-speed="0.3">
-        <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" loading="lazy">
-        <span class="circle-spin"></span>
+  <!-- === HEADER MODERNO === -->
+  <header class="header" id="header">
+    <div class="header-content">
+      <a href="#home" class="logo" aria-label="Leonardo Oliveira - Home">Leonardo.</a>
+      
+      <nav class="navbar" id="navbar">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-i18n="nav-home">Início</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav-about">Sobre</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Skills</a></li>
+          <li><a href="#education" class="nav-link" data-i18n="nav-education">Formação</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav-projects">Projetos</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contato</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-controls">
+        <select id="lang-switch" aria-label="Escolher idioma" class="lang-switch">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+        </select>
+        <button id="theme-toggle" aria-label="Alternar tema" class="theme-toggle" title="Alterar tema">
+          <i class='bx bx-moon'></i>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <div class="home-content reveal">
-        <h1>Oi, eu sou o <span class="gradient-text">Leonardo</span></h1>
-        <div class="text-animate">
-          <h3 class="typing-text" data-i18n="role">Full Stack-Developer</h3>
-        </div>
+    </div>
+  </header>
 
-  <p data-i18n="intro">Cara, programar é viciante! Comecei fazendo joguinhos bestas no Unity e hoje tô aqui criando sites e apps. Curto mexer tanto na parte visual (que o pessoal vê) quanto no back-end (onde a mágica acontece). React virou meu melhor amigo, Node.js tá sempre comigo e PostgreSQL... bom, ainda tô aprendendo a dominar esse bicho. Sempre tem algo novo pra aprender e eu amo quando consigo resolver um bug que tava me matando há horas!</p>
-
-        <div class="btn-box">
-          <a href="https://curriculo-online-three.vercel.app/" class="btn cv-btn" id="curriculo-btn">
-            <i class='bx bx-link-external'></i>
-            <span class="btn-label">MEU CURRÍCULO ONLINE</span>
-          </a>
+  <!-- === HERO SECTION MODERNO === -->
+  <main class="main">
+    <section class="hero section active" id="home">
+      <div class="hero-bg">
+        <div class="hero-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
         </div>
       </div>
-
-      <div class="home-sci">
-          <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" title="LinkedIn"> <i class='bx bxl-linkedin'></i></a>
-          <a href="https://github.com/PedroLeoo07" title="GitHub"> <i class='bx bxl-github'></i></a>
-         <a href="https://wa.me/5519988727143" title="WhatsApp">  <i class='bx bxl-whatsapp'></i></a>
-          <a href="https://www.instagram.com/oliveir._leo/" title="Instagram"><i class='bx bxl-instagram'></i></a>
-          <a href="https://www.behance.net/" aria-label="Behance" target="_blank" rel="noopener" title="Behance"><i class='bx bxl-behance'></i></a>
+      
+      <div class="hero-content container grid">
+        <div class="hero-info">
+          <div class="hero-label">
+            <span class="hero-greeting" data-i18n="hero-greeting">Olá, eu sou</span>
+          </div>
           
+          <h1 class="hero-title">
+            <span class="hero-name">Leonardo Oliveira</span>
+            <span class="hero-role gradient-text" id="hero-role" data-i18n="hero-role">Desenvolvedor Full-Stack</span>
+          </h1>
+          
+          <p class="hero-description" data-i18n="hero-description">
+            Desenvolvedor apaixonado por criar soluções inovadoras e experiências digitais únicas. 
+            Especializado em tecnologias modernas e sempre em busca de novos desafios.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="hero-cta-projects">Ver Projetos</span>
+              <i class='bx bx-right-arrow-alt'></i>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class='bx bx-user'></i>
+              <span data-i18n="hero-cta-contact">Vamos Conversar</span>
+            </a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <h3 class="stat-number">3+</h3>
+              <p class="stat-label" data-i18n="stat-experience">Anos de Experiência</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-number">15+</h3>
+              <p class="stat-label" data-i18n="stat-projects">Projetos Completos</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-number">10+</h3>
+              <p class="stat-label" data-i18n="stat-technologies">Tecnologias</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="hero-image-wrapper floating">
+            <div class="hero-image-bg"></div>
+            <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" class="hero-image">
+            <div class="hero-image-overlay"></div>
+            
+            <!-- Elementos flutuantes decorativos -->
+            <div class="floating-element floating-element-1" data-speed="0.02">
+              <i class='bx bxl-javascript'></i>
+            </div>
+            <div class="floating-element floating-element-2" data-speed="0.03">
+              <i class='bx bxl-react'></i>
+            </div>
+            <div class="floating-element floating-element-3" data-speed="0.025">
+              <i class='bx bxl-nodejs'></i>
+            </div>
+            <div class="floating-element floating-element-4" data-speed="0.035">
+              <i class='bx bxl-python'></i>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="home-imgHover">
-
+      
+      <div class="scroll-indicator">
+        <a href="#about" aria-label="Rolar para a seção Sobre">
+          <div class="scroll-arrow">
+            <span></span>
+            <span></span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section class="about reveal" id="about">
-      <h2 class="heading" data-i18n="about-heading">About <span class="gradient-text">Me</span></h2>
+    <!-- === SEÇÃO SOBRE MODERNIZADA === -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="about-heading">Sobre <span class="gradient-text">Mim</span></h2>
+          <p class="section-subtitle" data-i18n="about-subtitle">Conheça minha trajetória e paixão pelo desenvolvimento</p>
+        </div>
 
-      <!-- Seção de estatísticas -->
-      <div class="stats-container reveal">
-        <div class="stat-item">
-          <div class="counter" data-target="17">0</div>
-          <span data-i18n="stat-projects">Códigos que funcionaram</span>
+        <!-- Estatísticas Profissionais -->
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class='bx bx-code-alt'></i>
+            </div>
+            <div class="stat-content">
+              <div class="counter" data-target="17">0</div>
+              <span data-i18n="stat-projects">Projetos Entregues</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class='bx bx-calendar'></i>
+            </div>
+            <div class="stat-content">
+              <div class="counter" data-target="3">0</div>
+              <span data-i18n="stat-experience">Anos de Experiência</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class='bx bx-happy-heart-eyes'></i>
+            </div>
+            <div class="stat-content">
+              <div class="counter" data-target="12">0</div>
+              <span data-i18n="stat-clients">Clientes Satisfeitos</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class='bx bx-brain'></i>
+            </div>
+            <div class="stat-content">
+              <div class="counter" data-target="15">0</div>
+              <span data-i18n="stat-technologies">Tecnologias Dominadas</span>
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="counter" data-target="2">0</div>
-          <span data-i18n="stat-experience">Anos quebrando a cabeça</span>
-        </div>
-        <div class="stat-item">
-          <div class="counter" data-target="4">0</div>
-          <span data-i18n="stat-clients">Pessoas que confiaram em mim</span>
-        </div>
-        <div class="stat-item">
-          <div class="counter" data-target="8">0</div>
-          <span data-i18n="stat-technologies">Linguagens que não me odeiam</span>
-        </div>
-      </div>
 
-      <div class="about-img parallax-element" data-speed="0.2">
-        <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" loading="lazy">
-        <span class="circle-spin"></span>
-      </div>
+        <div class="about-content grid">
+          <div class="about-text reveal">
+            <div class="text-content">
+              <p class="about-description" data-i18n="about-description">
+                Desenvolvedor Full-Stack apaixonado por transformar ideias em realidade digital. Comecei minha jornada criando jogos simples no Unity e hoje construo aplicações web robustas e escaláveis.
+              </p>
+              
+              <p class="about-description" data-i18n="about-description-2">
+                Especializo-me tanto no front-end, criando interfaces modernas e intuitivas, quanto no back-end, desenvolvendo APIs eficientes. React.js é minha ferramenta favorita para o frontend, Node.js para o backend, e PostgreSQL para persistência de dados.
+              </p>
 
-      <div class="about-content">
-  <h3 data-i18n="role">Full-Stack Developer</h3>
-  <p data-i18n="about">Então, minha história com código começou meio por acaso... Tava fazendo curso de games e me apaixonei por programação. Hoje em dia faço sites e apps, mas ainda lembro da primeira vez que consegui fazer um bonequinho pular na tela - que sensação! React salvou minha vida porque organiza tudo direitinho, e Node.js é massa porque posso usar JS pra tudo. Não preciso ficar trocando de linguagem o tempo todo. Ah, e quando um código não funciona e depois de 3h descobri que esqueci um ponto e vírgula... é frustrante mas é engraçado também haha</p>
-        <div class="btn-box btns">
-          <a href="#" class="btn" data-i18n="read-more">Read More</a>
+              <p class="about-description" data-i18n="about-description-3">
+                O que mais me motiva é a constante evolução e os desafios únicos que cada projeto apresenta. Sempre busco as melhores práticas e tecnologias emergentes para entregar soluções de alta qualidade.
+              </p>
+              
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <i class='bx bx-check-circle'></i>
+                  <span data-i18n="highlight-responsive">Design Responsivo e Mobile-First</span>
+                </div>
+                <div class="highlight-item">
+                  <i class='bx bx-check-circle'></i>
+                  <span data-i18n="highlight-performance">Otimização de Performance</span>
+                </div>
+                <div class="highlight-item">
+                  <i class='bx bx-check-circle'></i>
+                  <span data-i18n="highlight-clean-code">Código Limpo e Documentado</span>
+                </div>
+              </div>
+              
+              <div class="about-actions">
+                <a href="https://curriculo-online-three.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener">
+                  <i class='bx bx-link-external'></i>
+                  <span data-i18n="about-cv">Ver Currículo Completo</span>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                  <i class='bx bx-phone'></i>
+                  <span data-i18n="about-contact">Entrar em Contato</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual reveal">
+            <div class="about-image-wrapper">
+              <div class="about-image-bg"></div>
+              <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" loading="lazy" class="about-image">
+              <div class="about-image-overlay"></div>
+              
+              <!-- Social Media Float -->
+              <div class="social-float">
+                <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" target="_blank" rel="noopener" title="LinkedIn" class="social-link">
+                  <i class='bx bxl-linkedin'></i>
+                </a>
+                <a href="https://github.com/PedroLeoo07" target="_blank" rel="noopener" title="GitHub" class="social-link">
+                  <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://wa.me/5519988727143" target="_blank" rel="noopener" title="WhatsApp" class="social-link">
+                  <i class='bx bxl-whatsapp'></i>
+                </a>
+                <a href="https://www.instagram.com/oliveir._leo/" target="_blank" rel="noopener" title="Instagram" class="social-link">
+                  <i class='bx bxl-instagram'></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="education" id="education">
-      <h2 class="heading" data-i18n="education-heading">My <span>Journey</span></h2>
+    <!-- === SEÇÃO FORMAÇÃO MODERNIZADA === -->
+    <section class="education section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="education-heading">Minha <span class="gradient-text">Jornada</span></h2>
+          <p class="section-subtitle" data-i18n="education-subtitle">Experiência acadêmica e aprendizado contínuo</p>
+        </div>
 
-      <div class="education-row">
-        <div class="education-column">
-          <h3 class="title" data-i18n="education-title">Educação</h3>
-
-          <div class="education-box">
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class='bx bx-calendar'></i> 2021 - 2023</div>
-                <h3 data-i18n="edu-games-title">Curso de Designer de Games</h3>
-                <p data-i18n="edu-games-desc">Cara, foi aqui que me ferrei (no bom sentido)! Aprendi a fazer joguinhos, mexer com Blender (que programa complicado), e no Unity eu sofri MUITO pra fazer um bonequinho pular. Sério, quem diria que fazer algo tão simples ia dar tanto trabalho? Mas quando funcionou... nossa, que sensação boa! Aí que descobri meu vício em resolver problema com código.</p>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-date">
+              <span>2024 - Atual</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-icon">
+                <i class='bx bx-code-block'></i>
+              </div>
+              <h3 data-i18n="edu-tech-title">Análise e Desenvolvimento de Sistemas</h3>
+              <p class="institution" data-i18n="edu-tech-institution">Curso Técnico</p>
+              <p data-i18n="edu-tech-desc">
+                Formação técnica focada em desenvolvimento de software, análise de sistemas e metodologias ágeis. 
+                Aprofundamento em estruturas de dados, banco de dados relacionais e arquitetura de software.
+              </p>
+              <div class="timeline-skills">
+                <span>SQL</span>
+                <span>Arquitetura de Software</span>
+                <span>Metodologias Ágeis</span>
               </div>
             </div>
+          </div>
 
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class='bx bx-calendar'></i> 2023 - 2025</div>
-                <h3 data-i18n="edu-it-title">Curso de Informática</h3>
-                <p data-i18n="edu-it-desc">Esse curso me salvou! Antes eu mal sabia usar o computador direito. Excel era um bicho de sete cabeças, hoje faço planilhas que até impressionam. PowerPoint? Aprendi a fazer slides que não deixam ninguém com sono (espero). Photoshop me ensinou a fazer umas artes legais, e Illustrator... bom, ainda tô brigando com as curvas bezier, mas vai melhorando!</p>
+          <div class="timeline-item reveal">
+            <div class="timeline-date">
+              <span>2024 - Atual</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-icon">
+                <i class='bx bx-laptop'></i>
+              </div>
+              <h3 data-i18n="course-fullstack-title">Desenvolvimento Full-Stack</h3>
+              <p class="institution" data-i18n="course-fullstack-institution">Especialização Online</p>
+              <p data-i18n="course-fullstack-desc">
+                Formação completa em desenvolvimento web moderno, desde fundamentos até tecnologias avançadas. 
+                Foco em React.js, Node.js, PostgreSQL e deploy de aplicações.
+              </p>
+              <div class="timeline-skills">
+                <span>React.js</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>DevOps</span>
               </div>
             </div>
+          </div>
 
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class='bx bx-calendar'></i> 2024 - 2025</div>
-                <h3 data-i18n="edu-tech-title">Curso Técnico em Análise e Desenvolvimento de Sistemas</h3>
-                <p data-i18n="edu-tech-desc">Aqui a coisa ficou séria! Descobri que fazer site bonito é moleza, o difícil é fazer funcionar quando todo mundo acessa ao mesmo tempo. SQL me quebrou o juízo algumas vezes (ainda quebra, pra ser sincero), e Git... cara, quantas vezes eu quase perdi projeto por não saber usar direito! Mas os projetos com prazo real me ensinaram a virar a madrugada programando quando precisa.</p>
+          <div class="timeline-item reveal">
+            <div class="timeline-date">
+              <span>2023 - 2025</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-icon">
+                <i class='bx bx-desktop'></i>
+              </div>
+              <h3 data-i18n="edu-it-title">Técnico em Informática</h3>
+              <p class="institution" data-i18n="edu-it-institution">Curso Técnico</p>
+              <p data-i18n="edu-it-desc">
+                Base sólida em computação, incluindo pacote Office avançado, design gráfico e fundamentos de programação. 
+                Desenvolvimento de habilidades em produtividade e design digital.
+              </p>
+              <div class="timeline-skills">
+                <span>Excel Avançado</span>
+                <span>Photoshop</span>
+                <span>Illustrator</span>
+                <span>PowerPoint</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">
+              <span>2021 - 2023</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-icon">
+                <i class='bx bx-joystick'></i>
+              </div>
+              <h3 data-i18n="edu-games-title">Designer de Games</h3>
+              <p class="institution" data-i18n="edu-games-institution">Curso Especializado</p>
+              <p data-i18n="edu-games-desc">
+                Primeiro contato com programação através do desenvolvimento de jogos. Aprendi Unity, C#, 
+                modelagem 3D e lógica de programação. Esta experiência despertou minha paixão por desenvolvimento.
+              </p>
+              <div class="timeline-skills">
+                <span>Unity</span>
+                <span>C#</span>
+                <span>Blender</span>
+                <span>Game Design</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="education-column">
-          <h3 class="title" data-i18n="extra-courses-title">Cursos Extras</h3>
-
-          <div class="education-box">
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class='bx bx-calendar'></i> 2024 - atualmente</div>
-                <h3 data-i18n="course-js-title">Curso de JavaScript</h3>
-                <p data-i18n="course-js-desc">JS é amor e ódio ao mesmo tempo! Começei com aqueles alerts chatos que todo mundo faz. Closures me deram dor de cabeça por semanas, async/await então... nossa senhora! Mas quando clicou, cara, é muito massa! Hoje consigo fazer umas animações legais e conectar com API, mesmo que às vezes dê erro 404 e eu fique meia hora tentando entender o que tá errado.</p>
+        <!-- Certificações Destacadas -->
+        <div class="certifications-grid reveal">
+          <h3 class="certifications-title" data-i18n="certifications-title">Certificações e Conquistas</h3>
+          <div class="certification-cards">
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class='bx bxl-javascript'></i>
               </div>
+              <h4 data-i18n="cert-js-title">JavaScript ES6+</h4>
+              <p data-i18n="cert-js-desc">Programação moderna e assíncrona</p>
             </div>
-
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class='bx bx-calendar'></i> 2024 - atualmente</div>
-                <h3 data-i18n="course-fullstack-title">Curso de Desenvolvimento Full-Stack</h3>
-                <p data-i18n="course-fullstack-desc">Esse curso me abriu a mente! Antes eu só sabia fazer a telinha bonitinha, agora sei conectar com banco de dados e não é mais magia negra. React com hooks me confundiu demais no início (useEffect ainda me pega desprevenido às vezes), Express é bem tranquilo, mas PostgreSQL vs MongoDB? Cara, ainda fico na dúvida de qual usar. Mas é massa conseguir fazer um projeto do zero e ver funcionando!</p>
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class='bx bxl-react'></i>
               </div>
+              <h4 data-i18n="cert-react-title">React.js & Hooks</h4>
+              <p data-i18n="cert-react-desc">Desenvolvimento de interfaces modernas</p>
             </div>
-
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class='bx bx-calendar'></i> 2024 - atualmente</div>
-                <h3 data-i18n="course-nodejs-title">Curso de Node.js</h3>
-                <p data-i18n="course-nodejs-desc">Node.js é brabo! Descobrir que dá pra usar JS no servidor foi tipo descobrir que você pode comer pizza no café da manhã - revolucionário! Middleware me confundiu muito, JWT então... quantas vezes esqueci de colocar Bearer no token! Mas quando criei minha primeira API e ela funcionou, cara, quase chorei de emoção. Arquitetura? Escalabilidade? Ainda tô aprendendo, mas pelo menos não é mais chinês pra mim.</p>
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class='bx bxl-nodejs'></i>
               </div>
+              <h4 data-i18n="cert-node-title">Node.js & Express</h4>
+              <p data-i18n="cert-node-desc">Desenvolvimento de APIs robustas</p>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class='bx bx-data'></i>
+              </div>
+              <h4 data-i18n="cert-db-title">PostgreSQL</h4>
+              <p data-i18n="cert-db-desc">Modelagem e otimização de dados</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="skills reveal" id="skills">
-      <h2 class="heading" data-i18n="skills-heading">My <span class="gradient-text">Skills</span></h2>
-
-      <div class="skills-row">
-
-        <div class="skills-column reveal">
-          <h3 class="title" data-i18n="frontend-skills">Front-end (o que você vê)</h3>
-
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>React <span>73%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>Next.js <span>61%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>TypeScript <span>67%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>JavaScript <span>79%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
-            </div>
-
-          </div>
-
+    <!-- === SEÇÃO SKILLS MODERNIZADA === -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="skills-heading">Minhas <span class="gradient-text">Habilidades</span></h2>
+          <p class="section-subtitle" data-i18n="skills-subtitle">Tecnologias e ferramentas que domino para criar soluções excepcionais</p>
         </div>
 
-        <div class="skills-column reveal">
-          <h3 class="title" data-i18n="backend-skills">Back-end (por trás dos panos)</h3>
-
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>Node.js <span>74%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>PostgreSQL <span>63%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>Express <span>69%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>Git (quando funciona) <span>81%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-             
-            </div>
-
-          </div>
-
+        <!-- Categorias de Skills -->
+        <div class="skills-categories reveal">
+          <button class="category-btn active" data-category="all" data-i18n="category-all">Todas</button>
+          <button class="category-btn" data-category="frontend" data-i18n="category-frontend">Frontend</button>
+          <button class="category-btn" data-category="backend" data-i18n="category-backend">Backend</button>
+          <button class="category-btn" data-category="mobile" data-i18n="category-mobile">Mobile</button>
+          <button class="category-btn" data-category="tools" data-i18n="category-tools">Ferramentas</button>
         </div>
 
-        <div class="skills-column reveal">
-          <h3 class="title" data-i18n="mobile-skills">Mobile (aprendendo ainda)</h3>
-
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>React Native <span>62%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>Expo <span>71%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-              
-              <div class="progress">
-                <h3>APIs Nativas <span>54%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
-              <div class="progress">
-                <h3>Publicar App (rezando) <span>42%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
+        <!-- Grid de Skills -->
+        <div class="skills-grid reveal">
+          <!-- Frontend Skills -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon">
+              <i class='bx bxl-react'></i>
             </div>
-
+            <h3>React.js</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="85"></div>
+              </div>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <p data-i18n="skill-react-desc">Biblioteca para criação de interfaces modernas e componentes reutilizáveis</p>
+            <div class="skill-tags">
+              <span>Hooks</span>
+              <span>Context API</span>
+              <span>Redux</span>
+            </div>
           </div>
 
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon">
+              <i class='bx bxl-javascript'></i>
+            </div>
+            <h3>JavaScript ES6+</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="90"></div>
+              </div>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <p data-i18n="skill-js-desc">Linguagem de programação moderna com foco em programação funcional</p>
+            <div class="skill-tags">
+              <span>Async/Await</span>
+              <span>Promises</span>
+              <span>Modules</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon">
+              <i class='bx bxl-typescript'></i>
+            </div>
+            <h3>TypeScript</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="75"></div>
+              </div>
+              <span class="skill-percentage">75%</span>
+            </div>
+            <p data-i18n="skill-ts-desc">Superset do JavaScript com tipagem estática para código mais robusto</p>
+            <div class="skill-tags">
+              <span>Types</span>
+              <span>Interfaces</span>
+              <span>Generics</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon">
+              <i class='bx bx-code-curly'></i>
+            </div>
+            <h3>Next.js</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="70"></div>
+              </div>
+              <span class="skill-percentage">70%</span>
+            </div>
+            <p data-i18n="skill-next-desc">Framework React para produção com SSR, SSG e otimizações automáticas</p>
+            <div class="skill-tags">
+              <span>SSR</span>
+              <span>SSG</span>
+              <span>API Routes</span>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon">
+              <i class='bx bxl-nodejs'></i>
+            </div>
+            <h3>Node.js</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="85"></div>
+              </div>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <p data-i18n="skill-node-desc">Runtime JavaScript para desenvolvimento de servidores e APIs escaláveis</p>
+            <div class="skill-tags">
+              <span>Express.js</span>
+              <span>RESTful APIs</span>
+              <span>Middleware</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon">
+              <i class='bx bx-data'></i>
+            </div>
+            <h3>PostgreSQL</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="80"></div>
+              </div>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <p data-i18n="skill-postgres-desc">Banco de dados relacional avançado para aplicações robustas</p>
+            <div class="skill-tags">
+              <span>SQL Avançado</span>
+              <span>Prisma</span>
+              <span>Sequelize</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon">
+              <i class='bx bx-server'></i>
+            </div>
+            <h3>Express.js</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="88"></div>
+              </div>
+              <span class="skill-percentage">88%</span>
+            </div>
+            <p data-i18n="skill-express-desc">Framework minimalista para criação de servidores web eficientes</p>
+            <div class="skill-tags">
+              <span>Routing</span>
+              <span>Authentication</span>
+              <span>Validation</span>
+            </div>
+          </div>
+
+          <!-- Mobile Skills -->
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon">
+              <i class='bx bxl-react'></i>
+            </div>
+            <h3>React Native</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="75"></div>
+              </div>
+              <span class="skill-percentage">75%</span>
+            </div>
+            <p data-i18n="skill-rn-desc">Framework para desenvolvimento de aplicativos mobile multiplataforma</p>
+            <div class="skill-tags">
+              <span>Expo</span>
+              <span>Navigation</span>
+              <span>Native Modules</span>
+            </div>
+          </div>
+
+          <!-- Tools Skills -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon">
+              <i class='bx bxl-git'></i>
+            </div>
+            <h3>Git & GitHub</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="90"></div>
+              </div>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <p data-i18n="skill-git-desc">Controle de versão e colaboração em projetos de desenvolvimento</p>
+            <div class="skill-tags">
+              <span>Branching</span>
+              <span>Pull Requests</span>
+              <span>CI/CD</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon">
+              <i class='bx bx-code-alt'></i>
+            </div>
+            <h3>VS Code</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="95"></div>
+              </div>
+              <span class="skill-percentage">95%</span>
+            </div>
+            <p data-i18n="skill-vscode-desc">Editor de código avançado com extensões e ferramentas de produtividade</p>
+            <div class="skill-tags">
+              <span>Extensions</span>
+              <span>Debugging</span>
+              <span>IntelliSense</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon">
+              <i class='bx bxl-figma'></i>
+            </div>
+            <h3>Figma</h3>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" data-level="70"></div>
+              </div>
+              <span class="skill-percentage">70%</span>
+            </div>
+            <p data-i18n="skill-figma-desc">Ferramenta de design colaborativo para prototipagem de interfaces</p>
+            <div class="skill-tags">
+              <span>Prototyping</span>
+              <span>Design Systems</span>
+              <span>Components</span>
+            </div>
+          </div>
         </div>
 
+        <!-- Soft Skills -->
+        <div class="soft-skills reveal">
+          <h3 class="soft-skills-title" data-i18n="soft-skills-title">Habilidades Interpessoais</h3>
+          <div class="soft-skills-list">
+            <div class="soft-skill-item">
+              <i class='bx bx-brain'></i>
+              <span data-i18n="soft-skill-problem">Resolução de Problemas</span>
+            </div>
+            <div class="soft-skill-item">
+              <i class='bx bx-group'></i>
+              <span data-i18n="soft-skill-team">Trabalho em Equipe</span>
+            </div>
+            <div class="soft-skill-item">
+              <i class='bx bx-time'></i>
+              <span data-i18n="soft-skill-time">Gestão de Tempo</span>
+            </div>
+            <div class="soft-skill-item">
+              <i class='bx bx-book-reader'></i>
+              <span data-i18n="soft-skill-learning">Aprendizado Contínuo</span>
+            </div>
+            <div class="soft-skill-item">
+              <i class='bx bx-chat'></i>
+              <span data-i18n="soft-skill-communication">Comunicação</span>
+            </div>
+            <div class="soft-skill-item">
+              <i class='bx bx-bulb'></i>
+              <span data-i18n="soft-skill-creativity">Criatividade</span>
+            </div>
+          </div>
+        </div>
       </div>
-
     </section>
 
     <section class="certifications" id="certifications">
@@ -326,7 +715,7 @@
     </section>
 
     <section class="projects reveal" id="projects">
-      <h2 class="heading" data-i18n="projects-heading">Uns códigos que <span class="gradient-text">funcionaram</span></h2>
+      <h2 class="heading" data-i18n="projects-heading">Meus <span style="background: linear-gradient(135deg, var(--main-color), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Projetos</span></h2>
       <div class="projects-container">
         <div class="project-box reveal featured">
           <div class="project-img-wrapper">
