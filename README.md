@@ -1,15 +1,15 @@
 <div align="center">
 
-# 🚀 Portfolio Leonardo Oliveira
+# 🌟 Portfolio Leonardo Oliveira
 
-### *Desenvolvedor Full Stack | Inovação Digital | Experiências Interativas*
+### *Desenvolvedor Full Stack | Design Profissional | Experiências Modernas*
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Portfolio-6C63FF?style=for-the-badge)](https://lab-oliveira-leo.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Portfolio-3B82F6?style=for-the-badge)](https://lab-oliveira-leo.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/leonardo-oliveira-38aab7321/)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroLeoo07)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:leonardo.p.oliveira12@aluno.senai.br)
+[![Email](https://img.shields.io/badge/Email-3B82F6?style=for-the-badge&logo=gmail&logoColor=white)](mailto:leonardo.p.oliveira12@aluno.senai.br)
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&width=800&height=60&lines=Desenvolvedor+Full+Stack+Apaixonado;Criador+de+Experiências+Digitais+Únicas;Especialista+em+Frontend+Moderno;Sempre+Aprendendo%2C+Sempre+Inovando)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=30&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&width=800&height=60&lines=Desenvolvedor+Full+Stack+Profissional;Criador+de+Experiências+Digitais+Modernas;Especialista+em+Frontend+Elegante;Qualidade%2C+Performance%2C+Inovação)
 
 </div>
 
@@ -17,7 +17,13 @@
 
 ## 🎯 **Sobre o Projeto**
 
-Este portfolio não é apenas uma vitrine - é uma **demonstração completa de habilidades técnicas avançadas**, combinando design moderno, interatividade excepcional e código limpo. Uma experiência imersiva que vai além do convencional.
+Este portfolio representa **excelência em design e desenvolvimento**, combinando uma **paleta de cores profissional azul** com uma experiência de usuário moderna e sofisticada. Um projeto que demonstra maturidade técnica e atenção aos detalhes.
+
+### 🎨 **Design Profissional**
+- **Paleta Azul Moderna**: Sistema de cores cuidadosamente escolhido (#3B82F6, #60A5FA, #1D4ED8)
+- **Tema Claro/Escuro**: Transições suaves e cores otimizadas para cada modo
+- **Tipografia Inter**: Fonte profissional para máxima legibilidade
+- **Micro-interações**: Animações sutis que elevam a experiência
 
 ### ⚡ **Destaques Técnicos**
 
