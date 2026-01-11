@@ -395,10 +395,12 @@ body {
 }
 
 .stat-number {
-  font-size: var(--font-size-2xl);
+  font-size: clamp(1.25rem, 2.5vw, var(--font-size-2xl));
   font-weight: var(--font-weight-bold);
   color: var(--primary);
   margin-bottom: var(--space-xs);
+  line-height: 1.2;
+  word-break: keep-all;
 }
 
 .stat-label {

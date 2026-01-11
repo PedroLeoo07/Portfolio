@@ -422,10 +422,12 @@ body {
 }
 
 .stat-number {
-  font-size: var(--text-2xl);
+  font-size: clamp(1.125rem, 2.2vw, var(--text-2xl));
   font-weight: 700;
   color: var(--primary);
   margin-bottom: var(--space-1);
+  line-height: 1.2;
+  word-break: keep-all;
 }
 
 .stat-label {
