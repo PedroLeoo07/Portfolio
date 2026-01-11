@@ -1,18 +1,16 @@
 // Sistema de Envio de Email - Portfolio Leonardo Oliveira
+// Email de destino: leonardopedrodeoliveira07@gmail.com
 
 class ContactForm {
     constructor() {
         this.form = document.getElementById('contact-form');
         this.submitBtn = document.getElementById('submit-btn');
-        this.btnText = document.querySelector('.btn-text');
-        this.btnLoader = document.querySelector('.btn-loader');
-        this.formStatus = document.getElementById('form-status');
         
-        // Configuração do EmailJS
+        // Configuração do EmailJS - SUBSTITUA PELOS SEUS VALORES REAIS
         this.emailjsConfig = {
-            serviceID: 'service_portfolio', // Será configurado
-            templateID: 'template_contact', // Será configurado
-            publicKey: 'YOUR_PUBLIC_KEY'   // Será configurado
+            serviceID: 'YOUR_SERVICE_ID',    // ID do serviço Gmail no EmailJS
+            templateID: 'YOUR_TEMPLATE_ID',  // ID do template no EmailJS  
+            publicKey: 'YOUR_PUBLIC_KEY'     // Chave pública do EmailJS
         };
         
         this.init();
@@ -44,10 +42,9 @@ class ContactForm {
             const templateParams = {
                 from_name: formData.get('from_name'),
                 from_email: formData.get('from_email'),
-                phone: formData.get('phone') || 'Não informado',
                 subject: formData.get('subject'),
                 message: formData.get('message'),
-                to_name: 'Leonardo Oliveira',
+                to_email: 'leonardopedrodeoliveira07@gmail.com'
                 reply_to: formData.get('from_email')
             };
             
