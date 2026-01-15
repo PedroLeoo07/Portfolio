@@ -1,7 +1,7 @@
-/* ===== TOQUES ORGÂNICOS EXTRAS ===== */
-/* Arquivo para adicionar mais humanização ao portfólio */
+/* ===== TOQUES SUTIS DE HUMANIZAÇÃO ===== */
+/* Melhorias discretas que mantêm profissionalismo */
 
-/* Adiciona textura sutil ao fundo */
+/* Adiciona textura muito sutil ao fundo */
 body::before {
   content: '';
   position: fixed;
@@ -10,98 +10,58 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.01) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.01) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Cards com bordas mais imperfeitas */
+/* Skill category cards com leve variação */
 .skill-category-card {
-  border-radius: 14px 22px 16px 24px !important;
-  transform: rotate(-0.6deg);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.skill-category-card:nth-child(2n) {
-  transform: rotate(0.8deg);
-  border-radius: 18px 14px 22px 16px !important;
-}
-
-.skill-category-card:nth-child(3n) {
-  transform: rotate(-1deg);
-  border-radius: 20px 16px 18px 24px !important;
+  transition: all 0.3s ease;
 }
 
 .skill-category-card:hover {
-  transform: translateY(-6px) rotate(0deg);
-  box-shadow: 2px 8px 24px rgba(37, 99, 235, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
 }
 
-/* Badges com formato orgânico */
-[style*="border-radius: 50px"],
-[style*="border-radius: 12px"] {
-  border-radius: 16px 20px 18px 22px !important;
-}
-
-/* Imagens de perfil com forma orgânica */
-[style*="border-radius: 50%"] {
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49% !important;
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-[style*="border-radius: 50%"]:hover {
-  border-radius: 52% 48% 47% 53% / 48% 54% 46% 52% !important;
-  transform: scale(1.02) rotate(2deg);
-}
-
-/* Inputs e textareas mais orgânicos */
+/* Inputs com feedback suave */
 input[type="text"],
 input[type="email"],
 textarea {
-  border-radius: 10px 14px 12px 16px !important;
-  border-width: 1.5px !important;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  transition: all 0.3s ease !important;
 }
 
 input[type="text"]:hover,
 input[type="email"]:hover,
 textarea:hover {
-  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.3) !important;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-  transform: translateY(-1px) scale(1.01);
-  border-radius: 12px 16px 14px 18px !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08) !important;
 }
 
-/* Social icons mais orgânicos */
-a[title="LinkedIn"],
-a[title="GitHub"],
-a[title="WhatsApp"] {
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49% !important;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-
+/* Social icons com animação suave */
 a[title="LinkedIn"]:hover,
 a[title="GitHub"]:hover,
 a[title="WhatsApp"]:hover {
-  border-radius: 52% 48% 47% 53% / 48% 54% 46% 52% !important;
-  transform: scale(1.15) rotate(-5deg) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
-/* Header com glassmorphism mais orgânico */
+/* Glassmorphism sutil no header */
 .header {
-  backdrop-filter: blur(16px) saturate(120%);
-  border-bottom-width: 1.5px;
+  backdrop-filter: blur(12px) saturate(110%);
 }
 
-/* Gradientes de texto mais vibrantes */
+/* Gradientes de texto com animação suave */
 .gradient-text {
-  background: linear-gradient(142deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -118,153 +78,9 @@ a[title="WhatsApp"]:hover {
   }
 }
 
-/* Elementos com efeito de "mão desenhada" */
-.hero-image-wrapper::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
-  border: 2px dashed rgba(37, 99, 235, 0.15);
-  pointer-events: none;
-  animation: rotateSketch 20s linear infinite;
-}
-
-@keyframes rotateSketch {
-  0% {
-    transform: rotate(0deg);
-    border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
-  }
-  25% {
-    border-radius: 52% 48% 47% 53% / 48% 54% 46% 52%;
-  }
-  50% {
-    transform: rotate(180deg);
-    border-radius: 48% 52% 51% 49% / 50% 48% 52% 50%;
-  }
-  75% {
-    border-radius: 54% 46% 53% 47% / 52% 48% 54% 46%;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
-  }
-}
-
-/* Adiciona "rabiscos" sutis de fundo */
-.section:nth-child(odd)::before {
-  content: '';
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
-  pointer-events: none;
-  animation: floatSketch 15s ease-in-out infinite;
-}
-
-.section:nth-child(even)::before {
-  content: '';
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
-  border-radius: 52% 48% 47% 53% / 48% 54% 46% 52%;
-  pointer-events: none;
-  animation: floatSketch 18s ease-in-out infinite reverse;
-}
-
-@keyframes floatSketch {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate(20px, -30px) rotate(10deg);
-  }
-  66% {
-    transform: translate(-15px, -15px) rotate(-5deg);
-  }
-}
-
-/* Botões com efeito de "pressionar" mais pronunciado */
-.btn:active {
-  transform: translateY(2px) rotate(0deg) scale(0.98);
-  box-shadow: 1px 2px 8px rgba(37, 99, 235, 0.2);
-}
-
-/* Cursor customizado (opcional - descomente se quiser) */
-/*
-body {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%232563EB" opacity="0.3"/></svg>'), auto;
-}
-
-a, button {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%232563EB" opacity="0.5"/></svg>'), pointer;
-}
-*/
-
-/* Scroll suave com efeito */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Animação de entrada para sections */
-.section {
-  position: relative;
-  animation: fadeInSection 0.8s ease-out;
-}
-
-@keyframes fadeInSection {
-  from {
-    opacity: 0;
-    transform: translateY(30px) rotate(-0.5deg);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0deg);
-  }
-}
-
-/* Melhor feedback visual para elementos clicáveis */
-a, button, .btn {
-  position: relative;
-}
-
-a::after,
-button::after,
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.2);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s, opacity 0.6s;
-  opacity: 0;
-  pointer-events: none;
-}
-
-a:active::after,
-button:active::after,
-.btn:active::after {
-  width: 200px;
-  height: 200px;
-  opacity: 1;
-  transition: 0s;
-}
-
-/* Melhora a legibilidade com sombras de texto sutis */
+/* Melhora legibilidade com sombras discretas */
 h1, h2, h3, h4, h5, h6 {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.015);
 }
 
 [data-theme="dark"] h1,
@@ -273,22 +89,60 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] h4,
 [data-theme="dark"] h5,
 [data-theme="dark"] h6 {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Adiciona profundidade aos cards com sombra interna sutil */
+/* Profundidade sutil nos cards */
 .project-card,
 .skill-category-card,
 .timeline-content {
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    2px 4px 12px rgba(0, 0, 0, 0.06);
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="dark"] .project-card,
 [data-theme="dark"] .skill-category-card,
 [data-theme="dark"] .timeline-content {
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    2px 4px 12px rgba(0, 0, 0, 0.3);
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de entrada suave para sections */
+.section {
+  position: relative;
+  animation: fadeInSection 0.6s ease-out;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Feedback visual discreto ao clicar */
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hover suave nos links de navegação */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Mobile toggle com animação suave */
+.mobile-toggle span {
+  transition: all 0.3s ease;
 }
