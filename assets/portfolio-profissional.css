@@ -772,51 +772,38 @@ body {
 
 /* ===== HOVER EFFECTS ===== */
 .hover-lift {
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px) rotate(-0.8deg);
-  box-shadow: 3px 14px 28px rgba(37, 99, 235, 0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
 }
 
 .hover-glow {
-  transition: all 0.35s ease-out;
+  transition: all 0.3s ease;
 }
 
 .hover-glow:hover {
-  box-shadow: 2px 4px 28px rgba(37, 99, 235, 0.4);
-  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+  transform: scale(1.05);
 }
 
 /* ===== SKILL CARDS ===== */
 .skill-card {
   background: var(--bg-secondary);
-  padding: 1.8rem 2rem 2rem 1.9rem;
-  border-radius: 14px 22px 16px 24px;
-  border: 1.5px solid var(--border);
-  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: rotate(-0.8deg);
+  padding: 1.8rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
   position: relative;
 }
 
-.skill-card:nth-child(even) {
-  transform: rotate(1.2deg);
-  margin-top: 0.8rem;
-  border-radius: 18px 14px 22px 16px;
-}
-
-.skill-card:nth-child(odd) {
-  transform: rotate(-1deg);
-  margin-bottom: 0.6rem;
-  border-radius: 20px 16px 18px 24px;
-}
-
 .skill-card:hover {
-  transform: translateY(-5px) rotate(0deg);
-  border-color: rgba(37, 99, 235, 0.5);
-  box-shadow: 2px 10px 28px rgba(37, 99, 235, 0.15);
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
 }
 
 .skill-bar {
@@ -886,28 +873,10 @@ body {
 
 /* ===== PROJECT CARD ENHANCEMENTS ===== */
 .project-card {
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
-  border-radius: 16px 24px 18px 26px;
-  transform: rotate(-0.6deg);
-}
-
-.project-card:nth-child(even) {
-  transform: rotate(1.4deg);
-  margin-top: 1rem;
-  border-radius: 22px 16px 24px 18px;
-}
-
-.project-card:nth-child(odd) {
-  transform: rotate(-1.2deg);
-  margin-bottom: 0.8rem;
-  border-radius: 18px 26px 20px 24px;
-}
-
-.project-card:nth-child(3n) {
-  transform: rotate(0.8deg);
-  border-radius: 24px 18px 22px 20px;
+  border-radius: var(--radius-xl);
 }
 
 .project-card::before {
@@ -917,9 +886,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(142deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.03));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(59, 130, 246, 0.02));
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   pointer-events: none;
 }
 
@@ -928,9 +897,9 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-10px) scale(1.02) rotate(0deg);
-  box-shadow: 3px 18px 40px rgba(0,0,0,0.12);
-  border-color: rgba(37, 99, 235, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 /* ===== SOCIAL LINKS HOVER ===== */
@@ -992,8 +961,8 @@ textarea:focus {
   top: 0;
   height: 100%;
   width: 3px;
-  background: linear-gradient(185deg, var(--primary), var(--secondary));
-  border-radius: 2px 1px 1.5px 2px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  border-radius: 1.5px;
 }
 
 .timeline-item {
@@ -1010,35 +979,29 @@ textarea:focus {
   height: 1rem;
   background: var(--primary);
   border: 3px solid var(--bg-primary);
-  border-radius: 48% 52% 51% 49% / 50% 48% 52% 50%;
-  box-shadow: 1px 5px 10px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 
 .timeline-item:hover::before {
-  transform: scale(1.3) rotate(10deg);
-  box-shadow: 2px 6px 14px rgba(37, 99, 235, 0.3);
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
 }
 
 .timeline-content {
   background: var(--bg-secondary);
   padding: 1.5rem;
-  border-radius: 12px 18px 14px 20px;
-  border: 1.5px solid var(--border);
-  box-shadow: 2px 4px 12px rgba(0,0,0,0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: rotate(-0.3deg);
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-  transform: rotate(0.5deg);
-  border-radius: 16px 12px 18px 14px;
+  transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
-  transform: translateY(-5px) rotate(0deg);
-  box-shadow: 2px 10px 24px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .timeline-date {
@@ -1046,11 +1009,10 @@ textarea:focus {
   background: var(--primary);
   color: white;
   padding: 0.375rem 0.75rem;
-  border-radius: 16px 20px 18px 22px;
+  border-radius: var(--radius-full);
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  transform: rotate(-0.5deg);
 }
 
 /* ===== FEATURE CARDS HUMANIZADOS ===== */
