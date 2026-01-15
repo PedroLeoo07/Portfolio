@@ -68,12 +68,12 @@ body {
   --font-weight-bold: 700;
   --font-weight-black: 900;
   
-  /* Radius - orgânico e irregular */
-  --radius-sm: 6px 8px 7px 9px;
-  --radius: 10px 14px 12px 16px;
-  --radius-lg: 14px 18px 16px 20px;
-  --radius-xl: 18px 24px 20px 26px;
-  --radius-full: 48% 52% 51% 49% / 50% 48% 52% 50%;
+  /* Radius - sutilmente orgânico */
+  --radius-sm: 0.4rem;
+  --radius: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1.2rem;
+  --radius-full: 50%;
   
   /* Shadows - orgânicas e naturais */
   --shadow-sm: 1px 2px 4px 0 rgba(0, 0, 0, 0.05);
@@ -196,13 +196,12 @@ body {
   font-weight: var(--font-weight-bold);
   color: var(--primary);
   text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: rotate(-1.5deg);
-  letter-spacing: -0.02em;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
 }
 
 .logo:hover {
-  transform: scale(1.08) rotate(2deg);
+  transform: scale(1.05);
   color: var(--secondary);
 }
 
@@ -250,8 +249,8 @@ body {
 .theme-toggle {
   width: 40px;
   height: 40px;
-  border: 1.5px solid var(--border);
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
+  border: none;
+  border-radius: 50%;
   background: var(--bg-secondary);
   color: var(--text-primary);
   cursor: pointer;
@@ -260,15 +259,13 @@ body {
   justify-content: center;
   font-size: 1.25rem;
   transition: var(--transition);
-  transform: rotate(-2deg);
 }
 
 .theme-toggle:hover {
   background: var(--primary);
   color: white;
-  transform: scale(1.15) rotate(8deg);
-  border-radius: 52% 48% 47% 53% / 48% 54% 46% 52%;
-  box-shadow: 2px 6px 16px rgba(37, 99, 235, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 .mobile-toggle {
@@ -383,35 +380,22 @@ body {
   text-align: center;
   padding: 1rem 0.8rem;
   background: rgba(37, 99, 235, 0.03);
-  border-radius: 10px 18px 12px 20px;
-  border: 1.5px solid rgba(37, 99, 235, 0.12);
-  transform: rotate(-1.2deg);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: var(--radius);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  transition: all 0.3s ease;
 }
 
 .stat:hover {
-  transform: rotate(0deg) translateY(-4px);
-  box-shadow: 2px 6px 16px rgba(37, 99, 235, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.12);
 }
 
 .stat:nth-child(2) {
-  transform: rotate(1.8deg);
-  margin-top: 0.8rem;
-  border-radius: 14px 12px 18px 10px;
-}
-
-.stat:nth-child(2):hover {
-  transform: rotate(0deg) translateY(-4px);
+  margin-top: 0.5rem;
 }
 
 .stat:nth-child(3) {
-  transform: rotate(-0.8deg);
-  margin-top: -0.5rem;
-  border-radius: 16px 10px 14px 20px;
-}
-
-.stat:nth-child(3):hover {
-  transform: rotate(0deg) translateY(-4px);
+  margin-top: -0.3rem;
 }
 
 .stat-number {
@@ -439,30 +423,24 @@ body {
   position: relative;
   width: 385px;
   height: 385px;
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
+  border-radius: 50%;
   overflow: hidden;
-  box-shadow: 3px 14px 32px rgba(0,0,0,0.13), 1px 5px 10px rgba(0,0,0,0.07);
-  background: linear-gradient(142deg, var(--primary), var(--secondary));
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   padding: 6px;
-  transform: rotate(-2deg);
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.3s ease;
 }
 
 .hero-image-wrapper:hover {
-  transform: rotate(1deg) scale(1.02);
-  border-radius: 52% 48% 47% 53% / 48% 54% 46% 52%;
+  transform: scale(1.02);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
-  transition: all 0.6s ease;
-}
-
-.hero-image-wrapper:hover .hero-image {
-  border-radius: 52% 48% 47% 53% / 48% 54% 46% 52%;
+  border-radius: 50%;
 }
 
 .floating-element {
@@ -470,30 +448,23 @@ body {
   width: 58px;
   height: 62px;
   background: var(--bg-primary);
-  border-radius: 16px 24px 18px 22px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
   color: var(--primary);
-  box-shadow: 2px 5px 18px rgba(37, 99, 235, 0.15), 1px 2px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.12);
   animation: floatOrganic 7s ease-in-out infinite;
-  transform: rotate(-3deg);
-  border: 1.5px solid rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 @keyframes floatOrganic {
   0%, 100% {
-    transform: translateY(0px) rotate(-2deg);
-  }
-  25% {
-    transform: translateY(-12px) rotate(3deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-22px) rotate(-1deg);
-  }
-  75% {
-    transform: translateY(-8px) rotate(2deg);
+    transform: translateY(-15px);
   }
 }
 
@@ -546,16 +517,15 @@ body {
 .scroll-arrow {
   width: 42px;
   height: 42px;
-  border-radius: 48% 52% 51% 49% / 50% 48% 52% 50%;
+  border-radius: 50%;
   background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease;
   animation: bounceOrganic 3s infinite;
-  transform: rotate(-2deg);
-  box-shadow: 2px 5px 14px rgba(37, 99, 235, 0.28);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 @keyframes bounceOrganic {
@@ -613,9 +583,7 @@ body {
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-md);
   color: var(--text-primary);
-  transform: rotate(-0.8deg);
-  letter-spacing: -0.025em;
-  display: inline-block;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
@@ -624,8 +592,6 @@ body {
   max-width: 580px;
   margin: 0 auto;
   line-height: 1.65;
-  transform: rotate(0.3deg);
-  display: inline-block;
 }
 
 /* ===== BUTTONS ===== */
@@ -634,21 +600,20 @@ body {
   align-items: center;
   gap: var(--space-sm);
   padding: 0.8rem 1.6rem;
-  border-radius: 10px 18px 12px 20px;
+  border-radius: var(--radius);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  border: 1.5px solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  transform: rotate(-0.8deg);
 }
 
 .btn:hover {
-  transform: translateY(-3px) rotate(0.5deg) scale(1.02);
-  box-shadow: 2px 8px 20px rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary {
