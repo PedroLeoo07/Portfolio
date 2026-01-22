@@ -435,13 +435,39 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   padding: 6px;
   transition: all 0.4s ease;
-  animation: photoFloat 6s ease-in-out infinite, photoGlow 3s ease-in-out infinite;
+  animation: borderRotate 8s linear infinite;
+}
+
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    var(--primary),
+    var(--secondary),
+    var(--accent),
+    transparent
+  );
+  animation: borderSpin 4s linear infinite;
+  z-index: -1;
+}
+
+.hero-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .hero-image-wrapper:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25), 0 0 30px rgba(59, 130, 246, 0.3);
-  animation-play-state: paused;
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
 }
 
 .hero-image {
@@ -450,51 +476,29 @@ body {
   object-fit: cover;
   border-radius: 50%;
   transition: all 0.4s ease;
-  animation: imageZoom 8s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-image-wrapper:hover .hero-image {
-  transform: scale(1.1);
-  filter: brightness(1.1) contrast(1.05);
+  filter: brightness(1.1);
 }
 
-@keyframes photoFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
+@keyframes borderSpin {
+  0% {
+    transform: rotate(0deg);
   }
-  25% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-  50% {
-    transform: translateY(-5px) rotate(-1deg);
-  }
-  75% {
-    transform: translateY(-15px) rotate(0.5deg);
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-@keyframes photoGlow {
+@keyframes borderRotate {
   0%, 100% {
-    box-shadow: 
-      0 12px 28px rgba(0,0,0,0.12), 
-      0 4px 8px rgba(0,0,0,0.06),
-      0 0 20px rgba(37, 99, 235, 0.2);
+    filter: hue-rotate(0deg) brightness(1);
   }
   50% {
-    box-shadow: 
-      0 16px 35px rgba(0,0,0,0.15), 
-      0 8px 12px rgba(0,0,0,0.08),
-      0 0 40px rgba(37, 99, 235, 0.4),
-      0 0 60px rgba(59, 130, 246, 0.2);
-  }
-}
-
-@keyframes imageZoom {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
+    filter: hue-rotate(20deg) brightness(1.1);
   }
 }
 
