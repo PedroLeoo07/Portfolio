@@ -147,17 +147,45 @@ html {
   transition: all 0.3s ease;
 }
 
-/* ===== EFEITO DE DIGITAÇÃO (TYPING EFFECT) ===== */
+/* ===== EFEITO DE DIGITAÇÃO APRIMORADO (ENHANCED TYPING EFFECT) ===== */
 .typing-text {
   display: inline-block;
   min-height: 1.2em;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.typing-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.3s ease;
+}
+
+.typing-text.complete::after {
+  width: 100%;
+}
+
+.typing-text.deleting {
+  opacity: 0.7;
 }
 
 .typing-cursor {
   display: inline-block;
   margin-left: 4px;
-  animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite, cursorGlow 2s ease-in-out infinite;
   font-weight: 400;
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+}
+
+.typing-cursor.pause {
+  animation: none;
+  opacity: 1;
 }
 
 @keyframes blink {
@@ -167,6 +195,24 @@ html {
   50%, 100% {
     opacity: 0;
   }
+}
+
+@keyframes cursorGlow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(37, 99, 235, 0.8), 0 0 24px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* Efeito suave no hero-role */
+.hero-role {
+  transition: transform 0.3s ease;
+}
+
+.hero-role:hover .typing-cursor {
+  animation: blink 0.3s infinite, cursorGlow 1s ease-in-out infinite;
 }
 
 .animated-role {
