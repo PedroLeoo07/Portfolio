@@ -146,3 +146,92 @@ html {
 .mobile-toggle span {
   transition: all 0.3s ease;
 }
+/* ===== ANIMAÇÕES DOS TÍTULOS DE CARGO ===== */
+.animated-role {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.role-text {
+  display: inline-block;
+  animation: slideInUp 1s ease-out forwards, glowPulse 3s ease-in-out infinite;
+  opacity: 0;
+  position: relative;
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.role-text:first-child {
+  animation-delay: 0.3s;
+}
+
+.role-text:last-child {
+  animation-delay: 0.6s;
+}
+
+.role-separator {
+  display: inline-block;
+  animation: fadeInScale 0.8s ease-out 0.45s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(37, 99, 235, 0.3),
+      0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(37, 99, 235, 0.5),
+      0 0 30px rgba(59, 130, 246, 0.3),
+      0 0 40px rgba(37, 99, 235, 0.2);
+  }
+}
+
+/* Efeito de brilho ao passar o mouse */
+.role-text:hover {
+  animation: glowPulse 0.6s ease-in-out;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .animated-role {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .role-separator {
+    display: none;
+  }
+  
+  .role-text {
+    font-size: 1.1rem;
+  }
+}
