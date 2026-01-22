@@ -148,11 +148,24 @@ html {
 }
 
 /* ===== EFEITO DE DIGITAÇÃO APRIMORADO (ENHANCED TYPING EFFECT) ===== */
+.typing-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 8s ease infinite;
+  display: inline-block;
+}
+
 .typing-text {
   display: inline-block;
   min-height: 1.2em;
   transition: all 0.15s ease;
   position: relative;
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .typing-text::after {
@@ -179,12 +192,14 @@ html {
   margin-left: 4px;
   animation: blink 0.7s infinite, cursorGlow 2s ease-in-out infinite;
   font-weight: 400;
-  color: var(--primary);
-  text-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .typing-cursor.pause {
-  animation: none;
+  animation: cursorGlow 2s ease-in-out infinite;
   opacity: 1;
 }
 
@@ -199,10 +214,10 @@ html {
 
 @keyframes cursorGlow {
   0%, 100% {
-    text-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+    filter: brightness(1);
   }
   50% {
-    text-shadow: 0 0 16px rgba(37, 99, 235, 0.8), 0 0 24px rgba(59, 130, 246, 0.4);
+    filter: brightness(1.5) drop-shadow(0 0 8px rgba(37, 99, 235, 0.6));
   }
 }
 
