@@ -502,6 +502,67 @@ body {
   }
 }
 
+/* Estilo para imagem na seção About */
+.about-image-wrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 6px;
+  transition: all 0.4s ease;
+  animation: borderRotate 8s linear infinite;
+}
+
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    var(--primary),
+    var(--secondary),
+    var(--accent),
+    transparent
+  );
+  animation: borderSpin 4s linear infinite;
+  z-index: -1;
+}
+
+.about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.about-image-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.about-image-wrapper:hover .about-image {
+  filter: brightness(1.1);
+}
+
 .floating-element {
   position: absolute;
   width: 58px;
