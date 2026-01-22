@@ -336,6 +336,10 @@ body {
 
 .hero-title {
   margin-bottom: var(--space-lg);
+  line-height: 1 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
 }
 
 .hero-name {
@@ -343,7 +347,7 @@ body {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-black);
   color: var(--text-primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0 !important;
   line-height: 1.1;
 }
 
@@ -352,6 +356,8 @@ body {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-semibold);
   line-height: 1.2;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .hero-description {

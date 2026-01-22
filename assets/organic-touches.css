@@ -224,6 +224,8 @@ html {
 /* Efeito suave no hero-role */
 .hero-role {
   transition: transform 0.3s ease;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .hero-role:hover .typing-cursor {
