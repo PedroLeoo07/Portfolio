@@ -156,27 +156,50 @@ html {
   background-size: 200% auto;
   animation: gradientShift 8s ease infinite;
   display: inline-block;
+  transform-origin: left center;
 }
 
 .typing-text {
   display: inline-block;
   min-height: 1.2em;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
   position: relative;
   background: inherit;
   background-clip: text;
   -webkit-background-clip: text;
+  letter-spacing: 0.02em;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.typing-text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.typing-text.complete::before {
+  opacity: 1;
 }
 
 .typing-text::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  transition: width 0.3s ease;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.5);
+  transition: width 0.4s ease;
+  border-radius: 2px;
 }
 
 .typing-text.complete::after {
@@ -184,52 +207,70 @@ html {
 }
 
 .typing-text.deleting {
-  opacity: 0.7;
+  opacity: 0.6;
+  transform: scale(0.98);
 }
 
 .typing-cursor {
   display: inline-block;
-  margin-left: 4px;
-  animation: blink 0.7s infinite, cursorGlow 2s ease-in-out infinite;
-  font-weight: 400;
+  margin-left: 6px;
+  animation: blink 0.8s infinite, cursorPulse 2s ease-in-out infinite;
+  font-weight: 600;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transform-origin: center;
 }
 
 .typing-cursor.pause {
-  animation: cursorGlow 2s ease-in-out infinite;
+  animation: cursorPulse 1.5s ease-in-out infinite;
   opacity: 1;
 }
 
 @keyframes blink {
-  0%, 49% {
+  0%, 50% {
     opacity: 1;
   }
-  50%, 100% {
+  51%, 100% {
     opacity: 0;
   }
 }
 
-@keyframes cursorGlow {
+@keyframes cursorPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 4px rgba(37, 99, 235, 0.4));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.8) drop-shadow(0 0 12px rgba(37, 99, 235, 0.8));
+  }
+}
+
+@keyframes textGlow {
   0%, 100% {
     filter: brightness(1);
   }
   50% {
-    filter: brightness(1.5) drop-shadow(0 0 8px rgba(37, 99, 235, 0.6));
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(37, 99, 235, 0.2));
   }
 }
 
 /* Efeito suave no hero-role */
 .hero-role {
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: 0 !important;
   padding-top: 0 !important;
+  will-change: transform;
 }
 
 .hero-role:hover .typing-cursor {
-  animation: blink 0.3s infinite, cursorGlow 1s ease-in-out infinite;
+  animation: blink 0.4s infinite, cursorPulse 1s ease-in-out infinite;
+}
+
+.hero-role:hover .typing-text {
+  filter: brightness(1.15) drop-shadow(0 0 12px rgba(37, 99, 235, 0.3));
 }
 
 .animated-role {

@@ -23,32 +23,38 @@ document.addEventListener('DOMContentLoaded', function() {
     let typingSpeed;
     
     if (isDeleting) {
-      // Apagando - mais rápido
+      // Apagando - rápido e suave
       typingElement.textContent = currentText.substring(0, charIndex - 1);
       charIndex--;
-      typingSpeed = getRandomSpeed(30, 20);
+      typingSpeed = getRandomSpeed(40, 30);
       
       // Adiciona classe para efeito visual
       typingElement.classList.add('deleting');
     } else {
-      // Digitando - velocidade variável para parecer mais natural
+      // Digitando - velocidade natural e variável
       typingElement.textContent = currentText.substring(0, charIndex + 1);
       charIndex++;
-      typingSpeed = getRandomSpeed(80, 60);
+      typingSpeed = getRandomSpeed(100, 80);
       
       // Remove classe de deleção
       typingElement.classList.remove('deleting');
       
-      // Pausa extra em espaços e vírgulas
+      // Pausas naturais em espaços
       if (currentText[charIndex - 1] === ' ') {
-        typingSpeed += 50;
+        typingSpeed += 100;
+      }
+      
+      // Pequena pausa adicional em letras maiúsculas
+      if (currentText[charIndex - 1] === currentText[charIndex - 1].toUpperCase() && 
+          currentText[charIndex - 1] !== ' ') {
+        typingSpeed += 20;
       }
     }
     
     // Se terminou de digitar
     if (!isDeleting && charIndex === currentText.length) {
-      // Pausa longa antes de começar a apagar
-      typingSpeed = 2500;
+      // Pausa antes de apagar
+      typingSpeed = 3000;
       isDeleting = true;
       
       // Adiciona efeito de conclusão
@@ -61,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       textIndex = (textIndex + 1) % texts.length;
-      typingSpeed = 800;
+      typingSpeed = 1000;
       
       // Remove efeitos
       typingElement.classList.remove('complete', 'deleting');
@@ -73,6 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(type, typingSpeed);
   }
   
-  // Inicia o efeito após um delay
-  setTimeout(type, 1200);
+  // Inicia o efeito após um delay suave
+  setTimeout(type, 1000);
 });

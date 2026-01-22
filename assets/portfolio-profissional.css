@@ -339,7 +339,7 @@ body {
   line-height: 1 !important;
   display: flex;
   flex-direction: column;
-  gap: 0 !important;
+  gap: 0.5rem !important;
 }
 
 .hero-name {
