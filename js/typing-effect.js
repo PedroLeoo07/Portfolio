@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!typingElement) return;
   
   const texts = [
-    'Software Engineer',
+    'Software Engineering Student',
     'Full Stack Developer'
   ];
   
