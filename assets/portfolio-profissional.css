@@ -348,14 +348,14 @@ body {
   font-weight: var(--font-weight-black);
   color: var(--text-primary);
   margin-bottom: 0 !important;
-  line-height: 1.1;
+  line-height: 1 !important;
 }
 
 .hero-role {
   display: block;
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-semibold);
-  line-height: 1.2;
+  line-height: 1 !important;
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
