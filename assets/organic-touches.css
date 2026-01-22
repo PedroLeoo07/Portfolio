@@ -146,7 +146,29 @@ html {
 .mobile-toggle span {
   transition: all 0.3s ease;
 }
-/* ===== ANIMAÇÕES DOS TÍTULOS DE CARGO ===== */
+
+/* ===== EFEITO DE DIGITAÇÃO (TYPING EFFECT) ===== */
+.typing-text {
+  display: inline-block;
+  min-height: 1.2em;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+  font-weight: 400;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
 .animated-role {
   display: flex;
   align-items: center;
