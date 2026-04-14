@@ -34,13 +34,19 @@
 
 [data-theme="dark"] {
   --text-dark: #f1f5f9;
-  --text-light: #cbd5e1;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
   --text-muted: #64748b;
   --bg-white: #0f172a;
   --bg-light: #1a202c;
   --bg-gray: #1e293b;
   --border: #334155;
   --accent-gold: #fbbf24;
+}
+
+[data-theme="dark"] .header {
+  background: rgba(15, 23, 42, 0.98);
+  border-bottom-color: rgba(51, 65, 85, 0.4);
 }
 
 html {

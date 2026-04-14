@@ -1,0 +1,332 @@
+/* ===== FINAL PROFESSIONAL POLISH ===== */
+
+/* Ensure consistent text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove default focus styles globally and apply custom */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Ensure headers have excellent readability */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Link styling optimization */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Button and input consistency */
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Image optimization */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* SVG styling */
+svg {
+  overflow: visible;
+}
+
+/* List styling */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Code block styling */
+code,
+pre {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* Quote styling */
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure proper cursor on interactive elements */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+a[role="button"],
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Smooth transitions on state changes */
+button,
+a,
+input,
+textarea,
+select {
+  transition: var(--transition);
+}
+
+/* Section spacing consistency */
+.section {
+  position: relative;
+}
+
+.section > .container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card shadow consistency */
+.project-card,
+[style*="background: var(--bg-secondary"] {
+  box-shadow: var(--shadow);
+}
+
+/* Ensure text legibility in all contexts */
+[style*="color: var(--text-secondary"] {
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+/* Form elements refinement */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  backend-filter: brightness(1);
+}
+
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--bg-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Animation performance optimization */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Viewport width optimization */
+@media (min-width: 1400px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+
+/* High DPI screen optimization */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  p {
+    page-break-inside: avoid;
+  }
+}
+
+/* Enhanced contrast for better accessibility */
+@media (prefers-contrast: more) {
+  body {
+    --primary: #082055;
+    --text-primary: #000;
+    --text-secondary: #1a1a1a;
+  }
+
+  [data-theme="dark"] {
+    --primary: #3b82f6;
+    --text-primary: #fff;
+    --text-secondary: #e5e5e5;
+  }
+}
+
+/* Ensure proper stacking context */
+.header {
+  z-index: 1000;
+}
+
+.hero::before,
+.hero::after {
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1;
+}
+
+/* Loading state for images */
+img {
+  background: linear-gradient(90deg, var(--bg-gray) 25%, var(--bg-light) 50%, var(--bg-gray) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+img[src] {
+  background: none;
+  animation: none;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Safe area for mobile devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .header-content {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
+
+/* Prevent zoom on input focus (iOS) */
+input,
+textarea,
+select {
+  font-size: 16px !important;
+}
+
+/* Ensure proper line wrapping */
+p,
+li,
+td,
+th {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Remove appearance for certain inputs */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Consistent link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+/* Data attribute styling for tooltips */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+}
