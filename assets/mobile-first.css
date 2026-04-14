@@ -106,13 +106,20 @@ body {
 .hero-buttons {
   flex-direction: column;
   gap: 0.5rem;
+  display: flex;
+  width: 100%;
 }
 
 .btn {
   width: 100%;
-  padding: 0.65rem 1rem;
-  font-size: 0.75rem;
-  padding: 0.65rem 0.9rem;
+  padding: 0.7rem 0.9rem !important;
+  font-size: 0.75rem !important;
+  text-align: center;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
 }
 
 /* Typography mobile */
@@ -415,11 +422,14 @@ footer a {
 
   .hero-buttons {
     gap: 0.75rem;
+    width: 100%;
   }
 
   .btn {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.85rem;
+    width: 100%;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.8rem !important;
+    min-height: 44px;
   }
 
   h1 {
