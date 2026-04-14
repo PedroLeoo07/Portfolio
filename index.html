@@ -14,10 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- CSS -->
-  <link rel="stylesheet" href="./assets/style-corporate.css">
-  <link rel="stylesheet" href="./assets/premium-refinements.css">
-  <link rel="stylesheet" href="./assets/final-polish.css">
-  <link rel="stylesheet" href="./assets/mobile-first.css">
+  <link rel="stylesheet" href="./assets/main.css">
   
   <!-- Icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -157,15 +154,15 @@
           <div class="about-image-wrapper">
             <img src="images/fotodoPai.jpg" alt="Leonardo Oliveira" class="about-image">
           </div>
-          
+
           <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
-            <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" target="_blank" title="LinkedIn" style="width: 44px; height: 44px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: var(--transition);">
+            <a href="https://www.linkedin.com/in/leonardo-oliveira-38aab7321/" target="_blank" title="LinkedIn" class="icon-button">
               <i class='bx bxl-linkedin'></i>
             </a>
-            <a href="https://github.com/PedroLeoo07" target="_blank" title="GitHub" style="width: 44px; height: 44px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: var(--transition);">
+            <a href="https://github.com/PedroLeoo07" target="_blank" title="GitHub" class="icon-button">
               <i class='bx bxl-github'></i>
             </a>
-            <a href="https://wa.me/5519988727143" target="_blank" title="WhatsApp" style="width: 44px; height: 44px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: var(--transition);">
+            <a href="https://wa.me/5519988727143" target="_blank" title="WhatsApp" class="icon-button">
               <i class='bx bxl-whatsapp'></i>
             </a>
           </div>
@@ -496,220 +493,15 @@
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  
-  <!-- JavaScript -->
+
+  <!-- Main JavaScript -->
+  <script src="./js/main.js"></script>
+
+  <!-- Initialize EmailJS -->
   <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
-    
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-      const icon = themeToggle.querySelector('i');
-      icon.className = theme === 'dark' ? 'bx bx-sun' : 'bx bx-moon';
-    }
-    
-    // Mobile Menu
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navbar = document.getElementById('navbar');
-    
-    mobileToggle.addEventListener('click', () => {
-      mobileToggle.classList.toggle('active');
-      navbar.classList.toggle('active');
-    });
-    
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-    
-    // Active Navigation
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    function updateActiveNav() {
-      const scrollPos = window.scrollY + 100;
-      
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-        
-        if (scrollPos >= top && scrollPos < top + height) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-    
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Header Scroll Effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-    
-    // EmailJS Initialization
-    (function() {
+    if (typeof emailjs !== 'undefined') {
       emailjs.init('YOUR_PUBLIC_KEY'); // Substituir pela sua chave pública
-    })();
-    
-    // Contact Form
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Mudando o botão para estado de carregamento
-      const originalContent = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="bx bx-loader bx-spin"></i><span>Enviando...</span>';
-      submitBtn.disabled = true;
-      
-      // Coletando dados do formulário
-      const templateParams = {
-        from_name: contactForm.from_name.value,
-        from_email: contactForm.from_email.value,
-        subject: contactForm.subject.value,
-        message: contactForm.message.value,
-        to_email: 'leonardopedrodeoliveira07@gmail.com'
-      };
-      
-      // Enviando email via EmailJS
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-        .then((response) => {
-          console.log('Email enviado com sucesso!', response.status, response.text);
-          
-          // Sucesso
-          submitBtn.innerHTML = '<i class="bx bx-check"></i><span>Enviado!</span>';
-          submitBtn.style.background = '#10B981';
-          
-          // Exibir mensagem de sucesso
-          showNotification('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success');
-          
-          // Limpar formulário
-          contactForm.reset();
-          
-          // Restaurar botão após 3 segundos
-          setTimeout(() => {
-            submitBtn.innerHTML = originalContent;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 3000);
-        })
-        .catch((error) => {
-          console.error('Erro ao enviar email:', error);
-          
-          // Erro
-          submitBtn.innerHTML = '<i class="bx bx-x"></i><span>Erro ao enviar</span>';
-          submitBtn.style.background = '#EF4444';
-          
-          // Exibir mensagem de erro
-          showNotification('Erro ao enviar mensagem. Tente novamente ou entre em contato via WhatsApp.', 'error');
-          
-          // Restaurar botão após 3 segundos
-          setTimeout(() => {
-            submitBtn.innerHTML = originalContent;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 3000);
-        });
-    });
-    
-    // Função para exibir notificações
-    function showNotification(message, type) {
-      // Criar elemento de notificação
-      const notification = document.createElement('div');
-      notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#10B981' : '#EF4444'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        font-weight: 500;
-        max-width: 400px;
-        animation: slideIn 0.3s ease-out;
-      `;
-      
-      notification.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <i class="bx ${type === 'success' ? 'bx-check-circle' : 'bx-x-circle'}"></i>
-          <span>${message}</span>
-        </div>
-      `;
-      
-      // Adicionar CSS da animação se não existir
-      if (!document.querySelector('#notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'notification-styles';
-        style.textContent = `
-          @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-          }
-          @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-          }
-        `;
-        document.head.appendChild(style);
-      }
-      
-      // Adicionar ao DOM
-      document.body.appendChild(notification);
-      
-      // Remover após 5 segundos
-      setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-in';
-        setTimeout(() => {
-          if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
-          }
-        }, 300);
-      }, 5000);
     }
-    
-    console.log('🚀 Portfolio carregado com sucesso!');
   </script>
-  
-  <!-- Typing Effect -->
-  <script src="./js/typing-effect.js"></script>
-
-  <!-- Hero Interactions -->
-  <script src="./js/hero-interactions.js"></script>
-
-  <!-- Premium Enhancements -->
-  <script src="./js/premium-enhancements.js"></script>
 </body>
 </html>
