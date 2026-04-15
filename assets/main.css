@@ -441,7 +441,7 @@ a:hover {
 
 .hero-image-wrapper {
   width: 240px;
-  height: 240px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--shadow-2xl);
@@ -473,7 +473,7 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 35%;
   border-radius: 50%;
   position: relative;
   z-index: 1;
@@ -515,7 +515,7 @@ a:hover {
 .about-image-wrapper {
   position: relative;
   width: 200px;
-  height: 200px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--shadow-2xl);
@@ -547,7 +547,7 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 35%;
   border-radius: 50%;
   position: relative;
   z-index: 1;
@@ -767,7 +767,6 @@ img {
 
   .hero-image-wrapper {
     width: 260px;
-    height: 260px;
   }
 
   .hero-buttons {
@@ -783,7 +782,6 @@ img {
 
   .about-image-wrapper {
     width: 220px;
-    height: 220px;
   }
 
   .icon-button {
@@ -854,7 +852,6 @@ img {
 
   .hero-image-wrapper {
     width: 280px;
-    height: 280px;
   }
 
   .btn {
@@ -864,7 +861,6 @@ img {
 
   .about-image-wrapper {
     width: 240px;
-    height: 240px;
   }
 
   .icon-button {
@@ -1034,7 +1030,6 @@ img {
 
   .hero-image-wrapper {
     width: 300px;
-    height: 300px;
   }
 
   .hero-visual {
@@ -1043,7 +1038,6 @@ img {
 
   .about-image-wrapper {
     width: 240px;
-    height: 240px;
   }
 
   .icon-button {
@@ -1136,7 +1130,6 @@ img {
 
   .hero-image-wrapper {
     width: 320px;
-    height: 320px;
   }
 
   .btn {
@@ -1146,7 +1139,6 @@ img {
 
   .about-image-wrapper {
     width: 280px;
-    height: 280px;
   }
 
   .icon-button {
