@@ -72,13 +72,6 @@ Este portfolio representa **excelência em design e desenvolvimento**, combinand
 
 ---
 
-## ✨ **Funcionalidades Exclusivas**
-
-### 🎮 **Sistema de Easter Eggs Avançado**
-- **11+ códigos secretos** para descobrir
-- **Código Konami** clássico implementado
-- **Gestos do mouse** para ações especiais
-- **Sistema de conquistas** persistente
 
 ### 🎵 **Audio Engine Personalizado**
 - **Web Audio API** para feedback sonoro
