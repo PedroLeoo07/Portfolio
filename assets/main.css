@@ -874,6 +874,22 @@ img {
     gap: 1.75rem;
   }
 
+  /* About section - centralize image on mobile, natural on desktop */
+  .grid > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid > div:last-child .about-image-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid > div:last-child > div {
+    justify-content: center;
+  }
+
   .section-title {
     font-size: 2.5rem;
   }
