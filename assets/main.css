@@ -522,7 +522,7 @@ a:hover {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   padding: 4px;
   transition: var(--transition);
-  margin: 0 auto;
+  margin: 0;
 }
 
 .about-image-wrapper::before {
@@ -792,6 +792,20 @@ img {
 
   .section-title {
     font-size: 2.25rem;
+  }
+
+  /* Centralize about image on mobile */
+  .grid > div:last-child {
+    text-align: center;
+  }
+
+  .grid > div:last-child .about-image-wrapper {
+    margin: 0 auto;
+  }
+
+  .grid > div:last-child > div {
+    display: flex;
+    justify-content: center;
   }
 }
 
