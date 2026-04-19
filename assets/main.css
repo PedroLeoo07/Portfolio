@@ -512,6 +512,58 @@ a:hover {
 }
 
 /* ===== ABOUT SECTION STYLES ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-content {
+  width: 100%;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.about-text-last {
+  margin-bottom: 2rem;
+}
+
+.about-highlight {
+  color: var(--text-primary);
+}
+
+.about-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.about-actions .btn {
+  width: 100%;
+}
+
+.about-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.about-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .about-image-wrapper {
   position: relative;
   width: 200px;
@@ -595,11 +647,6 @@ a:hover {
   gap: 1.5rem;
 }
 
-/* Centralize content in single column (mobile) */
-.grid > div:nth-child(2) {
-  text-align: center;
-}
-
 .card {
   background: var(--bg-light);
   border-radius: 12px;
@@ -678,6 +725,15 @@ footer a:hover {
   color: white;
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Keep inline-grid sections responsive without touching HTML structure */
+#projects .grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
+}
+
+#contact form > div:first-child {
+  grid-template-columns: 1fr !important;
 }
 
 /* ===== UTILITIES ===== */
@@ -785,8 +841,16 @@ img {
     width: auto;
   }
 
+  .about-actions .btn {
+    width: auto;
+  }
+
   .about-image-wrapper {
     width: 220px;
+  }
+
+  #contact form > div:first-child {
+    grid-template-columns: 1fr 1fr !important;
   }
 
   .icon-button {
@@ -868,6 +932,11 @@ img {
     width: 240px;
   }
 
+  .about-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+  }
+
   .icon-button {
     width: 48px;
     height: 48px;
@@ -877,11 +946,6 @@ img {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
-  }
-
-  /* Remove center align when 2 columns */
-  .grid > div:nth-child(2) {
-    text-align: left;
   }
 
   .section-title {
@@ -1050,6 +1114,20 @@ img {
     width: 240px;
   }
 
+  .about-grid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+  }
+
+  .about-text {
+    font-size: 1.08rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text-last {
+    margin-bottom: 2.25rem;
+  }
+
   .icon-button {
     width: 48px;
     height: 48px;
@@ -1149,6 +1227,10 @@ img {
 
   .about-image-wrapper {
     width: 280px;
+  }
+
+  .about-text {
+    font-size: 1.14rem;
   }
 
   .icon-button {
